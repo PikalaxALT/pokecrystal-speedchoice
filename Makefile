@@ -1,5 +1,6 @@
 PYTHON := python
 MD5 := md5sum -c --quiet
+RGBDS := rgbds
 
 .SUFFIXES:
 .PHONY: all clean crystal crystal11
@@ -27,27 +28,35 @@ misc/crystal_misc.o \
 text/common_text.o \
 gfx/pics.o
 
+rgbds_files := ${RGBDS}/rgbasm ${RGBDS}/rgblink ${RGBDS}/rgbgfx ${RGBDS}/rgbfix
 
 roms := crystal-speedchoice.gbc
 
 all: $(roms)
+
+rgbds: $(rgbds_files)
+
 crystal: crystal-speedchoice.gbc
 
 clean:
-	rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+	-rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+	-make -C ${RGBDS} clean
 
 compare: crystal-speedchoice.gbc
 	@$(MD5) roms.md5
 
+${RGBDS}/rgb%:
+	-make -C ${RGBDS}
+
 %.asm: ;
 
 %.o: dep = $(shell $(includes) $(@D)/$*.asm)
-%.o: %.asm $$(dep)
-	rgbasm -o $@ $<
+%.o: rgbds %.asm $$(dep)
+	${RGBDS}/rgbasm -o $@ $<
 
 crystal-speedchoice.gbc: $(crystal_obj)
-	rgblink -n crystal-speedchoice.sym -m crystal-speedchoice.map -o $@ $^
-	rgbfix -Cjv -i KAPB -k 01 -l 0x33 -m 0x10 -p 0 -n 3 -r 3 -t PM_CRYSTAL $@
+	${RGBDS}/rgblink -n crystal-speedchoice.sym -m crystal-speedchoice.map -o $@ $^
+	${RGBDS}/rgbfix -Cjv -i KAPB -k 01 -l 0x33 -m 0x10 -p 0 -n 3 -r 3 -t PM_CRYSTAL $@
 
 %.png: ;
 %.2bpp: %.png ; $(gfx) 2bpp $<
