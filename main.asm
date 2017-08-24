@@ -6057,10 +6057,10 @@ DetermineLinkBattleResult: ; 2b930
 	ret
 
 ChrisBackpic: ; 2ba1a
-INCBIN "gfx/misc/player.6x6.2bpp.lz"
+INCBIN "gfx/pics/tangela/back.2bpp.lz"
 
 DudeBackpic: ; 2bbaa
-INCBIN "gfx/misc/dude.6x6.2bpp.lz"
+INCBIN "gfx/pics/tangela/back.2bpp.lz"
 
 SECTION "bankB", ROMX, BANK[$B]
 
@@ -10309,10 +10309,10 @@ ChrisNameMenuHeader: ; 882b5
 	db 5 ; items
 	db "NEW NAME@"
 MalePlayerNameArray: ; 882c9
-	db "CHRIS@"
-	db "MAT@"
-	db "ALLAN@"
-	db "JON@"
+	db "keizaW@"
+	db "keizaW@"
+	db "keizaW@"
+	db "keizaW@"
 	db 2 ; displacement
 	db " NAME @" ; title
 
@@ -10329,10 +10329,10 @@ KrisNameMenuHeader: ; 882e5
 	db 5 ; items
 	db "NEW NAME@"
 FemalePlayerNameArray: ; 882f9
-	db "KRIS@"
-	db "AMANDA@"
-	db "JUANA@"
-	db "JODI@"
+	db "keizaW@"
+	db "keizaW@"
+	db "keizaW@"
+	db "keizaW@"
 	db 2 ; displacement
 	db " NAME @" ; title
 
@@ -10352,16 +10352,16 @@ GetPlayerIcon: ; 8832c
 ; Get the player icon corresponding to gender
 
 ; Male
-	ld de, ChrisSpriteGFX
-	ld b, BANK(ChrisSpriteGFX)
+	ld de, WigglywooSpriteGFX
+	ld b, BANK(WigglywooSpriteGFX)
 
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .done
 
 ; Female
-	ld de, KrisSpriteGFX
-	ld b, BANK(KrisSpriteGFX)
+	ld de, WigglywooSpriteGFX
+	ld b, BANK(WigglywooSpriteGFX)
 
 .done
 	ret
@@ -10385,10 +10385,10 @@ GetCardPic: ; 8833e
 	ret
 
 ChrisCardPic: ; 88365
-INCBIN "gfx/misc/chris_card.5x7.2bpp"
+INCBIN "gfx/misc/wigglywoo.5x7.2bpp"
 
 KrisCardPic: ; 88595
-INCBIN "gfx/misc/kris_card.5x7.2bpp"
+INCBIN "gfx/misc/wigglywoo.5x7.2bpp"
 
 CardGFX: ; 887c5
 INCBIN "gfx/misc/trainer_card.2bpp"
@@ -10471,10 +10471,10 @@ DrawIntroPlayerPic: ; 88874
 	ret
 
 ChrisPic: ; 888a9
-INCBIN "gfx/misc/chris.7x7.2bpp"
+INCBIN "gfx/trainers/wigglywoo.2bpp"
 
 KrisPic: ; 88bb9
-INCBIN "gfx/misc/kris.7x7.2bpp"
+INCBIN "gfx/trainers/wigglywoo.2bpp"
 
 GetKrisBackpic: ; 88ec9
 ; Kris's backpic is uncompressed.
@@ -10485,7 +10485,7 @@ GetKrisBackpic: ; 88ec9
 	ret
 
 KrisBackpic: ; 88ed6
-INCBIN "gfx/misc/kris_back.6x6.2bpp"
+INCBIN "gfx/pics/tangela/back.2bpp"
 
 String_89116:
 	db "-----@"
@@ -11608,6 +11608,7 @@ INCLUDE "data/battle_tower.asm"
 INCLUDE "data/odd_eggs.asm"
 
 SECTION "bank7F", ROMX, BANK[$7F]
+WigglywooSpriteGFX:    INCBIN "gfx/overworld/wigglywoo.2bpp"
 
 SECTION "stadium2", ROMX[$8000-$220], BANK[$7F]
 

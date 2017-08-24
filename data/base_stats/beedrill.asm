@@ -12,7 +12,7 @@
 	db 100 ; unknown
 	db 15 ; step cycles to hatch
 	db 5 ; unknown
-	dn 7, 7 ; frontpic dimensions
+	dn 6, 6 ; frontpic dimensions
 	db 0, 0, 0, 0 ; padding
 	db MEDIUM_FAST ; growth rate
 	dn INSECT, INSECT ; egg groups

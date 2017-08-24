@@ -30,19 +30,19 @@ gfx/pics.o
 
 rgbds_files := ${RGBDS}/rgbasm ${RGBDS}/rgblink ${RGBDS}/rgbgfx ${RGBDS}/rgbfix
 
-roms := crystal-speedchoice.gbc
+roms := crystal-wigglywoo.gbc
 
-all: $(roms)
+all: $(rgbds_files) $(roms)
 
 rgbds: $(rgbds_files)
 
-crystal: crystal-speedchoice.gbc
+crystal: crystal-wigglywoo.gbc
 
 clean:
 	-rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
 	-make -C ${RGBDS} clean
 
-compare: crystal-speedchoice.gbc
+compare: crystal-wigglywoo.gbc
 	@$(MD5) roms.md5
 
 ${RGBDS}/rgb%:
@@ -51,12 +51,12 @@ ${RGBDS}/rgb%:
 %.asm: ;
 
 %.o: dep = $(shell $(includes) $(@D)/$*.asm)
-%.o: rgbds %.asm $$(dep)
+%.o: %.asm $$(dep)
 	${RGBDS}/rgbasm -o $@ $<
 
-crystal-speedchoice.gbc: $(crystal_obj)
-	${RGBDS}/rgblink -n crystal-speedchoice.sym -m crystal-speedchoice.map -o $@ $^
-	${RGBDS}/rgbfix -Cjv -i KAPB -k 01 -l 0x33 -m 0x10 -p 0 -n 3 -r 3 -t PM_CRYSTAL $@
+crystal-wigglywoo.gbc: $(crystal_obj)
+	${RGBDS}/rgblink -n crystal-wigglywoo.sym -m crystal-wigglywoo.map -o $@ $^
+	${RGBDS}/rgbfix -Cjv -i WWOO -k 01 -l 0x33 -m 0x10 -p 0 -n 3 -r 3 -t WIGGLYWOO $@
 
 %.png: ;
 %.2bpp: %.png ; $(gfx) 2bpp $<

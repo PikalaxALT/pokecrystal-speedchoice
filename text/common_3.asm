@@ -689,7 +689,7 @@ ContestJudging_ThirdPlaceScoreText::
 
 UnknownText_0x1c1203::
 	text "Let me measure"
-	line "that MAGIKARP."
+	line "that WIGGLYWOO."
 
 	para "…Hm, it measures"
 	line "@"
