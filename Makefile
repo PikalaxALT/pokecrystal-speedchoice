@@ -32,7 +32,7 @@ rgbds_files := ${RGBDS}/rgbasm ${RGBDS}/rgblink ${RGBDS}/rgbgfx ${RGBDS}/rgbfix
 
 roms := crystal-speedchoice.gbc
 
-all: $(roms)
+all: $(rgbds_files) $(roms)
 
 rgbds: $(rgbds_files)
 
@@ -51,7 +51,7 @@ ${RGBDS}/rgb%:
 %.asm: ;
 
 %.o: dep = $(shell $(includes) $(@D)/$*.asm)
-%.o: rgbds %.asm $$(dep)
+%.o: %.asm $$(dep)
 	${RGBDS}/rgbasm -o $@ $<
 
 crystal-speedchoice.gbc: $(crystal_obj)
