@@ -56,7 +56,7 @@ ${RGBDS}/rgb%:
 
 crystal-wigglywoo.gbc: $(crystal_obj)
 	${RGBDS}/rgblink -n crystal-wigglywoo.sym -m crystal-wigglywoo.map -o $@ $^
-	${RGBDS}/rgbfix -Cjv -i WWOO -k 01 -l 0x33 -m 0x10 -p 0 -n 3 -r 3 -t WIGGLYWOO $@
+	${RGBDS}/rgbfix -Cjv -i WWOO -k 01 -l 0x33 -m 0x10 -p 0 -n 0 -r 3 -t WIGGLYWOO $@
 
 %.png: ;
 %.2bpp: %.png ; $(gfx) 2bpp $<
