@@ -155,14 +155,14 @@ StartMenu:: ; 125cd
 
 .MenuDataHeader
 	db $40 ; tile backup
-	db 0, 10 ; start coords
+	db 0, 8 ; start coords
 	db 17, 19 ; end coords
 	dw .MenuData
 	db 1 ; default selection
 
 .ContestMenuDataHeader
 	db $40 ; tile backup
-	db 2, 10 ; start coords
+	db 2, 8 ; start coords
 	db 17, 19 ; end coords
 	dw .MenuData
 	db 1 ; default selection
@@ -186,46 +186,36 @@ StartMenu:: ; 125cd
 	dw StartMenu_Quit,     .QuitString,     .QuitDesc
 	dw StartMenu_Escape,   .EscapeString,   .EscapeDesc
 
-.PokedexString 	db "#DEX@"
-.PartyString   	db "#MON@"
-.PackString    	db "PACK@"
-.StatusString  	db "<PLAYER>@"
-.SaveString    	db "SAVE@"
-.OptionString  	db "OPTION@"
-.ExitString    	db "EXIT@"
-.PokegearString	db $24, "GEAR@"
-.QuitString    	db "QUIT@"
-.EscapeString   db "ESCAPE@"
+.PokedexString 	db "WIGGLYWOO@"
+.PartyString   	db "WIGGLYWOO@"
+.PackString    	db "WIGGLYWOO@"
+.StatusString  	db "WIGGLYWOO@"
+.SaveString    	db "WIGGLYWOO@"
+.OptionString  	db "WIGGLYWOO@"
+.ExitString    	db "WIGGLYWOO@"
+.PokegearString	db "WIGGLYWOO@"
+.QuitString    	db "WIGGLYWOO@"
+.EscapeString   db "WIGGLYWOO@"
 
-.PokedexDesc  db   "#MON"
-              next "database@"
+.PokedexDesc  db   "keizaW@"
 
-.PartyDesc    db   "Party ", $4a
-              next "status@"
+.PartyDesc    db   "keizaW@"
 
-.PackDesc     db   "Contains"
-              next "items@"
+.PackDesc     db   "keizaW@"
 
-.PokegearDesc db   "Trainer's"
-              next "key device@"
+.PokegearDesc db   "keizaW@"
 
-.StatusDesc   db   "Your own"
-              next "status@"
+.StatusDesc   db   "keizaW@"
 
-.SaveDesc     db   "Save your"
-              next "progress@"
+.SaveDesc     db   "keizaW@"
 
-.OptionDesc   db   "Change"
-              next "settings@"
+.OptionDesc   db   "keizaW@"
 
-.ExitDesc     db   "Close this"
-              next "menu@"
+.ExitDesc     db   "keizaW@"
 
-.QuitDesc     db   "Quit and"
-              next "be judged.@"
+.QuitDesc     db   "keizaW@"
 			  
-.EscapeDesc   db   "Escape from"
-			  next "trouble.@"
+.EscapeDesc   db   "keizaW@"
 
 
 .OpenMenu ; 127e5
