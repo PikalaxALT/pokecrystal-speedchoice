@@ -1283,11 +1283,28 @@ Function1708b1: ; 1708b1 (5c:48b1) BattleTowerAction $0a
 	ret
 
 CheckMobileEventIndex: ; 1708b9 (5c:48b9) BattleTowerAction $0b something to do with GS Ball
-	ld a, BANK(sMobileEventIndex)
-	call GetSRAMBank
-	ld a, [sMobileEventIndex]
+;	ld a, BANK(sMobileEventIndex)
+;	call GetSRAMBank
+;	ld a, [sMobileEventIndex]
+;	ld [ScriptVar], a
+;	call CloseSRAM
+	xor a
 	ld [ScriptVar], a
-	call CloseSRAM
+	ld de, EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
+	call .CheckFlag
+	ret nz
+	ld de, EVENT_TEAM_ROCKET_DISBANDED
+	call .CheckFlag
+	ret z
+	ld a, MOBILE_EVENT_OBJECT_GS_BALL
+	ld [ScriptVar], a
+	ret
+
+.CheckFlag:
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
 	ret
 
 Function1708c8: ; 1708c8 (5c:48c8) BattleTowerAction $0c
