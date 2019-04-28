@@ -1087,10 +1087,10 @@ ShiftBoxMon: ; df47
 ; df8c
 
 GiveEgg:: ; df8c
-	ld a, [CurPartySpecies]
-	push af
-	callab GetPreEvolution
-	callab GetPreEvolution
+;	ld a, [CurPartySpecies]
+;	push af
+;	callab GetPreEvolution
+;	callab GetPreEvolution
 	ld a, [CurPartySpecies]
 	dec a
 
@@ -1138,8 +1138,8 @@ GiveEgg:: ; df8c
 	predef FlagPredef
 
 .skip_seen_flag
-	pop af
-	ld [CurPartySpecies], a
+;	pop af
+;	ld [CurPartySpecies], a
 	ld a, [PartyCount]
 	dec a
 	ld bc, PARTYMON_STRUCT_LENGTH
