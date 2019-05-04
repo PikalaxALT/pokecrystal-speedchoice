@@ -10984,7 +10984,6 @@ SECTION "bank39", ROMX, BANK[$39]
 CopyrightGFX:: ; e4000
 INCBIN "gfx/misc/copyright.2bpp"
 
-INCLUDE "engine/options_menu.asm"
 INCLUDE "engine/crystal_intro.asm"
 
 SECTION "bank3E", ROMX, BANK[$3E]
@@ -11647,3 +11646,5 @@ INCLUDE "engine/stat_tracking.asm"
 SECTION "statsdisplay", ROMX
 INCLUDE "engine/playthrough_stats_screen.asm"
 
+SECTION "options_menu", ROMX
+INCLUDE "engine/options_menu.asm"

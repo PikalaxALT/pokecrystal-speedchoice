@@ -106,9 +106,18 @@ Options_Name:
 	jr z, .GetText
 	ld a, [wJumptableIndex]
 	push af
+	ld a, [PlayerName]
+	cp "@"
+	jr z, .do_name
+	ld hl, .NameAlreadySetText
+	call PrintText
+	call YesNoBox
+	jr c, .Redraw
+.do_name
 	ld b, 1
 	ld de, PlayerName
 	callba NamingScreen
+.Redraw
 	call DrawOptionsMenu
 	pop af
 	ld [wJumptableIndex], a
@@ -123,6 +132,13 @@ Options_Name:
 	call PlaceString
 	and a
 	ret
+
+.NameAlreadySetText
+	text "You have already"
+	line "set your name."
+	para "Delete this and"
+	line "set a new one?"
+	done
 
 .NotSetString
 	db "NOT SET@"

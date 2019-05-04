@@ -1,5 +1,5 @@
 VersionNumberText::
-    db "v5.2@"
+    db "v5.2.1@"
 
 IntroPermaOptions::
 	xor a
@@ -49,7 +49,7 @@ PrintPermaOptionsToScreen::
 	;ld de, SelectedOptionsText
 	;coord hl, 2, 0
 	;call PlaceString
-	coord hl, 16, 0
+	coord hl, 20 - 6, 0
 	ld de, VersionNumberText
 	call PlaceString
 	ld a, [wPermanentOptions]
