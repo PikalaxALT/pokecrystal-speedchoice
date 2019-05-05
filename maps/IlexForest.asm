@@ -475,7 +475,7 @@ Randomizer_Celebi::
 	reloadmapafterbattle
 	pause 20
 	special CheckCaughtCelebi
-	iffalse .DidntCatchCelebi
+	iffalse _DidntCatchCelebi
 	appear ILEXFOREST_KURT
 	applymovement ILEXFOREST_KURT, MovementData_0x6ef4e
 	opentext
@@ -484,7 +484,7 @@ Randomizer_Celebi::
 	closetext
 	applymovement ILEXFOREST_KURT, MovementData_0x6ef53
 	disappear ILEXFOREST_KURT
-.DidntCatchCelebi:
+_DidntCatchCelebi
 	end
 
 MovementData_Farfetchd_Pos1_Pos2:
