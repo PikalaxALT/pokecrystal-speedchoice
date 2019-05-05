@@ -80,7 +80,7 @@ endr
 	dw .Fast
 	dw .Mid
 	dw .Slow
-	
+
 .Inst
 	db "INST@"
 
@@ -91,7 +91,6 @@ endr
 .Slow
 	db "SLOW@"
 ; e4346
-
 
 GetTextSpeed: ; e4346
 	ld a, [Options] ; This converts the number of frames, to 0, 1, 2, 3 representing speed
@@ -104,7 +103,7 @@ GetTextSpeed: ; e4346
 	ld c, MED_TEXT ; set it to mid if not one of the above
 	lb de, 1, 5
 	ret
-	
+
 .inst
 	ld c, INST_TEXT
 	lb de, 5, 1
@@ -120,7 +119,6 @@ GetTextSpeed: ; e4346
 	lb de, 0, 3
 	ret
 ; e4365
-
 
 Options_BattleScene: ; e4365
 	ld hl, Options
@@ -147,7 +145,6 @@ Options_BattleScene: ; e4365
 	db "OFF@"
 ; e43a0
 
-
 Options_BattleStyle: ; e43a0
 	ld hl, Options
 	and (1 << D_LEFT_F) | (1 << D_RIGHT_F)
@@ -172,7 +169,6 @@ Options_BattleStyle: ; e43a0
 .Set
 	db "SET  @"
 ; e43dd
-
 
 Options_Sound: ; e43dd
 	ld hl, Options
@@ -250,7 +246,6 @@ Options_MenuAccount: ; e44c1
 	db "ON @"
 ; e44fa
 
-
 Options_Frame: ; e44fa
 	ld hl, TextBoxFrame
 	bit D_LEFT_F, a
@@ -272,7 +267,7 @@ Options_Frame: ; e44fa
 	and $7
 	ld [hl], a
 	call LoadFontsExtra
-	
+
 .UpdateFrame: ; e4512
 	ld a, [TextBoxFrame]
 	hlcoord 16, 15 ; where on the screen the number is drawn
@@ -281,4 +276,3 @@ Options_Frame: ; e44fa
 	and a
 	ret
 ; e4520
-

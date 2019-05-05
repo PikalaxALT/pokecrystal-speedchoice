@@ -30,9 +30,8 @@ endr
 	jp [hl]
 ; 84031
 
-
 .Jumptable: ; 84031 (21:4031)
-	
+
 	dw Function84077
 	dw Function84143
 	dw Function84120
@@ -53,7 +52,6 @@ endr
 	dw Function84071
 	dw Function841b0
 	dw Function841b3
-
 
 Function84059: ; 84059 (21:4059)
 	ld hl, wJumptableIndex
@@ -427,7 +425,6 @@ Unknown_842cf: db  8, 0, $00, 0,  8, 0 ; unused
 Unknown_842d5: db 15, 0, $00, 0, 15, 0 ; unused
 ; 842db
 
-
 _PrinterReceive:: ; 842db
 	ld a, [wc2d5]
 	add a
@@ -441,9 +438,8 @@ _PrinterReceive:: ; 842db
 	jp [hl]
 ; 842ea
 
-
 .Jumptable: ; 842ea (21:42ea)
-	
+
 	dw Function8432f
 	dw Function84330
 	dw Function84339
@@ -476,7 +472,6 @@ _PrinterReceive:: ; 842db
 	dw Function8439f
 	dw Function843a8
 	dw Function843b6
-
 
 Function8432a: ; 8432a (21:432a)
 	ld hl, wc2d5

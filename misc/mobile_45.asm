@@ -6849,7 +6849,6 @@ Unknown_117356: ; 117356
 	db $8f, $8f, $8f, $8f, $08, $08, $08, $08, $08, $08, $08, $08, $08, $08, $08, $08
 ; 117656
 
-
 SECTION "Mobile Stadium", ROMX, BANK[$45]
 
 Special_GiveOddEgg: ; 117656
@@ -6958,7 +6957,6 @@ Jumptable_117728: ; 117728 (45:7728)
 	dw Function117976
 	dw Function117984
 	dw Function1179a7
-
 
 Function117738: ; 117738 (45:7738)
 	callba Function171ccd
@@ -7329,7 +7327,6 @@ MenuDataHeader_1179bd: ; 1179bd
 	db 0 ; default option
 ; 1179c5
 
-
 YessNoString_1179c5: ; 1179c5
 	db   "はい"
 	next "いいえ@"
@@ -7363,7 +7360,6 @@ INCBIN "data/mobile/ascii-alpha.txt"
 Unknown_117a47:
 INCBIN "data/mobile/ascii-sym.txt"
 ; 117a7f
-
 
 ; everything from here to the end of the bank is related to the
 ; Mobile Stadium option from the continue/newgame menu.

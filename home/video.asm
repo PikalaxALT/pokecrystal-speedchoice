@@ -42,20 +42,20 @@ _Serve2bppRequest::
 ; Copy [Requested2bpp] 2bpp tiles from [Requested2bppSource] to [Requested2bppDest], but no more than 15
 
 	ld [hSPBuffer], sp
-	
+
 ; Source
 	ld hl, Requested2bppSource
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
 	ld sp, hl
-	
+
 ; Destination
 	ld hl, Requested2bppDest
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	
+
 ; # tiles to copy
 	ld b, 15 ; max tiles
 	ld a, [Requested2bpp]
@@ -76,7 +76,7 @@ _Serve2bppRequest::
 	jr z, .next
 	dec b
 	jr z, .handlequarters
-	
+
 .next
 
 rept 4
@@ -129,7 +129,6 @@ endr
 	ld sp, hl
 	ret
 
-
 UpdateBGMapBuffer:: ; 15e3
 ; Copy [hFFDC] 16x8 tiles from BGMapBuffer
 ; to bg map addresses in BGMapBufferPtrs.
@@ -153,7 +152,6 @@ UpdateBGMapBuffer:: ; 15e3
 
 	ld hl, BGMapPalBuffer
 	ld de, BGMapBuffer
-
 
 .next
 ; Copy a pair of 16x8 blocks (one 16x16 block)
@@ -194,7 +192,6 @@ endr
 
 	jr nz, .next
 
-
 	ld a, [hSPBuffer]
 	ld l, a
 	ld a, [hSPBuffer + 1]
@@ -209,7 +206,6 @@ endr
 	scf
 	ret
 ; 163a
-
 
 WaitTop:: ; 163a
 ; Wait until the top third of the BG Map is being updated.
@@ -230,7 +226,6 @@ WaitTop:: ; 163a
 	ld [hBGMapMode], a
 	ret
 ; 164c
-
 
 UpdateBGMap:: ; 164c
 ; Update the BG Map, in thirds, from TileMap and AttrMap.
@@ -277,7 +272,6 @@ UpdateBGMapUnaligned::
 	ld [hBGMapAddress + 1], a
 	ret
 
-
 .Attr
 	ld a, 1
 	ld [rVBK], a
@@ -289,14 +283,12 @@ UpdateBGMapUnaligned::
 	ld [rVBK], a
 	ret
 
-
 .Tiles
 	hlcoord 0, 0
 
-
 .update
 	ld [hSPBuffer], sp
-	
+
 ; Which third?
 	ld a, [hBGMapThird]
 	and a ; 0
@@ -305,9 +297,7 @@ UpdateBGMapUnaligned::
 	jr z, .middle
 	; 2
 
-
 THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
-
 
 .bottom
 	ld de, 2 * THIRD_HEIGHT * SCREEN_WIDTH
@@ -326,7 +316,6 @@ THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 	xor a
 	jr .start
 
-
 .middle
 	ld de, THIRD_HEIGHT * SCREEN_WIDTH
 	add hl, de
@@ -344,7 +333,6 @@ THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 	ld a, 2
 	jr .start
 
-
 .top
 	ld sp, hl
 
@@ -356,7 +344,6 @@ THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 ; Next time: middle third
 	ld a, 1
 
-
 .start
 ; Which third to update next time
 	ld [hBGMapThird], a
@@ -366,7 +353,6 @@ THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 
 ; Discrepancy between TileMap and BGMap
 	ld bc, BG_MAP_WIDTH - (SCREEN_WIDTH - 1)
-
 
 .row
 ; Copy a row of 20 tiles
@@ -385,7 +371,6 @@ endr
 	add hl, bc
 	dec a
 	jr nz, .row
-
 
 	ld a, [hSPBuffer]
 	ld l, a
@@ -444,7 +429,6 @@ UpdateBGMapAligned::
 	ld [hBGMapAddress + 1], a
 	ret
 
-
 .Attr
 	ld a, 1
 	ld [rVBK], a
@@ -452,7 +436,7 @@ UpdateBGMapAligned::
 	xor a
 	ld [rVBK], a
 	ret
-	
+
 .Tiles
 	ld a, [rSVBK]
 	push af
@@ -501,14 +485,14 @@ endr
 	pop af
 	ld [rSVBK], a
 	ret
-	
+
 AnimateTileset:: ; 17d3
 ; Only call during the first fifth of VBlank
 
 	ld a, [hMapAnims]
 	and a
 	ret z
-	
+
 ; Back out if we're too far into VBlank
 	ld a, [rLY]
 	cp 144

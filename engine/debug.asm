@@ -1138,7 +1138,6 @@ String_81fcd: ; 81fcd
 DebugColorTestGFX:
 INCBIN "gfx/debug/color_test.2bpp"
 
-
 TilesetColorTest:
 	ret
 	xor a
@@ -1255,7 +1254,6 @@ endr
 	ld [rSVBK], a
 	ret
 ; 82236
-
 
 Function82236: ; 82236
 	ld hl, hJoyLast

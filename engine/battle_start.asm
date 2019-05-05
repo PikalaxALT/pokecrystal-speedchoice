@@ -1,7 +1,7 @@
 Predef_StartBattle: ; 8c20f
     ld a, TIMER_BATTLE
     ld [hTimerType], a
-    
+
 	call Function8c26d
 	ld a, [rBGP]
 	ld [wBGP], a
@@ -146,7 +146,6 @@ Function8c2cf: ; 8c2cf
 TrainerBattlePokeballTiles: ; 8c2f4
 INCBIN "gfx/overworld/trainer_battle_pokeball_tiles.2bpp"
 
-
 FlashyTransitionToBattle: ; 8c314
 	jumptable .dw, wJumptableIndex
 ; 8c323
@@ -196,7 +195,6 @@ FlashyTransitionToBattle: ; 8c314
 
 	; All animations jump to here.
 	dw StartTrainerBattle_Finish ; 20
-
 
 StartTrainerBattle_DetermineWhichAnimation: ; 8c365 (23:4365)
 ; The screen flashes a different number of
@@ -754,7 +752,6 @@ WipeLYOverrides: ; 8c6d8
 	jr nz, .loop
 	ret
 ; 8c6f7
-
 
 StartTrainerBattle_DrawSineWave: ; 8c6f7 (23:46f7)
 	and (1 << 6) - 1

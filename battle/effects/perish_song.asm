@@ -1,7 +1,6 @@
 BattleCommand_PerishSong: ; 376c2
 ; perishsong
 
-
 	ld hl, PlayerSubStatus1
 	ld de, EnemySubStatus1
 	bit SUBSTATUS_PERISH, [hl]

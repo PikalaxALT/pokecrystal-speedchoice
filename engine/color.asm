@@ -47,7 +47,6 @@ CheckShininess: ; 8a68
 	ret
 ; 8a88
 
-
 CheckContestMon: ; 8a88
 ; Check a mon's DVs at hl in the bug catching contest.
 ; Return carry if its DVs are good enough to place in the contest.
@@ -83,7 +82,6 @@ CheckContestMon: ; 8a88
 	ret
 ; 8aa4
 
-
 Function8aa4: ; 8aa4
 	push de
 	push bc
@@ -107,7 +105,6 @@ Function8aa4: ; 8aa4
 	call Function9809
 	ret
 ; 8ad1
-
 
 InitPartyMenuPalettes: ; 8ad1
 	ld hl, PalPacket_9c56 + 1
@@ -520,7 +517,6 @@ Palettes_8d05: ; 8d05
 
 INCLUDE "predef/cgb.asm"
 
-
 Function95f0: ; 95f0
 	ld hl, Palette_9608
 	ld de, UnknBGPals
@@ -540,7 +536,6 @@ Palette_9608: ; 9608
 	RGB 00, 03, 19
 
 ; 9610
-
 
 CopyFourPalettes: ; 9610
 	ld de, UnknBGPals
@@ -669,7 +664,6 @@ endr
 	ret
 ; 9699
 
-
 WipeAttrMap: ; 9699
 	hlcoord 0, 0, AttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -756,7 +750,6 @@ CGB_ApplyPartyMenuHPPals: ; 96f3 CGB layout $fc
 	call FillBoxCGB
 	ret
 ; 971a
-
 
 InitPartyMenuOBPals: ; 971a
 	ld hl, Palettes_b681
@@ -1011,7 +1004,6 @@ Function9853: ; 9853
 	ei
 	ret
 ; 9890
-
 
 Function9890:: ; 9890
 	call CheckCGB
@@ -2219,7 +2211,6 @@ Palettes_b681: ; b681
 	RGB 20, 15, 03
 	RGB 07, 07, 07
 
-
 Palettes_b6f1: ; b6f1
 	RGB 31, 31, 31
 	RGB 18, 23, 31
@@ -2245,7 +2236,6 @@ Palettes_b6f1: ; b6f1
 	RGB 23, 26, 31
 	RGB 18, 23, 31
 	RGB 00, 00, 00
-
 
 Palettes_b719: ; b719
 	RGB 31, 31, 31

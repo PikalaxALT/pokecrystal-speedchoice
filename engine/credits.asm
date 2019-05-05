@@ -116,7 +116,6 @@ const_value SET -7
 	const CREDITS_WAIT
 	const CREDITS_END
 
-
 Credits:: ; 109847
 	bit 6, b ; Hall Of Fame
 	ld a, $0
@@ -267,9 +266,8 @@ endr
 	jp [hl]
 ; 109937
 
-
 .Jumptable: ; 109937 (42:5937)
-	
+
 	dw ParseCredits
 	dw Credits_Next
 	dw Credits_Next
@@ -283,7 +281,6 @@ endr
 	dw Credits_UpdateGFXRequestPath
 	dw Credits_RequestGFX
 	dw Credits_LoopBack
-
 
 Credits_Next: ; 109951 (42:5951)
 	ld hl, wJumptableIndex
@@ -354,22 +351,21 @@ endr
 	ret
 ; 1099aa
 
-
 ParseCredits: ; 1099aa
 	ld hl, wJumptableIndex
 	bit 7, [hl]
 	jp nz, .done
-	
+
 ; Wait until the timer has run out to parse the next command.
 	ld hl, CreditsTimer
 	ld a, [hl]
 	and a
 	jr z, .parse
-	
+
 ; One tick has passed.
 	dec [hl]
 	jp .done
-	
+
 .parse
 ; First, let's clear the current text display,
 ; starting from line 5.
@@ -379,12 +375,12 @@ ParseCredits: ; 1099aa
 	ld bc, 20 * 12
 	ld a, " "
 	call ByteFill
-	
+
 ; Then read the script.
-	
+
 .loop
 	call .get
-	
+
 ; Commands:
 	cp CREDITS_END
 	jp z, .end
@@ -400,9 +396,9 @@ ParseCredits: ; 1099aa
 	jr z, .wait2
 	cp CREDITS_THEEND
 	jr z, .theend
-	
+
 ; If it's not a command, it's a string identifier.
-	
+
 	push af
 	ld e, a
 	ld d, 0
@@ -414,27 +410,27 @@ endr
 	ld d, [hl]
 	ld e, a
 	pop af
-	
+
 ; Strings spanning multiple lines have special cases.
-	
+
 	cp COPYRIGHT
 	jr z, .copyright
-	
+
 	cp STAFF
 	jr c, .staff
-	
+
 ; The rest start from line 6.
 
 	hlcoord 0, 6
 	jr .print
-	
+
 .copyright
 	hlcoord 2, 6
 	jr .print
-	
+
 .staff
 	hlcoord 0, 6
-	
+
 .print
 ; Print strings spaced every two lines.
 	call .get
@@ -442,12 +438,12 @@ endr
 	call AddNTimes
 	call PlaceString
 	jr .loop
-	
+
 .theend
 ; Display "The End" graphic.
 	call Credits_TheEnd
 	jr .loop
-	
+
 .scene
 ; Update the scene number and corresponding palette.
 	call .get
@@ -457,13 +453,13 @@ endr
 	call GetCreditsPalette
 	call SetPalettes ; update hw pal registers
 	jr .loop
-	
+
 .clear
 ; Clear the banner.
 	ld a, $ff
 	ld [wCreditsBorderFrame], a ; frame
 	jr .loop
-	
+
 .music
 ; Play the credits music.
 	ld de, MUSIC_CREDITS
@@ -474,26 +470,26 @@ endr
 	pop de
 	call PlayMusic
 	jp .loop
-	
+
 .wait2
 ; Wait for some amount of ticks.
 	call .get
 	ld [CreditsTimer], a
 	jr .done
-	
+
 .wait
 ; Wait for some amount of ticks, and do something else.
 	call .get
 	ld [CreditsTimer], a
-	
+
 	xor a
 	ld [hBGMapThird], a
 	ld a, 1
 	ld [hBGMapMode], a
-	
+
 .done
 	jp Credits_Next
-	
+
 .end
 ; Stop execution.
 	ld hl, wJumptableIndex
@@ -516,7 +512,7 @@ endr
 	ld d, a
 	ld hl, CreditsScript
 	add hl, de
-	
+
 	inc de
 	ld a, e
 	ld [CreditsPos], a
@@ -527,7 +523,6 @@ endr
 	pop hl
 	ret
 ; 109a95
-
 
 ConstructCreditsTilemap: ; 109a95 (42:5a95)
 	xor a
@@ -623,13 +618,13 @@ endr
 
 GetCreditsPalette: ; 109b2c
 	call .GetPalAddress
-	
+
 	push hl
 	ld a, 0
 	call .UpdatePals
 	pop hl
 	ret
-	
+
 .GetPalAddress
 ; Each set of palette data is 24 bytes long.
 	ld a, [wCreditsBorderMon] ; scene
@@ -644,10 +639,10 @@ GetCreditsPalette: ; 109b2c
 	add hl, de ; * 3
 	add hl, de
 	ret
-	
+
 .UpdatePals
 ; Update the first three colors in both palette buffers.
-	
+
 	push af
 	push hl
 	add UnknBGPals % $100
@@ -657,7 +652,7 @@ GetCreditsPalette: ; 109b2c
 	ld d, a
 	ld bc, 24
 	call CopyBytes
-	
+
 	pop hl
 	pop af
 	add BGPals % $100
@@ -668,7 +663,6 @@ GetCreditsPalette: ; 109b2c
 	ld bc, 24
 	call CopyBytes
 	ret
-
 
 CreditsPalettes:
 
@@ -803,7 +797,6 @@ Credits_TheEnd: ; 109c11 (42:5c11)
 	ret
 ; 109c24 (42:5c24)
 
-
 CreditsBorderGFX:    INCBIN "gfx/credits/border.2bpp"
 
 CreditsMonsGFX:
@@ -811,7 +804,6 @@ CreditsPichuGFX:     INCBIN "gfx/credits/pichu.2bpp"
 CreditsSmoochumGFX:  INCBIN "gfx/credits/smoochum.2bpp"
 CreditsDittoGFX:     INCBIN "gfx/credits/ditto.2bpp"
 CreditsIgglybuffGFX: INCBIN "gfx/credits/igglybuff.2bpp"
-
 
 CreditsScript: ; 10acb4
 
@@ -1100,7 +1092,6 @@ CreditsScript: ; 10acb4
 
 	db CREDITS_END
 ; 10ae13
-
 
 CreditsStrings:
 	dw .SatoshiTajiri

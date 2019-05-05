@@ -22,7 +22,6 @@ enum_set: macro
 __enum__ = \1
 endm
 
-
 ; Enumerate constants
 
 const_def: MACRO

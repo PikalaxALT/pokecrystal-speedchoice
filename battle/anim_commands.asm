@@ -1,6 +1,5 @@
 ; Battle animation command interpreter.
 
-
 PlayBattleAnim: ; cc0d6
 
 	ld a, [rSVBK]
@@ -252,7 +251,6 @@ Functioncc220: ; cc220
 	ret
 ; cc23d
 
-
 BattleAnim_ClearCGB_OAMFlags: ; cc23d
 
 	ld a, [BattleAnimFlags]
@@ -350,7 +348,6 @@ RunBattleAnimCommand: ; cc25f
 	jp [hl]
 ; cc2a4
 
-
 BattleAnimCommands:: ; cc2a4 (33:42a4)
 	dw BattleAnimCmd_Obj
 	dw BattleAnimCmd_1GFX
@@ -400,7 +397,6 @@ BattleAnimCommands:: ; cc2a4 (33:42a4)
 	dw BattleAnimCmd_Loop
 	dw BattleAnimCmd_Call
 	dw BattleAnimCmd_Ret
-
 
 BattleAnimCmd_EA:
 BattleAnimCmd_EB:
@@ -1324,7 +1320,6 @@ endr
 	dw $0000, $0000
 	dw $0000, $0000
 ; cc881
-
 
 PlayHitSound: ; cc881
 	ld a, [wNumHits]

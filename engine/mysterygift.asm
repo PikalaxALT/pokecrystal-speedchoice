@@ -1154,7 +1154,6 @@ Function1050c8: ; 1050c8
 	jp CloseSRAM
 ; 1050d9
 
-
 BackupMysteryGift: ; 1050d9
 	call GetMysteryGiftBank
 	ld hl, sMysteryGiftItem
@@ -1166,7 +1165,6 @@ BackupMysteryGift: ; 1050d9
 	ld [de], a
 	jp CloseSRAM
 ; 1050ea
-
 
 RestoreMysteryGift: ; 1050ea (41:50ea)
 	call GetMysteryGiftBank
@@ -1189,12 +1187,10 @@ Function1050fb: ; 1050fb (41:50fb)
 	jr nz, .loop
 	ret
 
-
 GetMysteryGiftBank: ; 105106
 	ld a, BANK(sBackupMysteryGiftItem)
 	jp GetSRAMBank
 ; 10510b
-
 
 StagePartyDataForMysteryGift: ; 10510b (41:510b)
 ; You will be sending this data to your mystery gift partner.

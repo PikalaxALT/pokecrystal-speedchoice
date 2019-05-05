@@ -97,7 +97,6 @@ CheckPlayerMoveTypeMatchups: ; 3484e
 	ret
 ; 348de
 
-
 .CheckEnemyMoveMatchups: ; 348de
 	ld de, EnemyMonMoves
 	ld b, NUM_MOVES + 1
@@ -161,10 +160,9 @@ endr
 
 .doubledown
 	call .DecreaseScore
-	
+
 	; fallthrough
 ; 34931
-
 
 .DecreaseScore: ; 34931
 	ld a, [wEnemyAISwitchScore]
@@ -172,7 +170,6 @@ endr
 	ld [wEnemyAISwitchScore], a
 	ret
 ; 34939
-
 
 .IncreaseScore: ; 34939
 	ld a, [wEnemyAISwitchScore]
@@ -299,7 +296,6 @@ CheckAbleToSwitch: ; 34941
 	ret
 ; 349f4
 
-
 FindAliveEnemyMons: ; 349f4
 	ld a, [OTPartyCount]
 	cp 2
@@ -350,7 +346,6 @@ FindAliveEnemyMons: ; 349f4
 	and a
 	ret
 ; 34a2a
-
 
 Function34a2a: ; 34a2a
 	ld hl, OTPartyMon1
@@ -412,7 +407,6 @@ Function34a2a: ; 34a2a
 	srl c
 	jr .asm_34a39
 ; 34a85
-
 
 Function34a85: ; 34a85
 	push bc
@@ -545,7 +539,6 @@ Function34aa7: ; 34aa7
 	ret
 ; 34b20
 
-
 FindEnemyMonsThatResistPlayer: ; 34b20
 	push bc
 	ld hl, OTPartySpecies
@@ -606,7 +599,6 @@ FindEnemyMonsThatResistPlayer: ; 34b20
 	ld c, a
 	ret
 ; 34b77
-
 
 FindEnemyMonsWithEnoughHP: ; 34b77
 	push bc

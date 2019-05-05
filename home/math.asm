@@ -25,7 +25,6 @@ SimpleMultiply:: ; 3105
 	ret
 ; 3110
 
-
 SimpleDivide:: ; 3110
 ; Divide a by c. Return quotient b and remainder a.
 	ld b, 0
@@ -37,7 +36,6 @@ SimpleDivide:: ; 3110
 	add c
 	ret
 ; 3119
-
 
 Multiply:: ; 3119
 ; Multiply hMultiplicand (3 bytes) by hMultiplier. Result in hProduct.
@@ -51,7 +49,6 @@ Multiply:: ; 3119
 	pop hl
 	ret
 ; 3124
-
 
 Divide:: ; 3124
 ; Divide hDividend length b (max 4 bytes) by hDivisor. Result in hQuotient.
@@ -73,7 +70,6 @@ Divide:: ; 3124
 	pop hl
 	ret
 ; 3136
-
 
 SubtractSigned:: ; 3136
 ; Return a - b, sign in carry.

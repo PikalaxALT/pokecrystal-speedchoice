@@ -138,7 +138,6 @@ CeruleanGymGuyScript:
 
 CeruleanGymHiddenMachinePart:
 	dwb EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM, MACHINE_PART
-	
 
 CeruleanGymStatue1:
 	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM

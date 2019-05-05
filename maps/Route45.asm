@@ -313,7 +313,6 @@ Route45MaxPotion:
 
 Route45HiddenPpUp:
 	dwb EVENT_ROUTE_45_HIDDEN_PP_UP, PP_UP
-	
 
 HikerErikSeenText:
 	text "Be prepared for"

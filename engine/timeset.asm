@@ -550,7 +550,6 @@ endr
 .Friday:    db " FRIDAY@"
 .Saturday:  db "SATURDAY@"
 
-
 .WhatDayIsItText: ; 0x90a3f
 	; What day is it?
 	text_jump UnknownText_0x1bc369

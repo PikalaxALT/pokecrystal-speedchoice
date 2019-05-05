@@ -3,14 +3,13 @@ SFX_Get_Item1_1:: ; 8192 (2:4192)
 	musicheader 1, 6, SFX_Get_Item1_1_Ch2
 	musicheader 1, 7, SFX_Get_Item1_1_Ch3
 
-
 SFX_Get_Item1_1_Ch1: ; ad77 (2:6d77)
 	togglesfx
 	tempo 256
 	volume 119
 	vibrato 6, (2<<4) + 6
 	dutycycle 2
-	
+
 	notetype 4, (11<<4) + 1
 	octave 3
 	note G#, 2
@@ -20,7 +19,6 @@ SFX_Get_Item1_1_Ch1: ; ad77 (2:6d77)
 	octave 4
 	note E_, 4
 	endchannel
-
 
 SFX_Get_Item1_1_Ch2: ; ad8e (2:6d8e)
 	togglesfx
@@ -34,7 +32,6 @@ SFX_Get_Item1_1_Ch2: ; ad8e (2:6d8e)
 	notetype 12, (12<<4) + 3
 	note B_, 4
 	endchannel
-
 
 SFX_Get_Item1_1_Ch3: ; ad9e (2:6d9e)
 	togglesfx

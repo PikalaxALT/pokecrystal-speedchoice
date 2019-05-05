@@ -1528,7 +1528,6 @@ Function28926: ; 28926
 	jp InitTradeMenuDisplay
 ; 28aaf
 
-
 .Text_CantTradeLastMon: ; 0x28aaf
 	; If you trade that #MON, you won't be able to battle.
 	text_jump UnknownText_0x1c41b1
@@ -1543,7 +1542,6 @@ Function28926: ; 28926
 	text_jump UnknownText_0x1c41e6
 	db "@"
 ; 0x28ac9
-
 
 Function28ac9: ; 28ac9
 	ld a, [wMenuCursorY]
@@ -2013,7 +2011,6 @@ String28ebd: ; 28ebd
 String_TooBadTheTradeWasCanceled: ; 28ece
 	db   "Too bad! The trade"
 	next "was canceled!@"
-
 
 Predef_LinkTextbox: ; 28eef
 	ld d, h

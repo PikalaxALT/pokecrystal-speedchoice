@@ -96,7 +96,6 @@ GCMTIceBeam:
 	if_equal $0, GCMTTeachMove
 	jump GCMTIncompatible
 
-
 GCMTMoveMenuDataHeader:
 	db $40 ; flags
 	db 02, 00 ; start coords
@@ -112,10 +111,9 @@ GCMTMenuData2:
 	db "THUNDERBOLT@"
 	db "ICE BEAM@"
 	db "CANCEL@"
-	
+
 Randomizer_MoveTutorMenuNewSpace::
 	ds $100
-
 
 GCMTRefused:
 	writetext UnknownText_0x1990b4

@@ -15,7 +15,6 @@ AIChooseMove: ; 440ce
 	callba CheckSubstatus_RechargeChargedRampageBideRollout
 	ret nz
 
-
 ; The default score is 20. Unusable moves are given a score of 80.
 	ld a, 20
 	ld hl, Buffer1
@@ -60,7 +59,6 @@ endr
 	jr nz, .CheckMovePP
 	ld [hl], 80
 	jr .CheckMovePP
-
 
 ; Apply AI scoring layers depending on the trainer class.
 .ApplyLayers
@@ -200,7 +198,6 @@ endr
 	ld [CurEnemyMoveNum], a
 	ret
 ; 441af
-
 
 AIScoringPointers: ; 441af
 	dw AI_Basic

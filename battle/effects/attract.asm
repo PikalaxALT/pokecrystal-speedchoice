@@ -23,7 +23,6 @@ BattleCommand_Attract: ; 377ce
 	jp FailAttract
 ; 377f5
 
-
 CheckOppositeGender: ; 377f5
 	ld a, MON_SPECIES
 	call BattlePartyAttr

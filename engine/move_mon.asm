@@ -1341,7 +1341,6 @@ RemoveMonFromPartyOrBox: ; e039
 	jp CloseSRAM
 ; e134
 
-
 ComputeNPCTrademonStats: ; e134
 	ld a, MON_LEVEL
 	call GetPartyParamLocation

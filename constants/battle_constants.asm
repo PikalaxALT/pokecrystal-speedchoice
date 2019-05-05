@@ -161,7 +161,6 @@ SUBSTATUS_CURLED       EQU 0
 	const WEATHER_SUN_END
 	const WEATHER_SANDSTORM_END
 
-
 ; move effects
 	const_def
 	const EFFECT_NORMAL_HIT

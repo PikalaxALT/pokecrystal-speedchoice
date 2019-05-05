@@ -458,7 +458,7 @@ DoMapTrigger: ; 968ec
 rept 4
 	add hl, de
 endr
-	
+
 	call GetMapScriptHeaderBank
 	call GetFarHalfword
 	call GetMapScriptHeaderBank
@@ -931,7 +931,7 @@ SelectMenuCallback: ; 96b66
 
 CountStep: ; 96b79
     callba SRAMStatsStepCount
-    
+
 	; Don't count steps in link communication rooms.
 	ld a, [wLinkMode]
 	and a

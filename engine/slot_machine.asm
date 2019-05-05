@@ -801,7 +801,7 @@ Function92bd4: ; 92bd4 (24:6bd4)
 ; 92be4 (24:6be4)
 
 .dw: ; 92be4
-	
+
 	dw ReelAction_DoNothing                   ; 00
 	dw Slots_StopReelIgnoreJoypad             ; 01
 	dw ReelAction_QuadrupleRate               ; 02
@@ -1323,7 +1323,7 @@ Slots_CheckMatchedFirstTwoReels: ; 92e94
 ; 92ebd
 
 .Jumptable: ; 92ebd
-	
+
 	dw .zero
 	dw .one
 	dw .two
@@ -1438,7 +1438,7 @@ Slots_CheckMatchedAllThreeReels: ; 92f1d
 ; 92f48
 
 .Jumptable: ; 92f48
-	
+
 	dw .zero
 	dw .one
 	dw .two
@@ -1961,11 +1961,10 @@ SlotMachine_AnimateGolem: ; 9321d (24:721d)
 	jp [hl]
 
 .Jumptable: ; 9322d (24:722d)
-	
+
 	dw .init
 	dw .fall
 	dw .roll
-
 
 .init: ; 93233 (24:7233)
 	ld hl, SPRITEANIMSTRUCT_0E
@@ -2062,11 +2061,10 @@ Slots_AnimateChansey: ; 932ac (24:72ac)
 	jp [hl]
 
 .Jumptable: ; 932bc (24:72bc)
-	
+
 	dw .walk
 	dw .one
 	dw .two
-
 
 .walk: ; 932c2 (24:72c2)
 	ld hl, SPRITEANIMSTRUCT_XCOORD

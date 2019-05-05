@@ -275,7 +275,6 @@ Jumptable_8b4a0: ; 8b4a0 (22:74a0)
 	dw Function8b4a4
 	dw Function8b4b8
 
-
 Function8b4a4: ; 8b4a4 (22:74a4)
 	push bc
 	push de
@@ -1023,7 +1022,6 @@ Function8b94a: ; 8b94a
 	ld [wd030], a
 	ret
 ; 8b960
-
 
 Function8b960: ; 8b960 (22:7960)
 	ld hl, MenuDataHeader_0x8b9ac

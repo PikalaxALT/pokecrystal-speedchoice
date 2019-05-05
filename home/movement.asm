@@ -205,4 +205,3 @@ HideCursor:: ; 1bf7
 	ld [hl], " "
 	ret
 ; 1c00
-

@@ -152,7 +152,6 @@ StartBugContestTimer: ; 11490
 	ret
 ; 114a4
 
-
 CheckBugContestTimer:: ; 114a4 (4:54a4)
 	ld hl, wBugContestStartTime
 	call CalcSecsMinsHoursDaysSince
@@ -186,7 +185,6 @@ CheckBugContestTimer:: ; 114a4 (4:54a4)
 	ld [wBugContestSecsRemaining], a
 	scf
 	ret
-
 
 InitializeStartDay: ; 114dd
 	call UpdateTime

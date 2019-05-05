@@ -11,7 +11,6 @@ _Multiply:: ; 66de
 	ld [hMathBuffer + 3], a
 	ld [hMathBuffer + 4], a
 
-
 .loop
 	ld a, [hMultiplier]
 	srl a
@@ -46,7 +45,6 @@ _Multiply:: ; 66de
 	dec b
 	jr z, .done
 
-
 ; hMultiplicand <<= 1
 
 	ld a, [hMultiplicand + 2]
@@ -67,7 +65,6 @@ _Multiply:: ; 66de
 
 	jr .loop
 
-
 .done
 	ld a, [hMathBuffer + 4]
 	ld [hProduct + 3], a
@@ -83,7 +80,6 @@ _Multiply:: ; 66de
 
 	ret
 ; 673e
-
 
 _Divide:: ; 673e
 	xor a

@@ -454,7 +454,6 @@ Function100327: ; 100327
 	ret
 ; 100327
 
-
 Function10032e: ; 10032e
 	call Function10034d
 	ld e, a
@@ -669,7 +668,6 @@ Function10043a: ; 10043a
 	pop hl
 	ret
 ; 10044e
-
 
 Jumptable_10044e: ; 10044e (40:444e)
 	dw Function10046a
@@ -1262,7 +1260,6 @@ Function100772: ; 100772
 	ret
 ; 10079c
 
-
 Function10079c: ; 10079c
 	ld a, [wcd21]
 	cp $01
@@ -1454,7 +1451,6 @@ Function1008a6: ; 1008a6
 	ret
 ; 1008e0
 
-
 Function1008e0: ; 1008e0
 	ld a, [hBGMapMode]
 	ld b, a
@@ -1519,7 +1515,6 @@ Function100902: ; 100902
 .string_100966 ; 100966
 	db "のこり   ふん", $e7, "@"
 ; 100970
-
 
 Function100970: ; 100970
 	hlcoord 0, 0
@@ -1782,7 +1777,6 @@ Function100ae7: ; 100ae7
 	ret
 ; 100b0a
 
-
 SECTION "tetsuji", ROMX, BANK[$40]
 
 	charmap " ", $20 ; revert to ascii
@@ -1790,7 +1784,6 @@ SECTION "tetsuji", ROMX, BANK[$40]
 Unknown_100b0a: ; 100b0a
 	db "tetsuji", 0
 ; 100b12
-
 
 SECTION "bank40_2", ROMX, BANK[$40]
 
@@ -2152,8 +2145,6 @@ Function100db0: ; 100db0
 	ret
 ; 100dc0
 
-
-
 Function100dc0: ; 100dc0
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
@@ -2286,7 +2277,6 @@ Function100e84: ; 100e84
 	ret
 ; 100e8c
 
-
 Jumptable_100e8c: ; 100e8c (40:4e8c)
 	dw Function100ea2
 	dw Function100eae
@@ -2300,14 +2290,12 @@ Jumptable_100e8c: ; 100e8c (40:4e8c)
 	dw Function100eae
 	dw Function100ec4
 
-
 Function100ea2: ; 100ea2 (40:4ea2)
 	call Function100dc0
 	ret nc
 	ld hl, wcd29
 	set 0, [hl]
 	call Function100ec5
-
 
 Function100eae: ; 100eae
 	scf
@@ -3822,7 +3810,6 @@ Function101826: ; 101826
 	ret
 ; 10186f
 
-
 SECTION "ascii 10186f", ROMX, BANK[$40]
 
 	charmap " ", $20 ; revert to ascii
@@ -3842,7 +3829,6 @@ Unknown_101895:
 	db $19, $67, $10, $01, "limit_crystal"
 .end	db 0
 ; 1018a8
-
 
 SECTION "bank40_3", ROMX, BANK[$40]
 

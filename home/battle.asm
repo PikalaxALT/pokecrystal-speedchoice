@@ -10,7 +10,6 @@ UserPartyAttr:: ; 3945
 	jr OTPartyAttr
 ; 3951
 
-
 OpponentPartyAttr:: ; 3951
 	push af
 	ld a, [hBattleTurn]
@@ -22,7 +21,6 @@ OpponentPartyAttr:: ; 3951
 	pop af
 	jr OTPartyAttr
 ; 395d
-
 
 BattlePartyAttr:: ; 395d
 ; Get attribute a from the active BattleMon's party struct.
@@ -37,7 +35,6 @@ BattlePartyAttr:: ; 395d
 	ret
 ; 396d
 
-
 OTPartyAttr:: ; 396d
 ; Get attribute a from the active EnemyMon's party struct.
 	push bc
@@ -50,7 +47,6 @@ OTPartyAttr:: ; 396d
 	pop bc
 	ret
 ; 397d
-
 
 ResetDamage:: ; 397d
 	xor a
@@ -70,7 +66,6 @@ SetEnemyTurn:: ; 3989
 	ld [hBattleTurn], a
 	ret
 ; 398e
-
 
 UpdateOpponentInParty:: ; 398e
 	ld a, [hBattleTurn]
@@ -121,7 +116,6 @@ UpdateEnemyMonInParty:: ; 39b0
 	jp CopyBytes
 ; 39c9
 
-
 RefreshBattleHuds:: ; 39c9
 	call UpdateBattleHuds
 	ld c, 3
@@ -134,7 +128,6 @@ UpdateBattleHuds:: ; 39d4
 	callba UpdateEnemyHUD
 	ret
 ; 39e1
-
 
 GetBattleVar:: ; 39e1
 ; Preserves hl.
@@ -167,7 +160,7 @@ endr
 	and a
 	jr z, .getvar
 	inc hl
-	
+
 .getvar
 ; var id
 	ld a, [hl]
@@ -182,9 +175,9 @@ endr
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	
+
 	ld a, [hl]
-	
+
 	pop bc
 	ret
 
@@ -233,7 +226,6 @@ endr
 	dw LastPlayerMove,               LastEnemyMove
 ; 3a90
 
-
 FarCopyRadioText:: ; 3a90
 	inc hl
 	ld a, [hROMBank]
@@ -258,7 +250,6 @@ FarCopyRadioText:: ; 3a90
 	ret
 ; 3ab2
 
-
 MobileTextBorder:: ; 3ab2
 
 CELL_PHONE_TOP    EQU $5e
@@ -278,7 +269,6 @@ CELL_PHONE_BOTTOM EQU $5f
 	ret
 ; 3ac3
 
-
 BattleTextBox:: ; 3ac3
 ; Open a textbox and print text at hl.
 	push hl
@@ -290,7 +280,6 @@ BattleTextBox:: ; 3ac3
 	call PrintTextBoxText
 	ret
 ; 3ad5
-
 
 StdBattleTextBox:: ; 3ad5
 ; Open a textbox and print battle text at 20:hl.

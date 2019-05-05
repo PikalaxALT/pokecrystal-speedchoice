@@ -44,7 +44,6 @@ MapGoldenrodDeptStoreElevatorSignpost0Script:
 .Done
 	end
 
-
 Elevator_0x566e0:
 	db 7 ; floors
 	elevfloor _B1F, 2, GOLDENROD_DEPT_STORE_B1F
@@ -55,7 +54,6 @@ Elevator_0x566e0:
 	elevfloor _5F,  3, GOLDENROD_DEPT_STORE_5F
 	elevfloor _6F,  2, GOLDENROD_DEPT_STORE_6F
 	db -1 ; end
-
 
 GoldenrodDeptStoreElevator_MapEventHeader:
 	; filler

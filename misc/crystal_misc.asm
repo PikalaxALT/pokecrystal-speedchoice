@@ -1,11 +1,9 @@
 INCLUDE "includes.asm"
 
-
 SECTION "Misc Crystal", ROMX, BANK[MISC_CRYSTAL]
 
 MobileAdapterGFX::
 INCBIN "gfx/misc/mobile_adapter.2bpp"
-
 
 Function17a68f:: ; 17a68f (5e:668f)
 	call Function17a6a8
@@ -196,7 +194,6 @@ Jumptable_17a7b6: ; 17a7b6 (5e:67b6)
 	dw Function17a7ff
 	dw Function17a81a
 	dw Function17a7f4
-
 
 Function17a7c2: ; 17a7c2 (5e:67c2)
 	ld a, $4

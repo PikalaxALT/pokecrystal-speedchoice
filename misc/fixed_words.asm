@@ -99,7 +99,6 @@ Function11c08f: ; 11c08f
 
 ; 11c0c6
 
-
 Function11c0c6: ; 11c0c6
 	ld a, [wJumptableIndex]
 	ld l, a
@@ -354,7 +353,6 @@ Function11c254: ; 11c254
 
 ; 11c277
 
-
 Function11c277: ; 11c277 (47:4277)
 	ld a, " "
 	hlcoord 0, 6
@@ -386,7 +384,6 @@ Function11c283: ; 11c283
 	jumptable .Jumptable, wJumptableIndex
 ; 11c2bb
 
-
 .Jumptable: ; 11c2bb (47:42bb)
 	dw Function11c2e9 ; 00
 	dw Function11c346 ; 01
@@ -411,7 +408,6 @@ Function11c283: ; 11c283
 	dw Function11cd54 ; 14
 	dw Function11ce0b ; 15
 	dw Function11ce2b ; 16
-
 
 Function11c2e9: ; 11c2e9 (47:42e9)
 	depixel 3, 1, 2, 5
@@ -2522,7 +2518,6 @@ Function11d0b6: ; 11d0b6 (47:50b6)
 	dw .nine
 	dw .ten
 
-
 .zero: ; 11d0dd (47:50dd)
 	ld a, [wcd20] ; wcd20 (aliases: CreditsPos)
 	sla a
@@ -3228,7 +3223,6 @@ Function11d4aa: ; 11d4aa
 	ret
 
 ; 11d4fe
-
 
 SortedPokemon:
 ; Pokemon sorted by kana.

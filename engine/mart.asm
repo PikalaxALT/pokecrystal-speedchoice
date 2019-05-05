@@ -366,7 +366,6 @@ BargainShopData: ; 15c51
 	db -1
 ; 15c62
 
-
 BuyMenu: ; 15c62
 	call FadeToMenu
 	callba BlankScreen
@@ -467,7 +466,6 @@ endr
 	dw Text_Pharmacy_HereYouGo
 	dw BuyMenuLoop
 ; 15cef
-
 
 BuyMenuLoop: ; 15cef
 	callba PlaceMoneyTopRight
@@ -630,7 +628,6 @@ endr
 	ld d, [hl]
 	ret
 ; 15e0e
-
 
 Text_Mart_HowMany: ; 0x15e0e
 	; How many?
@@ -807,7 +804,6 @@ Text_Pharmacist_ComeAgain: ; 0x15eae
 	db "@"
 ; 0x15eb3
 
-
 SellMenu: ; 15eb3
 	call DisableSpriteUpdates
 	callba DepositSellInitPackBuffers
@@ -838,7 +834,6 @@ SellMenu: ; 15eb3
 	db "@"
 ; 0x15ee0
 
-
 .TryToSellItem: ; 15ee0
 	callba CheckItemMenu
 	ld a, [wItemAttributeParamBuffer]
@@ -860,7 +855,6 @@ SellMenu: ; 15eb3
 .cant_buy: ; 15efc
 	ret
 ; 15efd
-
 
 .try_sell: ; 15efd
 	callba _CheckTossableItem

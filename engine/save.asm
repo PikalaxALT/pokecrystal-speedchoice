@@ -37,7 +37,6 @@ Function14a58: ; 14a58
 	ret
 ; 14a83
 
-
 ChangeBoxSaveGame: ; 14a83 (5:4a83)
 	push de
 	ld hl, UnknownText_0x152a1
@@ -150,7 +149,6 @@ ClearWRAMStateAfterSave: ; 14b5a
 	ret
 ; 14b5f
 
-
 AddHallOfFameEntry: ; 14b5f
 	ld a, BANK(sHallOfFame)
 	call GetSRAMBank
@@ -258,7 +256,6 @@ SavedTheGame: ; 14be6
 	ret
 ; 14c10
 
-
 SaveGameData_: ; 14c10
     ld de, sStatsSaveCount
     callba SRAMStatsIncrement2Byte
@@ -349,7 +346,6 @@ SavingDontTurnOffThePower: ; 14c99
 	call DelayFrames
 	ret
 ; 14cbb
-
 
 ErasePreviousSave: ; 14cbb
 	call EraseBoxes
@@ -468,7 +464,6 @@ Function14d93: ; 14d93
 	call CloseSRAM
 	ret
 ; 14da0
-
 
 HallOfFame_InitSaveIfNeeded: ; 14da0
 	ld a, [wSavedAtLeastOnce]
@@ -608,7 +603,6 @@ SaveBackupChecksum: ; 14e8b
 	ret
 ; 14ea5
 
-
 TryLoadSaveFile: ; 14ea5 (5:4ea5)
 	call VerifyChecksum
 	jr nz, .backup
@@ -654,7 +648,6 @@ TryLoadSaveFile: ; 14ea5 (5:4ea5)
 	ld [Options], a
 	scf
 	ret
-
 
 TryLoadSaveData: ; 14f1c
 	xor a
@@ -759,7 +752,6 @@ CheckBackupSaveFile: ; 14faf
 	ret
 ; 14fd7
 
-
 LoadPlayerData: ; 14fd7 (5:4fd7)
 	ld a, BANK(sPlayerData)
 	call GetSRAMBank
@@ -857,7 +849,6 @@ VerifyBackupChecksum: ; 1507c (5:507c)
 	pop af
 	ret
 
-
 _SaveData: ; 1509a
 	ld a, BANK(sCrystalData)
 	call GetSRAMBank
@@ -875,7 +866,6 @@ _SaveData: ; 1509a
 
 	jp CloseSRAM
 
-
 _LoadData: ; 150b9
 	ld a, BANK(sCrystalData)
 	call GetSRAMBank
@@ -892,7 +882,6 @@ _LoadData: ; 150b9
 	ld [hli], a
 
 	jp CloseSRAM
-
 
 GetBoxAddress: ; 150d8
 	ld a, [wCurBox]
@@ -997,7 +986,6 @@ SaveBoxAddress: ; 150f9
 	ret
 ; 1517d
 
-
 LoadBoxAddress: ; 1517d (5:517d)
 ; Load box via wMisc.
 ; We do this in three steps because the size of wMisc is less than
@@ -1061,7 +1049,6 @@ LoadBoxAddress: ; 1517d (5:517d)
 	pop hl
 	ret
 
-
 EraseBoxes: ; 151fb
 	ld hl, BoxAddresses
 	ld c, NUM_BOXES
@@ -1122,7 +1109,6 @@ BoxAddresses: ; 1522d
 	dbww BANK(sBox14), sBox14, sBox14End
 ; 15273
 
-
 Checksum: ; 15273
 	ld de, 0
 .loop
@@ -1138,7 +1124,6 @@ Checksum: ; 15273
 	jr nz, .loop
 	ret
 ; 15283
-
 
 UnknownText_0x15283: ; 0x15283
 	; Would you like to save the game?

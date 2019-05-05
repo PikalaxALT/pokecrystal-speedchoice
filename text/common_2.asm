@@ -112,7 +112,7 @@ Text_StringBuffer2ExpPoints::
 	deciram StringBuffer2, 2, 4
 	text " EXP. Points!"
 	prompt
-	
+
 Text_BWXPBoostedGain::
 	text ""
 	line "a boosted"

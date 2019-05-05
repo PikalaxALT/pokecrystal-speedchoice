@@ -3,7 +3,7 @@ GBCOnlyScreen: ; 4ea82
 	ld a, [hCGB]
 	and a
 	ret nz
-	
+
 	call DisableLCD
 
 	ld de, MUSIC_NONE
@@ -26,7 +26,7 @@ GBCOnlyScreen: ; 4ea82
 	call Get1bpp
 
 	call DrawGBCOnlyScreen
-	
+
 	call EnableLCD
 
 	call WaitBGMap
@@ -36,7 +36,6 @@ GBCOnlyScreen: ; 4ea82
 	call DelayFrame
 	jr .loop
 ; 4eac5
-
 
 DrawGBCOnlyScreen: ; 4eac5
 
@@ -62,7 +61,6 @@ DrawGBCOnlyScreen: ; 4eac5
 
 	ret
 ; 4eaea
-
 
 DrawGBCOnlyBorder: ; 4eaea
 
@@ -114,7 +112,6 @@ DrawGBCOnlyBorder: ; 4eaea
 	ret
 ; 4eb27
 
-
 DrawGBCOnlyGraphic: ; 4eb27
 	ld de, SCREEN_WIDTH
 .y
@@ -133,14 +130,12 @@ DrawGBCOnlyGraphic: ; 4eb27
 	ret
 ; 4eb38
 
-
 GBCOnlyString: ; 4eb38
 	db   "This Game Pak is"
 	next "designed only for"
 	next "use on the"
 	next "Game Boy Color.@"
 ; 4eb76
-
 
 GBCOnlyGFX: ; 4eb76
 INCBIN "gfx/misc/gbc_only.w112.2bpp.lz"

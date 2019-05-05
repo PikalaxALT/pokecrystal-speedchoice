@@ -117,7 +117,6 @@ NO_EFFECT          EQU 00
 	db STEEL,     ROCK,      SUPER_EFFECTIVE
 	db STEEL,     STEEL,     NOT_VERY_EFFECTIVE
 
-
 ; Foresight removes Ghost's immunities.
 
 	db $fe

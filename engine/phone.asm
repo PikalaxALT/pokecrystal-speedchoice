@@ -12,7 +12,6 @@ AddPhoneNumber:: ; 90000
 	ret
 ; 9000f
 
-
 DelCellNum:: ; 9000f
 	call _CheckCellNum
 	jr nc, .not_in_list
@@ -102,7 +101,6 @@ PermanentNumbers: ; 90066
 	db PHONECONTACT_MOM, PHONECONTACT_ELM, -1
 ; 90069
 
-
 FarPlaceString: ; 90069
 	ld a, [hROMBank]
 	push af
@@ -115,7 +113,6 @@ FarPlaceString: ; 90069
 	rst Bankswitch
 	ret
 ; 90074
-
 
 CheckPhoneCall:: ; 90074 (24:4074)
 ; Check if the phone is ringing in the overworld.
@@ -494,7 +491,6 @@ Phone_CallerTextboxWithName: ; 90292 (24:4292)
 	call Function90363
 	ret
 
-
 PhoneCall:: ; 9029a
 	ld a, b
 	ld [PhoneScriptBank], a
@@ -535,7 +531,6 @@ endr
 	call FarPlaceString
 	ret
 ; 902e3
-
 
 Phone_NoSignal: ; 902e3 (24:42e3)
 	ld de, SFX_NO_SIGNAL
@@ -580,7 +575,6 @@ UnknownText_0x9032a: ; 9032a
 	db "@"
 ; 9032f
 
-
 HangUp_BoopOn: ; 9032f
 	ld hl, UnknownText_0x90336
 	call PrintText
@@ -591,7 +585,6 @@ UnknownText_0x90336: ; 0x90336
 	text_jump UnknownText_0x1c5588
 	db "@"
 ; 0x9033b
-
 
 HangUp_BoopOff: ; 9033b
 	call SpeechTextBox
@@ -618,7 +611,6 @@ Phone_Wait20Frames
 	ret
 ; 90363
 
-
 Function90363: ; 90363 (24:4363)
 	push bc
 	call Phone_CallerTextbox
@@ -633,7 +625,6 @@ endr
 	call Function90380
 	ret
 
-
 Phone_CallerTextbox: ; 90375
 	hlcoord 0, 0
 	ld b, 2
@@ -641,7 +632,6 @@ Phone_CallerTextbox: ; 90375
 	call TextBox
 	ret
 ; 90380
-
 
 Function90380: ; 90380 (24:4380)
 	ld h, d
@@ -676,7 +666,6 @@ GetCallerTrainerClass: ; 9039a
 	pop hl
 	ret
 ; 903a9
-
 
 GetCallerName: ; 903a9 (24:43a9)
 	ld a, c

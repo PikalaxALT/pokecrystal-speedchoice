@@ -58,7 +58,6 @@ BlackthornGym2F_MapScriptHeader:
 	earthquake 80
 	end
 
-
 BlackthornGymBoulder:
 	jumpstd strengthboulder
 

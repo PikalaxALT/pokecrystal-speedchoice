@@ -25,7 +25,9 @@ STATIC_POKES = ['Lapras',
                 'Eevee',
                 'Dratini',
                 'Raikou',
-                'Entei']
+                'Entei',
+                'Suicune',
+                'Celebi']
 GAME_CORNER = ['Abra',
                'Cubone',
                'Wobbuffet',

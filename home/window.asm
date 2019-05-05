@@ -15,7 +15,6 @@ RefreshScreen:: ; 2dba
 	ret
 ; 2dcf
 
-
 CloseText:: ; 2dcf
 	ld a, [hOAMUpdate]
 	push af

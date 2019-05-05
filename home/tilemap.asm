@@ -197,14 +197,12 @@ ClearWholeMenuBox:: ; 1cf1
 	ret
 ; 1cfd
 
-
 MenuBoxCoord2Tile:: ; 1cfd
 	ld a, [wMenuBorderLeftCoord]
 	ld c, a
 	ld a, [wMenuBorderTopCoord]
 	ld b, a
 ; 1d05
-
 
 Coord2Tile:: ; 1d05
 ; Return the address of TileMap(c, b) in hl.

@@ -154,7 +154,6 @@ _CGB_FinishBattleScreenLayout: ; 8e23
 	ret
 ; 8e85
 
-
 InitPartyMenuBGPal7: ; 8e85
 	callba Function100dc0
 Mobile_InitPartyMenuBGPal7: ; 8e8b

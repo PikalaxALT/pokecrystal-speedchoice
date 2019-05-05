@@ -37,7 +37,6 @@ endr
 	jp [hl]
 ; 8e854
 
-
 .Jumptable: ; 8e854 (23:6854)
 	dw Function8e8d5 ; init
 	dw Function8e961
@@ -46,7 +45,6 @@ endr
 	dw Function8e898
 	dw Mobile_InitPartyMenuBGPal71
 	dw .GetPartyMenuMonIcon
-
 
 .GetPartyMenuMonIcon: ; 8e862 (23:6862)
 	call InitPartyMenuIcon
@@ -267,7 +265,6 @@ GetSpeciesIcon: ; 8e9ac
 	call GetIconGFX
 	ret
 ; 8e9bc
-
 
 FlyFunction_GetMonIcon: ; 8e9bc (23:69bc)
 	push de

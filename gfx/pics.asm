@@ -1,6 +1,5 @@
 INCLUDE "includes.asm"
 
-
 ; Unown pic pointers are assumed to start at the same address in a different bank.
 
 SECTION "Pic Pointers", ROMX[$4000], BANK[PIC_POINTERS]
@@ -9,11 +8,8 @@ PicPointers:: INCLUDE "gfx/pics/pic_pointers.asm"
 SECTION "Unown Pic Pointers", ROMX[$4000], BANK[UNOWN_PIC_POINTERS]
 UnownPicPointers:: INCLUDE "gfx/pics/unown_pic_pointers.asm"
 
-
 SECTION "Trainer Pic Pointers", ROMX, BANK[TRAINER_PIC_POINTERS]
 TrainerPicPointers:: INCLUDE "gfx/pics/trainer_pic_pointers.asm"
-
-
 
 SECTION "Pics 1", ROMX, BANK[PICS_1]
 
@@ -31,7 +27,6 @@ EnteiFrontpic:       INCBIN "gfx/pics/entei/front.2bpp.lz"
 SuicuneFrontpic:     INCBIN "gfx/pics/suicune/front.2bpp.lz"
 TyphlosionFrontpic:  INCBIN "gfx/pics/typhlosion/front.2bpp.lz"
 ; 123ffa
-
 
 SECTION "Pics 2", ROMX, BANK[PICS_2]
 
@@ -52,7 +47,6 @@ FearowFrontpic:      INCBIN "gfx/pics/fearow/front.2bpp.lz"
 CharizardFrontpic:   INCBIN "gfx/pics/charizard/front.2bpp.lz"
 QuilavaFrontpic:     INCBIN "gfx/pics/quilava/front.2bpp.lz"
 ; 127ffe
-
 
 SECTION "Pics 3", ROMX, BANK[PICS_3]
 
@@ -75,7 +69,6 @@ RaichuFrontpic:      INCBIN "gfx/pics/raichu/front.2bpp.lz"
 PrimeapeFrontpic:    INCBIN "gfx/pics/primeape/front.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pics/omastar/back.2bpp.lz"
 ; 12bffe
-
 
 SECTION "Pics 4", ROMX, BANK[PICS_4]
 
@@ -101,7 +94,6 @@ PinsirFrontpic:      INCBIN "gfx/pics/pinsir/front.2bpp.lz"
 UnownEFrontpic:      INCBIN "gfx/pics/unown_e/front.2bpp.lz"
 ; 130000
 
-
 SECTION "Pics 5", ROMX, BANK[PICS_5]
 
 GolbatFrontpic:      INCBIN "gfx/pics/golbat/front.2bpp.lz"
@@ -126,7 +118,6 @@ ParasectFrontpic:    INCBIN "gfx/pics/parasect/front.2bpp.lz"
 MrMimeFrontpic:      INCBIN "gfx/pics/mr__mime/front.2bpp.lz"
 HeracrossFrontpic:   INCBIN "gfx/pics/heracross/front.2bpp.lz"
 ; 133fff
-
 
 SECTION "Pics 6", ROMX, BANK[PICS_6]
 
@@ -154,7 +145,6 @@ VulpixFrontpic:      INCBIN "gfx/pics/vulpix/front.2bpp.lz"
 GligarFrontpic:      INCBIN "gfx/pics/gligar/front.2bpp.lz"
 DunsparceFrontpic:   INCBIN "gfx/pics/dunsparce/front.2bpp.lz"
 ; 137fff
-
 
 SECTION "Pics 7", ROMX, BANK[PICS_7]
 
@@ -184,7 +174,6 @@ ForretressFrontpic:  INCBIN "gfx/pics/forretress/front.2bpp.lz"
 TogeticFrontpic:     INCBIN "gfx/pics/togetic/front.2bpp.lz"
 KangaskhanBackpic:   INCBIN "gfx/pics/kangaskhan/back.2bpp.lz"
 ; 13c000
-
 
 SECTION "Pics 8", ROMX, BANK[PICS_8]
 
@@ -216,7 +205,6 @@ CyndaquilFrontpic:   INCBIN "gfx/pics/cyndaquil/front.2bpp.lz"
 HitmonchanFrontpic:  INCBIN "gfx/pics/hitmonchan/front.2bpp.lz"
 QuagsireFrontpic:    INCBIN "gfx/pics/quagsire/front.2bpp.lz"
 ; 13fff7
-
 
 SECTION "Pics 9", ROMX, BANK[PICS_9]
 
@@ -252,7 +240,6 @@ NidoranFFrontpic:    INCBIN "gfx/pics/nidoran_f/front.2bpp.lz"
 PidgeyFrontpic:      INCBIN "gfx/pics/pidgey/front.2bpp.lz"
 ParasectBackpic:     INCBIN "gfx/pics/parasect/back.2bpp.lz"
 ; 144000
-
 
 SECTION "Pics 10", ROMX, BANK[PICS_10]
 
@@ -292,7 +279,6 @@ CloysterBackpic:     INCBIN "gfx/pics/cloyster/back.2bpp.lz"
 HoothootFrontpic:    INCBIN "gfx/pics/hoothoot/front.2bpp.lz"
 UnownFBackpic:       INCBIN "gfx/pics/unown_f/back.2bpp.lz"
 ; 148000
-
 
 SECTION "Pics 11", ROMX, BANK[PICS_11]
 
@@ -335,7 +321,6 @@ KrabbyBackpic:       INCBIN "gfx/pics/krabby/back.2bpp.lz"
 BugCatcherPic:       INCBIN "gfx/trainers/bug_catcher.2bpp.lz"
 SnorlaxBackpic:      INCBIN "gfx/pics/snorlax/back.2bpp.lz"
 ; 14bffb
-
 
 SECTION "Pics 12", ROMX, BANK[PICS_12]
 
@@ -381,7 +366,6 @@ GoldeenBackpic:      INCBIN "gfx/pics/goldeen/back.2bpp.lz"
 BulbasaurFrontpic:   INCBIN "gfx/pics/bulbasaur/front.2bpp.lz"
 StarmieBackpic:      INCBIN "gfx/pics/starmie/back.2bpp.lz"
 ; 150000
-
 
 SECTION "Pics 13", ROMX, BANK[PICS_13]
 
@@ -429,7 +413,6 @@ MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pics/electrode/front.2bpp.lz"
 ; 153fe3
-
 
 SECTION "Pics 14", ROMX, BANK[PICS_14]
 
@@ -480,7 +463,6 @@ BellossomBackpic:    INCBIN "gfx/pics/bellossom/back.2bpp.lz"
 Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
 SwinubBackpic:       INCBIN "gfx/pics/swinub/back.2bpp.lz"
 ; 158000
-
 
 SECTION "Pics 15", ROMX, BANK[PICS_15]
 
@@ -534,7 +516,6 @@ ErikaPic:            INCBIN "gfx/trainers/erika.2bpp.lz"
 JaninePic:           INCBIN "gfx/trainers/janine.2bpp.lz"
 MagnemiteBackpic:    INCBIN "gfx/pics/magnemite/back.2bpp.lz"
 ; 15bffa
-
 
 SECTION "Pics 16", ROMX, BANK[PICS_16]
 
@@ -592,7 +573,6 @@ LarvitarBackpic:     INCBIN "gfx/pics/larvitar/back.2bpp.lz"
 PorygonBackpic:      INCBIN "gfx/pics/porygon/back.2bpp.lz"
 UnownHBackpic:       INCBIN "gfx/pics/unown_h/back.2bpp.lz"
 ; 15ffff
-
 
 SECTION "Pics 17", ROMX, BANK[PICS_17]
 
@@ -659,7 +639,6 @@ OddishBackpic:       INCBIN "gfx/pics/oddish/back.2bpp.lz"
 UnownDBackpic:       INCBIN "gfx/pics/unown_d/back.2bpp.lz"
 ; 163ffc
 
-
 SECTION "Pics 18", ROMX, BANK[PICS_18]
 
 SpinarakBackpic:     INCBIN "gfx/pics/spinarak/back.2bpp.lz"
@@ -723,7 +702,6 @@ UnownPBackpic:       INCBIN "gfx/pics/unown_p/back.2bpp.lz"
 UnownIBackpic:       INCBIN "gfx/pics/unown_i/back.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pics/unown_r/back.2bpp.lz"
 ; 1669d3
-
 
 SECTION "Pics 19", ROMX, BANK[PICS_19]
 

@@ -456,7 +456,6 @@ PopulateDecoCategoryMenu: ; 2695b
 	dbw 0, 0
 ; 269dd
 
-
 GetDecorationData: ; 269dd
 	ld hl, DecorationAttributes
 	ld bc, 6
@@ -511,7 +510,6 @@ DoDecorationAction2: ; 26a02
 	dw DecoAction_setupornament
 	dw DecoAction_putawayornament
 ; 26a30
-
 
 GetDecorationFlag: ; 26a30
 	call GetDecorationData
@@ -604,7 +602,6 @@ DecorationAttributes: ; 26a4f
 	decoration DECO_PLANT,    SILVER_TROPHY,     SET_UP_DOLL,        EVENT_DECO_SILVER_TROPHY,          SPRITE_SILVER_TROPHY
 ; 26b8d
 
-
 DecorationNames: ; 26b8d
 	db "CANCEL@"
 	db "PUT IT AWAY@"
@@ -654,7 +651,6 @@ GetDecoName: ; 26c72
 	dw .doll
 	dw .bigdoll
 ; 26c8c
-
 
 .invalid: ; 26c8c
 	ret
@@ -1098,7 +1094,6 @@ DecorationFlagAction_c: ; 26ef1
 	jp DecorationFlagAction
 ; 26ef5
 
-
 GetDecorationName_c: ; 26ef5 (9:6ef5)
 	ld a, c
 	call GetDecorationID
@@ -1107,7 +1102,6 @@ GetDecorationName_c: ; 26ef5 (9:6ef5)
 	call GetDecorationName
 	pop de
 	ret
-
 
 SetSpecificDecorationFlag: ; 26f02
 	ld a, c

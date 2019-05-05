@@ -13,7 +13,7 @@ DoAnimFrame: ; 8d24b
 ; 8d25b
 
 .Jumptable: ; 8d25b (23:525b)
-	
+
 	dw .Null        ; null
 	dw .one         ; bouncing mon icon
 	dw .two         ; bouncing mon icon, selected
@@ -49,7 +49,6 @@ DoAnimFrame: ; 8d24b
 	dw .thirtytwo   ; intro unown
 	dw .thirtythree ; intro unown F with suicune leaping up
 	dw .thirtyfour  ; intro suicune facing away from us
-
 
 .Null: ; 8d2a1 (23:52a1)
 	ret

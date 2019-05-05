@@ -100,7 +100,7 @@ StatsScreenBattle: ; 4dcf7
 ; 4dd2a
 
 StatsScreenPointerTable: ; 4dd2a
-	
+
 	dw MonStatsInit       ; regular pokémon
 	dw EggStatsInit       ; egg
 	dw StatsScreenWaitCry
@@ -110,7 +110,6 @@ StatsScreenPointerTable: ; 4dd2a
 	dw MonStatsJoypad
 	dw StatsScreen_Exit
 ; 4dd3a
-
 
 StatsScreen_WaitAnim: ; 4dd3a (13:5d3a)
 	ld hl, wcf64
@@ -173,7 +172,6 @@ EggStatsInit: ; 4dda1
 	ld [wJumptableIndex], a
 	ret
 ; 0x4ddac
-
 
 EggStatsJoypad: ; 4ddac (13:5dac)
 	call StatsScreen_GetJoypad
@@ -535,11 +533,10 @@ StatsScreen_LoadGFX: ; 4dfb6 (13:5fb6)
 	ret
 
 .Jumptable: ; 4e00d (13:600d)
-	
+
 	dw .PinkPage
 	dw .GreenPage
 	dw .BluePage
-
 
 .PinkPage: ; 4e013 (13:6013)
 	hlcoord 0, 9
@@ -804,7 +801,6 @@ OTString: ; 4e222
 	db "OT/@"
 ; 4e226
 
-
 StatsScreen_PlaceFrontpic: ; 4e226 (13:6226)
 	ld hl, TempMonDVs
 	predef GetUnownLetter
@@ -890,7 +886,6 @@ StatsScreen_GetAnimationParam: ; 4e2ad (13:62ad)
 	dw .BoxMon
 	dw .Tempmon
 	dw .Wildmon
-
 
 .PartyMon: ; 4e2bf (13:62bf)
 	ld a, [CurPartyMon]
@@ -1055,7 +1050,6 @@ EggALotMoreTimeString: ; 0x4e46e
 	next "hatch.@"
 ; 0x4e497
 
-
 StatsScreen_AnimateEgg: ; 4e497 (13:6497)
 	call StatsScreen_GetAnimationParam
 	ret nc
@@ -1151,7 +1145,6 @@ GetNicknamePointer: ; 4e528 (13:6528)
 	ret z
 	ld a, [CurPartyMon]
 	jp SkipNames
-
 
 CheckFaintedFrzSlp: ; 4e53f
 	ld hl, MON_HP

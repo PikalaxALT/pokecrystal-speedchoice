@@ -179,7 +179,6 @@ UnusedTitleBG_Palettes: ; 10d8b1
 	RGB 19, 08, 26
 	RGB 17, 07, 22
 
-
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	RGB 31, 31, 31
@@ -242,7 +241,6 @@ UnusedTitleFG_Palettes: ; 10eab1
 	RGB 22, 31, 00
 	RGB 27, 31, 00
 	RGB 31, 31, 00
-
 
 	RGB 31, 00, 18
 	RGB 31, 31, 31
@@ -541,7 +539,6 @@ UnusedTitleFG_OAM: ; 10ecb1
 	db $58, $38, $40, $01,  $58, $40, $42, $01,  $58, $48, $44, $01,  $58, $50, $46, $01
 	db $58, $58, $48, $01,  $58, $60, $4a, $01,  $58, $68, $4c, $01,  $58, $70, $4e, $01
 ; 10ed51
-
 
 Function10ed51: ; 10ed51
 	call _TitleScreen

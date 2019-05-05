@@ -33,7 +33,7 @@ endr
 ; 16242
 
 .dw: ; 16242
-	
+
 	dw .CheckIfBankInitialized
 	dw .InitializeBank
 	dw .IsThisAboutYourMoney

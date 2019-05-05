@@ -1,6 +1,5 @@
 ; Event scripting commands.
 
-
 EnableScriptMode:: ; 96c56
 	push af
 	ld a, SCRIPT_READ
@@ -67,7 +66,6 @@ RunScriptCommand: ; 96ca9
 	rst JumpTable
 	ret
 ; 96cb1
-
 
 ScriptCommandTable: ; 96cb1
 	dw Script_scall                      ; 00
@@ -355,7 +353,6 @@ JumpTextScript: ; 96e7a
 	end
 ; 96e81
 
-
 IF _CRYSTAL
 
 Script_farjumptext: ; 96e81
@@ -375,7 +372,6 @@ Script_farjumptext: ; 96e81
 ; 96e9b
 
 ENDC
-
 
 Script_writetext: ; 96e9b
 ; script command 0x4c
@@ -570,7 +566,6 @@ Script_verbosegiveitem: ; 96f60
 	jp ScriptCall
 ; 96f76
 
-
 ret_96f76: ; 96f76
 	ret
 ; 96f77
@@ -595,7 +590,6 @@ ReceivedItemText: ; 96f89
 	text_jump UnknownText_0x1c4719
 	db "@"
 ; 96f8e
-
 
 Script_verbosegiveitem2: ; 96f8e
 ; script command 0x9f
@@ -666,7 +660,6 @@ Script_specialsound: ; 96fe4
 	ret
 ; 96ffe
 
-
 GetPocketName: ; 96ffe
 	callba CheckItemPocket
 	ld a, [wItemAttributeParamBuffer]
@@ -707,7 +700,6 @@ CurItemName: ; 97051
 	ret
 ; 9705b
 
-
 PutItemInPocketText: ; 9705b
 	text_jump UnknownText_0x1c472c
 	db "@"
@@ -717,7 +709,6 @@ PocketIsFullText: ; 97060
 	text_jump UnknownText_0x1c474b
 	db "@"
 ; 97065
-
 
 Script_pokemart: ; 97065
 ; script command 0x94
@@ -1439,7 +1430,6 @@ ShowEmoteScript: ; 973b6
 	step_end
 ; 973c7
 
-
 Script_earthquake: ; 973c7
 ; script command 0x78
 ; parameters:
@@ -1469,7 +1459,6 @@ EarthquakeMovement: ; 973eb
 	step_end
 EarthquakeMovementEnd
 ; 973f0
-
 
 Script_loadpikachudata: ; 973f0
 ; script command 0x5a
@@ -3062,7 +3051,6 @@ Script_closetext: ; 97b2f
 	ret
 ; 97b36
 
-
 Script_passtoengine: ; 97b36
 ; script command 0x89
 ; parameters:
@@ -3249,7 +3237,6 @@ Script_check_save: ; 97c15
 	ret
 ; 97c20
 
-
 Script_check_permaoptions:
 ; script command 0xaa
 ; parameters:
@@ -3282,7 +3269,7 @@ Script_check_permaoptions:
 .writeResult
 	ld [ScriptVar], a
 	ret
-    
+
 Script_increment_2byte_stat:
 ; script command 0xab
 ; parameters:
@@ -3293,7 +3280,7 @@ Script_increment_2byte_stat:
     ld d, a
     callba SRAMStatsIncrement2Byte
     ret
-    
+
 Script_increment_4byte_stat:
 ; script command 0xac
 ; parameters:
@@ -3304,5 +3291,5 @@ Script_increment_4byte_stat:
     ld d, a
     callba SRAMStatsIncrement4Byte
     ret
-	
+
 ; 97c28

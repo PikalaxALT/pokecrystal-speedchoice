@@ -341,7 +341,6 @@ Function118284: ; 118284
 	ret
 ; 1182d5 (46:42d5)
 
-
 Function1182d5: ; 1182d5
 	call Function1183cb
 	ld a, $18
@@ -1160,11 +1159,9 @@ Function118903: ; 118903 (46:4903)
 	call Function119ed8
 	jp Function119e2e
 
-
 Function11891c: ; 11891c
 	call Function118b42
 	jp Function119e2e
-
 
 Function118922: ; 118922
 	ld a, [wcd38]
@@ -1346,8 +1343,6 @@ Function118982:
 	ld a, $0
 	ld [wcd46], a
 	ret
-
-
 
 Function118a54: ; 118a54
 	ld a, [wcd55]
@@ -1540,7 +1535,6 @@ Function118b9a: ; 118b9a
 	ret
 ; 118ba5
 
-
 	charmap " ", $20 ; revert to ascii
 
 ExchangeDownloadURL: ; 0x118ba5
@@ -1557,7 +1551,6 @@ MenuDownloadURL: ; 0x118c95
 
 IndexDownloadURL: ; 0x118ce5
 	db "http://gameboy.datacenter.ne.jp/cgb/download?name=/01/CGB-BXTJ/tamago/index.txt", 0
-
 
 Function118d35: ; 118d35
 ; unreferenced
@@ -7977,5 +7970,3 @@ TilemapPack_11bb7d:
 	db $2e, $0a, $85, $0a, $0a, $0a, $8d, $00 ; 22
 	db $2e, $0a, $0a, $84, $0a, $0a, $8e, $00 ; 23
 	db -1
-
-

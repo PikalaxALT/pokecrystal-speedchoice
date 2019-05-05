@@ -301,9 +301,7 @@ KantoMonSpecials: ; fb656
 	db 100 ; MEW
 ; fb6ed
 
-
 INCLUDE "event/name_rater.asm"
-
 
 PlaySlowCry: ; fb841
 	ld a, [ScriptVar]

@@ -1,6 +1,6 @@
 Timer:: ; 3e93
 	reti ; timer isn't needed without mobile
-	
+
 Function3e32:: ; 3e32
 Function3e60:: ; 3e60
 MobileReceive::

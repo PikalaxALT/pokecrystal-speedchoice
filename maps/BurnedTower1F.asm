@@ -137,11 +137,9 @@ BurnedTower1FRock:
 
 BurnedTower1FHiddenEther:
 	dwb EVENT_BURNED_TOWER_1F_HIDDEN_ETHER, ETHER
-	
 
 BurnedTower1FHiddenUltraBall:
 	dwb EVENT_BURNED_TOWER_1F_HIDDEN_ULTRA_BALL, ULTRA_BALL
-	
 
 BurnedTower1FHPUp:
 	itemball HP_UP

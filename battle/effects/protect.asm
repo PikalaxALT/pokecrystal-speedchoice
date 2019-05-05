@@ -13,7 +13,6 @@ BattleCommand_Protect: ; 37618
 	jp StdBattleTextBox
 ; 3762c
 
-
 ProtectChance: ; 3762c
 
 	ld de, PlayerProtectCount
@@ -68,7 +67,6 @@ ProtectChance: ; 3762c
 
 	and a
 	ret
-
 
 .failed
 	xor a

@@ -42,13 +42,12 @@ _DepositPKMN: ; e2391 (38:6391)
 	jp [hl]
 
 .Jumptable: ; e23df (38:63df)
-	
+
 	dw .Init
 	dw .HandleJoypad
 	dw .WhatsUp
 	dw .Submenu
 	dw BillsPC_EndJumptableLoop
-
 
 .Init: ; e23e9 (38:63e9)
 	xor a
@@ -151,12 +150,11 @@ endr
 	jp [hl]
 
 BillsPCDepositJumptable: ; e24a1 (38:64a1)
-	
+
 	dw BillsPCDepositFuncDeposit ; Deposit Pokemon
 	dw BillsPCDepositFuncStats ; Pokemon Stats
 	dw BillsPCDepositFuncRelease ; Release Pokemon
 	dw BillsPCDepositFuncCancel ; Cancel
-
 
 BillsPCDepositFuncDeposit: ; e24a9 (38:64a9)
 	call BillsPC_CheckMail_PreventBlackout
@@ -310,13 +308,12 @@ _WithdrawPKMN: ; e2583 (38:6583)
 	jp [hl]
 
 .Jumptable: ; e25d2 (38:65d2)
-	
+
 	dw .Init
 	dw .Joypad
 	dw .PrepSubmenu
 	dw BillsPC_Withdraw
 	dw BillsPC_EndJumptableLoop
-
 
 .Init: ; e25dc (38:65dc)
 	ld a, NUM_BOXES + 1
@@ -424,7 +421,6 @@ endr
 	dw .stats ; Stats
 	dw .release ; Release
 	dw .cancel ; Cancel
-
 
 .withdraw: ; e26a1 (38:66a1)
 	call BillsPC_CheckMail_PreventBlackout
@@ -562,7 +558,7 @@ _MovePKMNWithoutMail: ; e2759
 ; e27ac
 
 .Jumptable: ; e27ac
-	
+
 	dw .Init
 	dw .Joypad
 	dw .PrepSubmenu
@@ -1929,7 +1925,6 @@ TryWithdrawPokemon: ; e30fa (38:70fa)
 	scf
 	ret
 
-
 ReleasePKMN_ByePKMN: ; e3180 (38:7180)
 	hlcoord 0, 0
 	lb bc, 15, 8
@@ -2033,7 +2028,7 @@ endr
 ; e3245
 
 .Jumptable: ; e3245
-	
+
 	dw .BoxToBox
 	dw .PartyToBox
 	dw .BoxToParty
@@ -2306,7 +2301,6 @@ PCString_BoxFull: db "The BOX is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
 ; e35aa
-
 
 _ChangeBox: ; e35aa (38:75aa)
 	call LoadStandardMenuDataHeader

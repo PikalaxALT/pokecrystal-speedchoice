@@ -110,7 +110,6 @@ CheckBalance_MomItem2: ; fd044
 	ret
 ; fd0a6
 
-
 MomBuysItem_DeductFunds: ; fd0a6 (3f:50a6)
 	call GetItemFromMom
 	ld de, 3 ; cost
@@ -125,7 +124,6 @@ MomBuysItem_DeductFunds: ; fd0a6 (3f:50a6)
 	ld bc, hMoneyTemp
 	callba TakeMoney
 	ret
-
 
 Mom_GiveItemOrDoll: ; fd0c3
 	call GetItemFromMom
@@ -150,7 +148,6 @@ Mom_GiveItemOrDoll: ; fd0c3
 	call ReceiveItem
 	ret
 ; fd0eb
-
 
 Mom_GetScriptPointer: ; fd0eb (3f:50eb)
 	call GetItemFromMom
@@ -179,7 +176,6 @@ Mom_GetScriptPointer: ; fd0eb (3f:50eb)
 	writetext _MomText_ItsInRoom
 	end
 ; 0xfd117
-
 
 GetItemFromMom: ; fd117
 	ld a, [wWhichMomItemSet]
@@ -214,7 +210,6 @@ momitem: macro
 	dt \2
 	db \3, \4
 ENDM
-
 
 MomItems_1: ; fd136
 	momitem      0,   600, MOM_ITEM, SUPER_POTION

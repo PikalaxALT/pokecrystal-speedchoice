@@ -91,7 +91,6 @@ MovementPointers: ; 5075
 	dw Movement_skyfall_top       ; 59
 ; 5129
 
-
 Movement_teleport_from: ; 5129
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
@@ -525,7 +524,6 @@ Movement_big_step_right: ; 5337
 	jp NormalStep
 ; 533c
 
-
 Movement_turn_away_down: ; 533c
 	ld a, STEP_SLOW << 2 | DOWN
 	jp TurningStep
@@ -585,7 +583,6 @@ Movement_turn_waterfall_right: ; 5373
 	ld a, STEP_BIKE << 2 | RIGHT
 	jp TurningStep
 ; 5378
-
 
 Movement_slow_slide_step_down: ; 5378
 	ld a, STEP_SLOW << 2 | DOWN
@@ -647,7 +644,6 @@ Movement_fast_slide_step_right: ; 53af
 	jp SlideStep
 ; 53b4
 
-
 Movement_slow_jump_step_down: ; 53b4
 	ld a, STEP_SLOW << 2 | DOWN
 	jp JumpStep
@@ -707,7 +703,6 @@ Movement_fast_jump_step_right: ; 53eb
 	ld a, STEP_BIKE << 2 | RIGHT
 	jp JumpStep
 ; 53f0
-
 
 Movement_turn_step_down: ; 53f0
 	ld a, OW_DOWN
@@ -802,7 +797,6 @@ TurningStep: ; 5446
 	ret
 ; 5468
 
-
 SlideStep: ; 5468
 	call InitStep
 	call UpdateTallGrassFlags
@@ -827,7 +821,6 @@ SlideStep: ; 5468
 	ld [hl], STEP_TYPE_PLAYER_WALK
 	ret
 ; 548a
-
 
 JumpStep: ; 548a
 	call InitStep

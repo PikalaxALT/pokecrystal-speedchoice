@@ -329,7 +329,6 @@ endr
 	ld [hl], a
 	ret
 
-
 Battle_GetTrainerName:: ; 39939
 	ld a, [InBattleTowerBattle]
 	bit 0, a

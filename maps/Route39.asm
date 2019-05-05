@@ -181,7 +181,6 @@ FruitTreeScript_0x1a5bf4:
 
 Route39HiddenNugget:
 	dwb EVENT_ROUTE_39_HIDDEN_NUGGET, NUGGET
-	
 
 UnknownText_0x1a5bf9:
 	text "MILTANK: Mooo!"

@@ -49,7 +49,6 @@ BattleRandom:: ; 2f9f
 	ret
 ; 2fb1
 
-
 RandomRange:: ; 2fb1
 ; Return a random number between 0 and a (non-inclusive).
 

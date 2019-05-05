@@ -1,6 +1,5 @@
 ; Functions dealing with palettes.
 
-
 UpdatePalsIfCGB:: ; c2f
 ; update bgp data from BGPals
 ; update obp data from OBPals
@@ -11,14 +10,12 @@ UpdatePalsIfCGB:: ; c2f
 	and a
 	ret z
 
-
 UpdateCGBPals:: ; c33
 ; return carry if successful
 ; any pals to update?
 	ld a, [hCGBPalUpdate]
 	and a
 	ret z
-
 
 ForceUpdateCGBPals:: ; c37
 
@@ -42,9 +39,9 @@ endr
 
 	dec b
 	jr nz, .bgp
-	
+
 ; hl is now 5:d0c0 OBPals
-	
+
 ; copy 8 pals to obpd
 	ld a, %10000000 ; auto increment, index 0
 	ld [rOBPI], a
@@ -58,7 +55,7 @@ endr
 
 	dec b
 	jr nz, .obp
-	
+
 	pop af
 	ld [rSVBK], a
 
@@ -69,7 +66,6 @@ endr
 	scf
 	ret
 ; c9f
-
 
 DmgToCgbBGPals:: ; c9f
 ; exists to forego reinserting cgb-converted image data
@@ -116,7 +112,6 @@ DmgToCgbBGPals:: ; c9f
 	ret
 ; ccb
 
-
 DmgToCgbObjPals:: ; ccb
 ; exists to forego reinserting cgb-converted image data
 
@@ -127,7 +122,7 @@ DmgToCgbObjPals:: ; ccb
 	ld [rOBP0], a
 	ld a, d
 	ld [rOBP1], a
-	
+
 	ld a, [hCGB]
 	and a
 	ret z
@@ -161,7 +156,6 @@ DmgToCgbObjPals:: ; ccb
 	pop hl
 	ret
 ; cf8
-
 
 DmgToCgbObjPal0:: ; cf8
 	ld [rOBP0], a
@@ -240,8 +234,6 @@ DmgToCgbObjPal1:: ; d24
 	ret
 ; d50
 
-
-
 CopyPals:: ; d50
 ; copy c palettes in order b from de to hl
 
@@ -250,7 +242,7 @@ CopyPals:: ; d50
 .loop
 	push de
 	push hl
-	
+
 ; get pal color
 	ld a, b
 	and %11 ; color
@@ -262,7 +254,7 @@ CopyPals:: ; d50
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	
+
 ; dest
 	pop hl
 ; write color
@@ -278,7 +270,7 @@ CopyPals:: ; d50
 ; done pal?
 	dec c
 	jr nz, .loop
-	
+
 ; de += 8 (next pal)
 	ld a, 1 palettes ; NUM_PAL_COLORS * 2 ; bytes per pal
 	add e
@@ -286,14 +278,13 @@ CopyPals:: ; d50
 	inc d
 .ok
 	ld e, a
-	
+
 ; how many more pals?
 	pop bc
 	dec c
 	jr nz, CopyPals
 	ret
 ; d79
-
 
 ClearVBank1:: ; d79
 	ld a, [hCGB]
@@ -313,11 +304,9 @@ ClearVBank1:: ; d79
 	ret
 ; d90
 
-
 ret_d90:: ; d90
 	ret
 ; d91
-
 
 Special_ReloadSpritesNoPalettes:: ; d91
 	ld a, [hCGB]
@@ -338,7 +327,6 @@ Special_ReloadSpritesNoPalettes:: ; d91
 	call DelayFrame
 	ret
 ; db1
-
 
 FarCallSwapTextboxPalettes:: ; db1
 	ld a, [hROMBank]

@@ -261,7 +261,6 @@ NUM_HMS = const_value - HM01
 
 ITEM_FROM_MEM EQU $ff
 
-
 ; leftovers from red
 SAFARI_BALL    EQU  8 ; MOON_STONE
 MOON_STONE_RED EQU 10 ; BURN_HEAL
@@ -277,7 +276,6 @@ TM_HM    EQU 4
 ; item actions
 CANT_SELECT EQU 1 << 6
 CANT_TOSS   EQU 1 << 7
-
 
 ; held item effects
 	const_def

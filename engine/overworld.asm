@@ -110,7 +110,6 @@ GetPlayerSprite: ; 14183
 	db $ff
 ; 141c9
 
-
 AddMapSprites: ; 141c9
 	call GetMapPermission
 	call CheckOutdoorMap
@@ -122,7 +121,6 @@ AddMapSprites: ; 141c9
 	call AddOutdoorSprites
 	ret
 ; 141d9
-
 
 AddIndoorSprites: ; 141d9
 	ld hl, Map1ObjectSprite
@@ -139,7 +137,6 @@ AddIndoorSprites: ; 141d9
 	jr nz, .loop
 	ret
 ; 141ee
-
 
 AddOutdoorSprites: ; 141ee
 	ld a, [MapGroup]
@@ -163,7 +160,6 @@ endr
 	jr nz, .loop
 	ret
 ; 14209
-
 
 RunCallback_04: ; 14209
 	ld a, MAPCALLBACK_SPRITES
@@ -189,8 +185,6 @@ RunCallback_04: ; 14209
 	callba LoadEmote
 	ret
 ; 14236
-
-
 
 SafeGetSprite: ; 14236
 	push hl
@@ -226,7 +220,6 @@ GetSprite: ; 1423c
 	ld h, a
 	ret
 ; 14259
-
 
 GetMonSprite: ; 14259
 ; Return carry if a monster sprite was loaded.
@@ -291,7 +284,6 @@ GetMonSprite: ; 14259
 	ret
 ; 142a7
 
-
 _DoesSpriteHaveFacings:: ; 142a7
 ; Checks to see whether we can apply a facing to a sprite.
 ; Returns carry unless the sprite is a Pokemon or a Still Sprite.
@@ -319,7 +311,6 @@ _DoesSpriteHaveFacings:: ; 142a7
 	ret
 ; 142c4
 
-
 _GetSpritePalette:: ; 142c4
 	ld a, c
 	call GetMonSprite
@@ -340,14 +331,12 @@ _GetSpritePalette:: ; 142c4
 	ret
 ; 142db
 
-
 LoadAndSortSprites: ; 142db
 	call LoadSpriteGFX
 	call SortUsedSprites
 	call ArrangeUsedSprites
 	ret
 ; 142e5
-
 
 AddSpriteGFX: ; 142e5
 ; Add any new sprite ids to a list of graphics to be loaded.
@@ -389,7 +378,6 @@ endr
 	ret
 ; 14306
 
-
 LoadSpriteGFX: ; 14306
 ; Bug: b is not preserved, so
 ; it's useless as a next count.
@@ -415,7 +403,6 @@ LoadSpriteGFX: ; 14306
 	ld a, l
 	ret
 ; 1431e
-
 
 SortUsedSprites: ; 1431e
 ; Bubble-sort sprites by type.
@@ -491,7 +478,6 @@ endr
 	ret
 ; 14355
 
-
 ArrangeUsedSprites: ; 14355
 ; Get the length of each sprite and space them out in VRAM.
 ; Crystal introduces a second table in VRAM bank 0.
@@ -551,7 +537,6 @@ ArrangeUsedSprites: ; 14355
 	ret
 ; 14386
 
-
 GetSpriteLength: ; 14386
 ; Return the length of sprite type a in tiles.
 
@@ -573,7 +558,6 @@ GetSpriteLength: ; 14386
 	ld a, 4
 	ret
 ; 1439b
-
 
 GetUsedSprites: ; 1439b
 	ld hl, UsedSprites
@@ -746,7 +730,6 @@ EmotesPointers: ; 144d
 	emote_header FishingRodGFX4, 1, $7e
 ; 14495
 
-
 SpriteMons: ; 14495
 	db UNOWN
 	db GEODUDE
@@ -785,7 +768,6 @@ SpriteMons: ; 14495
 	db HO_OH
 ; 144b8
 
-
 OutdoorSprites: ; 144b8
 ; Valid sprite IDs for each map group.
 
@@ -816,7 +798,6 @@ OutdoorSprites: ; 144b8
 	dw Group25Sprites
 	dw Group26Sprites
 ; 144ec
-
 
 Group13Sprites: ; 144ec
 	db SPRITE_SUICUNE
@@ -1481,7 +1462,6 @@ Group20Sprites: ; 1472b
 	db SPRITE_POKE_BALL
 	db SPRITE_POKEDEX
 ; 14736
-
 
 SpriteHeaders: ; 14736
 INCLUDE "gfx/overworld/sprite_headers.asm"

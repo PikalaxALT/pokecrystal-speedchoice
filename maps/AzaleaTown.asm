@@ -216,7 +216,6 @@ WhiteApricornTree:
 
 AzaleaTownHiddenFullHeal:
 	dwb EVENT_AZALEA_TOWN_HIDDEN_FULL_HEAL, FULL_HEAL
-	
 
 AzaleaTownRivalBattleApproachMovement1:
 	step_left

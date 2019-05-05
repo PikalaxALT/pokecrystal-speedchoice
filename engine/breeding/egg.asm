@@ -85,7 +85,6 @@ CheckBreedmonCompatibility: ; 16e1d
 	ret
 ; 16ebc
 
-
 .CheckDVs: ; 16ebc (5:6ebc)
 ; If Defense DVs match and the lower 3 bits of the Special DVs match,
 ; maximize the chances of spawning an egg regardless of species.
@@ -642,7 +641,6 @@ GetBreedmonMovePointer: ; 1720b
 	ret
 ; 17224
 
-
 GetEggFrontpic: ; 17224 (5:7224)
 	push de
 	ld [CurPartySpecies], a
@@ -992,4 +990,3 @@ DayCareMonPrintEmptyString: ; 174b5
 .string: ; 174b9
 	db "@"
 ; 174ba
-

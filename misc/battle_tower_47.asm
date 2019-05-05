@@ -157,7 +157,6 @@ BTTrainerClassGenders: ; 11f2f0
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
 
-
 BTMaleTrainerTexts: ; 11f332
 	dw .Greetings
 	dw .PlayerLost
@@ -244,7 +243,6 @@ BTMaleTrainerTexts: ; 11f332
 	dw BTWinM24
 	dw BTWinM25
 
-
 BTFemaleTrainerTexts:
 	dw .Greetings
 	dw .PlayerLost
@@ -300,7 +298,6 @@ BTFemaleTrainerTexts:
 	dw BTWinF13
 	dw BTWinF14
 	dw BTWinF15
-
 
 BTGreetingM1: ; 0x11f42e
 	text_jump BattleTowerText_0x1ec000
@@ -601,9 +598,6 @@ BTLossM25: ; 0x11f59b
 BTWinM25: ; 0x11f5a0
 	text_jump UnknownText_0x1ec99b
 	db "@"
-
-
-
 
 BTGreetingF1: ; 0x11f5a5
 	text_jump UnknownText_0x1ec9bd

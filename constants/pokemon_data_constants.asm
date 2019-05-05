@@ -25,7 +25,6 @@ const_value SET 1
 	const REPTILE      ; e
 	const NO_EGGS      ; f
 
-
 ; menu sprites
 const_value SET 1
 	const ICON_POLIWAG
@@ -67,7 +66,6 @@ const_value SET 1
 	const ICON_SUDOWOODO
 	const ICON_BIGMON
 
-
 ; evolution types
 const_value SET 1
 	const EVOLVE_LEVEL
@@ -75,7 +73,6 @@ const_value SET 1
 	const EVOLVE_TRADE
 	const EVOLVE_HAPPINESS
 	const EVOLVE_STAT
-
 
 BASE_HAPPINESS        EQU 70
 FRIEND_BALL_HAPPINESS EQU 200
@@ -86,7 +83,6 @@ const_value SET 1
 	const TR_ANYTIME
 	const TR_MORNDAY
 	const TR_NITE
-
 
 ; stat evolution triggers
 const_value SET 1

@@ -15,7 +15,6 @@ RunCallback_03: ; 1045c4
 	ld [wMapTimeOfDay], a
 	ret
 
-
 EnterMapConnection: ; 1045d6
 ; Return carry if a connection has been entered.
 	ld a, [wPlayerStepDirection]
@@ -29,7 +28,6 @@ EnterMapConnection: ; 1045d6
 	jp z, EnterEastConnection
 	ret
 ; 1045ed
-
 
 EnterWestConnection: ; 1045ed
 	ld a, [WestConnectedMapGroup]
@@ -67,7 +65,6 @@ EnterWestConnection: ; 1045ed
 	jp EnteredConnection
 ; 104629
 
-
 EnterEastConnection: ; 104629
 	ld a, [EastConnectedMapGroup]
 	ld [MapGroup], a
@@ -104,7 +101,6 @@ EnterEastConnection: ; 104629
 	jp EnteredConnection
 ; 104665
 
-
 EnterNorthConnection: ; 104665
 	ld a, [NorthConnectedMapGroup]
 	ld [MapGroup], a
@@ -130,7 +126,6 @@ EnterNorthConnection: ; 104665
 	ld [wOverworldMapAnchor + 1], a
 	jp EnteredConnection
 ; 104696
-
 
 EnterSouthConnection: ; 104696
 	ld a, [SouthConnectedMapGroup]
@@ -389,7 +384,6 @@ CheckMovingOffEdgeOfMap:: ; 104820 (41:4820)
 .ok
 	scf
 	ret
-
 
 GetCoordOfUpperLeftCorner:: ; 10486d
 	ld hl, OverworldMap

@@ -141,7 +141,6 @@ GoldenrodGameCornerPrizeVendor_NoCoinCaseScript:
 	closetext
 	end
 
-
 GoldenrodGameCornerTMVendorMenuData:
 	db $40 ; flags
 	db 02, 00 ; start coords
@@ -156,7 +155,6 @@ GoldenrodGameCornerTMVendorMenuData:
 	db "TM14    5500@"
 	db "TM38    5500@"
 	db "CANCEL@"
-
 
 GoldenrodGameCornerPrizeMonVendorScript:
 	faceplayer
@@ -239,7 +237,6 @@ Randomizer_GameCornerWobbuffetSpecies3::
 	takecoins 1500
 	jump GGCPMVloop
 
-
 GGCPMVMenuDataHeader:
 	db $40 ; flags
 	db 02, 00 ; start coords
@@ -257,7 +254,6 @@ Randomizer_GameCornerCuboneName::
 Randomizer_GameCornerWobbuffetName::
 	db "WOBBUFFET  1500@"
 	db "CANCEL@"
-
 
 GoldenrodGameCornerPharmacistScript:
 	faceplayer

@@ -1066,19 +1066,19 @@ wait: macro
 check_save: macro
 	db check_save_command
 	endm
-	
+
 	enum check_permaoptions_command
 check_permaoptions: macro
 	db check_permaoptions_command
 	db \1 ; bit
 	endm
-    
+
     enum increment_2byte_stat_command
 increment_2byte_stat: macro
     db increment_2byte_stat_command
     dw \1 ; address
     endm
-    
+
     enum increment_4byte_stat_command
 increment_4byte_stat: macro
     db increment_4byte_stat_command

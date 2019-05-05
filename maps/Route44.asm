@@ -319,7 +319,6 @@ Route44MaxRepel:
 
 Route44HiddenElixer:
 	dwb EVENT_ROUTE_44_HIDDEN_ELIXER, ELIXER
-	
 
 FisherWilton1SeenText:
 	text "Aack! You made me"

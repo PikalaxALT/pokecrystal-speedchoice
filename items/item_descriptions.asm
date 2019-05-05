@@ -31,7 +31,6 @@ endr
 	jp PlaceString
 ; 0x1c8987
 
-
 ItemDescriptions:
 	dw MasterBallDesc
 	dw UltraBallDesc
@@ -371,7 +370,7 @@ RepelDesc:
 MaxElixerDesc:
 	db   "Fully restores the"
 	next "PP of one #MON.@"
-    
+
 DoneButtonDesc:
     db   "Use when the race"
     next "or run is over.@"

@@ -392,7 +392,6 @@ Jumptable_171a45: ; 171a45 (5c:5a45)
 	dw Function171c39
 	dw Function171c41
 
-
 Function171a5d: ; 171a5d (5c:5a5d)
 	ld a, [wc821]
 	bit 1, a
@@ -847,7 +846,6 @@ String_172e5d: ; 172e5d
 	db "せつぞくする モバイルセンターを"
 	next "えらんで ください@"
 ; 172e78
-
 
 Function172e78: ; 172e78 (5c:6e78)
 	ld a, $7f

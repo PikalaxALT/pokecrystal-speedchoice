@@ -306,7 +306,6 @@ NationalParkTMDig:
 
 NationalParkHiddenFullHeal:
 	dwb EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL, FULL_HEAL
-	
 
 UnknownText_0x5c1d3:
 	text "Look! Check out my"

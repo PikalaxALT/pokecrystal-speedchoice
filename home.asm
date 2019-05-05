@@ -462,8 +462,7 @@ WaitBGMap:: ; 31f6
 	ld a, [hCGB]
 	and a
 	jr z, WaitBGMapSlow
-	
-	
+
 WaitBGMap1Fast::
 ; Tell VBlank to update BG Map
 	ld a, 1 ; BG Map 0 tiles
@@ -533,16 +532,16 @@ LoadEDTile:: ; 323d
 	push af
 	xor a
 	ld [hMapAnims], a
-	
+
 ; why lol
 	ld a, [rLY]
 	cp $7e
 	call nc, DelayFrame
-	
+
 	ld a, 1
 	ld [hBGMapMode], a
 	call DelayFrame
-	
+
 	ld a, 2
 	ld [hBGMapMode], a
 	call DelayFrame
@@ -1837,7 +1836,7 @@ Function3b0c:: ; 3b0c
 	ld [Requested2bppDest], a
 	ld a, LYOverrides / $100
 	ld [Requested2bppDest + 1], a
-	
+
 	ld a, 4
 	ld [Requested2bppQuarters], a
 

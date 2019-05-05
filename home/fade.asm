@@ -1,6 +1,5 @@
 ; Functions to fade the screen in and out.
 
-
 Function48c:: ; 48c
 	ld a, [TimeOfDayPal]
 	ld b, a
@@ -20,7 +19,6 @@ Function48c:: ; 48c
 	ld [rOBP1], a
 	ret
 ; 4a3
-
 
 RotateFourPalettesRight:: ; 4a3
 	ld a, [hCGB]
@@ -109,7 +107,6 @@ RotatePalettesLeft:: ; 501
 	jr nz, RotatePalettesLeft
 	ret
 ; 517
-
 
 ; 517
 IncGradGBPalTable_00:: db %11111111, %11111111, %11111111

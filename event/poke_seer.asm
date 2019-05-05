@@ -49,7 +49,6 @@ SpecialPokeSeer: ; 4f0bc
 	ret
 ; 4f0ee
 
-
 SeerAction: ; 4f0ee
 	ld a, [wSeerAction]
 	ld hl, SeerActions
@@ -366,7 +365,6 @@ SeerCancelText: ; 0x4f2af
 	db "@"
 ; 0x4f2b4
 
-
 SeerAdvice: ; 4f2b4
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
@@ -433,7 +431,6 @@ SeerAdvice5: ; 0x4f2fc
 	text_jump UnknownText_0x1c4ae5
 	db "@"
 ; 0x4f301
-
 
 GetCaughtGender: ; 4f301
 	ld hl, MON_CAUGHTGENDER

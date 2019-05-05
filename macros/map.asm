@@ -58,7 +58,6 @@ warp_def: macro
 	map \4 ; map
 	endm
 
-
 map_header: MACRO
 	; label, tileset, permission, location, music, phone service flag, time of day, fishing group
 \1_MapHeader:
@@ -68,7 +67,6 @@ map_header: MACRO
 	dn \6, \7
 	db \8
 ENDM
-
 
 map_header_2: MACRO
 ; label, map, border block, connections

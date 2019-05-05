@@ -173,13 +173,11 @@ endr
 	jp [hl]
 ; 8ca1b
 
-
 .dw: ; 8ca1b (23:4a1b)
 	dw Cut_SpawnAnimateTree
 	dw Cut_SpawnAnimateLeaves
 	dw Cut_StartWaiting
 	dw Cut_WaitAnimSFX
-
 
 Cut_SpawnAnimateTree: ; 8ca23 (23:4a23)
 	call Cut_Headbutt_GetPixelFacing
@@ -320,7 +318,6 @@ Cut_Headbutt_GetPixelFacing: ; 8cad3 (23:4ad3)
 	dbpixel  8, 11
 	dbpixel 12, 11
 ; 8caed
-
 
 FlyFromAnim: ; 8caed
 	call DelayFrame

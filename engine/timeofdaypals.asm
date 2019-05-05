@@ -7,7 +7,6 @@ UpdateTimeOfDayPal:: ; 8c001
 	ret
 ; 8c011
 
-
 _TimeOfDayPals:: ; 8c011
 ; return carry if pals are changed
 
@@ -37,7 +36,6 @@ _TimeOfDayPals:: ; 8c011
 ; update palette id
 	ld [TimeOfDayPal], a
 
-
 ; save bg palette 8
 	ld hl, UnknBGPals + 8 * 7 ; UnknBGPals + 7 pals
 
@@ -63,11 +61,9 @@ _TimeOfDayPals:: ; 8c011
 	ld a, b
 	ld [rSVBK], a
 
-
 ; update sgb pals
 	ld b, SCGB_MAPPALS
 	call GetSGBLayout
-
 
 ; restore bg palette 8
 	ld hl, UnknOBPals - 1 ; last byte in UnknBGPals
@@ -107,7 +103,6 @@ _TimeOfDayPals:: ; 8c011
 	and a
 	ret
 ; 8c070
-
 
 _UpdateTimePals:: ; 8c070
 	ld c, $9 ; normal
@@ -165,7 +160,6 @@ Special_FadeBlackQuickly: ; 8c0b6
 	call ConvertTimePalsDecHL
 	ret
 ; 8c0c1
-
 
 FillWhiteBGColor: ; 8c0c1
 	ld a, [rSVBK]
@@ -286,7 +280,6 @@ endr
 	ret
 ; 8c14e
 
-
 DmgToCgbTimePals: ; 8c14e
 	push hl
 	push de
@@ -327,7 +320,6 @@ endr
 	jr nz, .loop
 	ret
 ; 8c17c
-
 
 GetTimePalFade: ; 8c17c
 ; check cgb

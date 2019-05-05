@@ -255,7 +255,7 @@ MoveDescriptions:: ; 2cb52
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
-	
+
 MoveDescriptionsHMNerfs:: ; 2cb52
 	dw PoundDescription
 	dw KarateChopDescription
@@ -743,7 +743,7 @@ MistDescription:
 WaterGunDescription:
 	db   "Squirts water to"
 	next "attack.@"
-	
+
 WaterCannonDescription:
 	db   "Blasts water to"
 	next "attack strongly.@"
@@ -755,7 +755,7 @@ HydroPumpDescription:
 SurfDescription:
 	db   "A strong water-"
 	next "type attack.@"
-	
+
 PuddleSurfDescription:
 	db   "A weak water-"
 	next "type attack.@"
@@ -811,7 +811,7 @@ SeismicTossDescription:
 StrengthDescription:
 	db   "A powerful physi-"
 	next "cal attack.@"
-	
+
 DemiStrengthDescription:
 	db   "A mediocre physi-"
 	next "cal attack.@"

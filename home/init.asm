@@ -19,7 +19,6 @@ Reset:: ; 150
 	jr Init
 ; 16e
 
-
 _Start:: ; 16e
 	cp $11
 	jr z, .cgb
@@ -34,7 +33,6 @@ _Start:: ; 16e
 	ld a, $1
 	ld [hFFEA], a
 ; 17d
-
 
 Init:: ; 17d
 
@@ -102,12 +100,11 @@ Init:: ; 17d
 	call ClearSprites
 	call Function270
 
-
 	ld a, BANK(LoadPushOAM)
 	rst Bankswitch
 
 	call LoadPushOAM
-	
+
 	callba Function9890
 
 	xor a
@@ -115,7 +112,7 @@ Init:: ; 17d
 	ld [hSCX], a
 	ld [hSCY], a
 	ld [rJOYP], a
-    
+
     ld a, TIMER_INTROS
     ld [hTimerType], a
 
@@ -181,7 +178,6 @@ Init:: ; 17d
 	ld [wMapMusic], a
 	jp GameInit
 ; 245
-
 
 ClearVRAM:: ; 245
 ; Wipe VRAM banks 0 and 1

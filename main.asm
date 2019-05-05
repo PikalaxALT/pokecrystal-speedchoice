@@ -2195,7 +2195,7 @@ CutFunction: ; c785
 	ret
 
 .Jumptable: ; c796 (3:4796)
-	
+
 	dw .CheckAble
 	dw .DoCut
 	dw .FailCut
@@ -5068,7 +5068,6 @@ GetPokeBallWobble: ; f971 (3:7971)
 ; catch rate, number of wobble to break out on if not caught
 	db  75, 1
 	db 255, 2
-	
 
 KnowsMove: ; f9ea
 	ld a, MON_MOVES
@@ -6970,7 +6969,7 @@ Special_MoveTutor: ; 4925b
 .thunderbolt
 	ld a, [MoveTutorMove_Thunderbolt]
 	ret
-	
+
 MoveTutorMove_Flamethrower::
 	db FLAMETHROWER
 MoveTutorMove_Thunderbolt::
@@ -9396,7 +9395,7 @@ GetGender: ; 50bdd
 	ld a, 1
 	and a
 	ret
-	
+
 .AlwaysGenderless
 	pop af
 	ld a, 1

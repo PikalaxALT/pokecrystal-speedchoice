@@ -55,7 +55,7 @@ MainMenu: ; 49cdc
 	db "CLOCK RESET@"
 
 .Jumptable: ; 0x49d60
-	
+
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Options
@@ -157,7 +157,6 @@ StudiumMenu: ; 0x49d9e
 	db CLOCK_RESET
 	db -1
 
-
 MainMenu_GetWhichMenu: ; 49da4
 	nop
 	nop
@@ -250,7 +249,6 @@ MainMenu_PrintCurrentTimeAndDay: ; 49e09
 	ret
 ; 49e27
 
-
 .PlaceBox: ; 49e27
 	call CheckRTCStatus
 	and $80
@@ -265,7 +263,6 @@ MainMenu_PrintCurrentTimeAndDay: ; 49e09
 	call SpeechTextBox
 	ret
 ; 49e3d
-
 
 .PlaceTime: ; 49e3d
 	ld a, [wSaveFileExists]
@@ -349,7 +346,6 @@ MainMenu_vInit: ; 49ed0
 	call ClearWindowData
 	ret
 ; 49ee0
-
 
 MainMenu_NewGame: ; 49ee0
 	callba NewGame

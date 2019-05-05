@@ -24,7 +24,7 @@ UnknownScript_0x196817:
 	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX
 	closetext
 	end
-	
+
 CherrygroveBetterMartScript:
 	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_BETTER
 	closetext

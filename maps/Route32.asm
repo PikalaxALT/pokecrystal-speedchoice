@@ -512,11 +512,9 @@ Route32PokeCenterSign:
 
 Route32HiddenGreatBall:
 	dwb EVENT_ROUTE_32_HIDDEN_GREAT_BALL, GREAT_BALL
-	
 
 Route32HiddenSuperPotion:
 	dwb EVENT_ROUTE_32_HIDDEN_SUPER_POTION, SUPER_POTION
-	
 
 Movement_Route32CooltrainerMPushesYouBackToViolet:
 	step_up

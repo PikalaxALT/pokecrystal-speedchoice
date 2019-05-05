@@ -17,7 +17,7 @@ ClerkScript_0x68295:
 	pokemart MARTTYPE_STANDARD, MART_VIOLET
 	closetext
 	end
-	
+
 VioletBetterMartScript:
 	pokemart MARTTYPE_STANDARD, MART_VIOLET_BETTER
 	closetext

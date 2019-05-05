@@ -472,7 +472,6 @@ MAP_NONE   EQU 0
 	mapgroup MR_POKEMONS_HOUSE,                           4,  4 ; 10
 	mapgroup ROUTE_31_VIOLET_GATE,                        4,  5 ; 11
 
-
 ; elevator floors
 
 	const_def
@@ -608,7 +607,6 @@ EMOTE_MEM EQU -1
 	const SIGNPOST_COPY
 
 ; I'm relocating spawn constants here, so that they can be used anywhere in the disassembly.
-
 
 const_value = -1
 	const SPAWN_N_A

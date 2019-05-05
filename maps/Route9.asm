@@ -84,7 +84,6 @@ MapRoute9Signpost0Script:
 
 Route9HiddenEther:
 	dwb EVENT_ROUTE_9_HIDDEN_ETHER, ETHER
-	
 
 CamperDeanSeenText:
 	text "I came to explore"

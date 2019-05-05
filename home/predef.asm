@@ -18,7 +18,7 @@ Predef:: ; 2d83
 
 	ld hl, .Return
 	push hl
-	
+
 ; Call the Predef function
 	ld a, [PredefAddress]
 	ld h, a

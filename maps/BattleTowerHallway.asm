@@ -23,7 +23,6 @@ BattleTowerHallway_MapScriptHeader:
 	callasm .asm_load_battle_room
 	jump .WalkToChosenBattleRoom
 
-
 .asm_load_battle_room:
 	ld a, [rSVBK]
 	push af
@@ -36,7 +35,6 @@ BattleTowerHallway_MapScriptHeader:
 	pop af
 	ld [rSVBK], a
 	ret
-
 
 ; enter different rooms for different levels to battle against
 ; at least it should look like that

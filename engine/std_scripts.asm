@@ -1869,7 +1869,6 @@ CoinVendor_IntroScript: ; 0xbcde0
 	end
 ; 0xbce54
 
-
 .MenuDataHeader
 	db $40 ; flags
 	db 04, 00 ; start coords
@@ -1884,7 +1883,6 @@ CoinVendor_IntroScript: ; 0xbcde0
 	db "500 : ¥10000@"
 	db "CANCEL@"
 ; 0xbce7f
-
 
 HappinessCheckScript:
 	faceplayer

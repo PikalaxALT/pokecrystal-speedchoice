@@ -1,6 +1,5 @@
 ; Functions relating to the timer interrupt and the real-time-clock.
 
-
 AskTimer:: ; 591
 	push af
 	ld a, [hMobile]
@@ -13,7 +12,6 @@ AskTimer:: ; 591
 	reti
 ; 59c
 
-
 LatchClock:: ; 59c
 ; latch clock counter data
 	ld a, 0
@@ -23,7 +21,6 @@ LatchClock:: ; 59c
 	ret
 ; 5a7
 
-
 UpdateTime:: ; 5a7
 	call GetClock
 	call FixDays
@@ -31,7 +28,6 @@ UpdateTime:: ; 5a7
 	callba GetTimeOfDay
 	ret
 ; 5b7
-
 
 GetClock:: ; 5b7
 ; store clock data in hRTCDayHi-hRTCSeconds
@@ -84,7 +80,6 @@ GetClock:: ; 5b7
 	ret
 ; 5e8
 
-
 FixDays:: ; 5e8
 ; fix day count
 ; mod by 140
@@ -96,7 +91,7 @@ FixDays:: ; 5e8
 ; reset dh (bit 8)
 	res 0, a
 	ld [hRTCDayHi], a ; DH
-	
+
 ; mod 140
 ; mod twice since bit 8 (DH) was set
 	ld a, [hRTCDayLo] ; DL
@@ -107,7 +102,7 @@ FixDays:: ; 5e8
 	sub 140
 	jr nc, .modl
 	add 140
-	
+
 ; update dl
 	ld [hRTCDayLo], a ; DL
 
@@ -120,19 +115,19 @@ FixDays:: ; 5e8
 	ld a, [hRTCDayLo] ; DL
 	cp 140
 	jr c, .quit
-	
+
 ; mod 140
 .mod
 	sub 140
 	jr nc, .mod
 	add 140
-	
+
 ; update dl
 	ld [hRTCDayLo], a ; DL
-	
+
 ; flag for sRTCStatusFlags
 	ld a, %00100000
-	
+
 .set
 ; update clock with modded day value
 	push af
@@ -140,12 +135,11 @@ FixDays:: ; 5e8
 	pop af
 	scf
 	ret
-	
+
 .quit
 	xor a
 	ret
 ; 61d
-
 
 FixTime:: ; 61d
 ; add ingame time (set at newgame) to current time
@@ -162,7 +156,7 @@ FixTime:: ; 61d
 	add 60
 .updatesec
 	ld [hSeconds], a
-	
+
 ; minute
 	ccf ; carry is set, so turn it off
 	ld a, [hRTCMinutes] ; M
@@ -174,7 +168,7 @@ FixTime:: ; 61d
 	add 60
 .updatemin
 	ld [hMinutes], a
-	
+
 ; hour
 	ccf ; carry is set, so turn it off
 	ld a, [hRTCHours] ; H
@@ -186,7 +180,7 @@ FixTime:: ; 61d
 	add 24
 .updatehr
 	ld [hHours], a
-	
+
 ; day
 	ccf ; carry is set, so turn it off
 	ld a, [hRTCDayLo] ; DL
@@ -219,8 +213,6 @@ InitTime:: ; 677
 	ret
 ; 67e
 
-
-
 PanicResetClock:: ; 67e
 	call .ClearhRTC
 	call SetClock
@@ -237,21 +229,20 @@ PanicResetClock:: ; 67e
 	ret
 ; 691
 
-
 SetClock:: ; 691
 ; set clock data from hram
 
 ; enable clock r/w
 	ld a, SRAM_ENABLE
 	ld [MBC3SRamEnable], a
-	
+
 ; set clock data
 ; stored 'backwards' in hram
 
 	call LatchClock
 	ld hl, MBC3SRamBank
 	ld de, MBC3RTC
-	
+
 ; seconds
 	ld a, RTC_S
     ld [hSRAMBank], a
@@ -283,12 +274,11 @@ SetClock:: ; 691
 	ld a, [hRTCDayHi]
 	res 6, a ; make sure timer is active
 	ld [de], a
-	
+
 ; cleanup
 	call CloseSRAM ; unlatch clock, disable clock r/w
 	ret
 ; 6c4
-
 
 ClearRTCStatus:: ; 6c4
 ; clear sRTCStatusFlags

@@ -301,7 +301,6 @@ DoNPCTrade: ; fcc63
 	ret
 ; fcdc2
 
-
 GetTradeAttribute: ; 0xfcdc2
 	ld d, 0
 	push de
@@ -427,7 +426,6 @@ GetTradeMonNames: ; fce1b
 	ret
 ; fce58
 
-
 NPCTrades:: ; fce58
 npctrade: MACRO
 	db \1, \2, \3, \4 ; dialog set, requested mon, offered mon, nickname
@@ -438,7 +436,6 @@ npctrade: MACRO
 	db \8, \9, 0 ; OT name, gender requested
 ENDM
 
-
 	npctrade 0, ABRA,       MACHOP,     "MUSCLE@@@@@", $37, $66, GOLD_BERRY,   37460, "MIKE@@@@@@@", TRADE_EITHER_GENDER
 	npctrade 0, BELLSPROUT, ONIX,       "ROCKY@@@@@@", $96, $66, BITTER_BERRY, 48926, "KYLE@@@@@@@", TRADE_EITHER_GENDER
 	npctrade 1, KRABBY,     VOLTORB,    "VOLTY@@@@@@", $98, $88, PRZCUREBERRY, 29189, "TIM@@@@@@@@", TRADE_EITHER_GENDER
@@ -447,7 +444,6 @@ ENDM
 	npctrade 3, CHANSEY,    AERODACTYL, "AEROY@@@@@@", $96, $66, GOLD_BERRY,   26491, "KIM@@@@@@@@", TRADE_EITHER_GENDER
 	npctrade 0, DUGTRIO,    MAGNETON,   "MAGGIE@@@@@", $96, $66, METAL_COAT,   50082, "FOREST@@@@@", TRADE_EITHER_GENDER
 ; fcf38
-
 
 PrintTradeText: ; fcf38
 	push af
@@ -500,13 +496,11 @@ TradeTexts: ; fcf53
 	dw TradeAfterText4
 ; fcf7b
 
-
 ConnectLinkCableText: ; 0xfcf7b
 	; OK, connect the Game Link Cable.
 	text_jump UnknownText_0x1bd407
 	db "@"
 ; 0xfcf80
-
 
 TradedForText: ; 0xfcf80
 	; traded givemon for getmon
@@ -524,7 +518,6 @@ TradedForText: ; 0xfcf80
 	text_jump UnknownText_0x1bd445
 	db "@"
 ; 0xfcf97
-
 
 TradeIntroText1: ; 0xfcf97
 	; I collect #MON. Do you have @ ? Want to trade it for my @ ?
@@ -555,7 +548,6 @@ TradeAfterText1: ; 0xfcfab
 	text_jump UnknownText_0x1bd4f4
 	db "@"
 ; 0xfcfb0
-
 
 TradeIntroText2:
 TradeIntroText3: ; 0xfcfb0
@@ -590,7 +582,6 @@ TradeAfterText2: ; 0xfcfc4
 	db "@"
 ; 0xfcfc9
 
-
 TradeIntroText4: ; 0xfcfc9
 	; 's cute, but I don't have it. Do you have @ ? Want to trade it for my @ ?
 	text_jump UnknownText_0x1bd621
@@ -620,7 +611,6 @@ TradeAfterText4: ; 0xfcfdd
 	text_jump UnknownText_0x1bd6f5
 	db "@"
 ; 0xfcfe2
-
 
 TradeCompleteText3: ; 0xfcfe2
 	; Uh? What happened?

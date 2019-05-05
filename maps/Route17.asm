@@ -66,11 +66,9 @@ BikerGlennScript:
 
 Route17HiddenMaxEther:
 	dwb EVENT_ROUTE_17_HIDDEN_MAX_ETHER, MAX_ETHER
-	
 
 Route17HiddenMaxElixer:
 	dwb EVENT_ROUTE_17_HIDDEN_MAX_ELIXER, MAX_ELIXER
-	
 
 BikerRileySeenText:
 	text "Hey, you! You're"

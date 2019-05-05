@@ -133,7 +133,6 @@ BattleBGEffects: ; c805a (32:405a)
 	dw BattleBGEffect_WobbleMon
 	dw BattleBGEffect_35
 
-
 BattleBGEffect_End: ; c80c6 (32:40c6)
 	call EndBattleBGEffect
 	ret
@@ -355,7 +354,6 @@ BattleBGEffect_HideMon: ; c81b3 (32:41b3)
 	dw BattleBGEffects_IncrementJumptable
 	dw .four
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	push bc
@@ -423,7 +421,6 @@ BattleBGEffect_FeetFollow: ; c8214 (32:4214)
 	dw BattleBGEffects_IncrementJumptable
 	dw .five
 
-
 .zero
 	call BGEffect_CheckFlyDigStatus
 	jr z, .not_flying_digging
@@ -490,7 +487,6 @@ BattleBGEffect_HeadFollow: ; c8281 (32:4281)
 	dw BattleBGEffects_IncrementJumptable
 	dw BattleBGEffects_IncrementJumptable
 	dw .five
-
 
 .zero
 	call BGEffect_CheckFlyDigStatus
@@ -561,7 +557,6 @@ BattleBGEffect_27: ; c82f5 (32:42f5)
 	dw BattleBGEffects_IncrementJumptable
 	dw BattleBGEffects_IncrementJumptable
 	dw .four
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -726,7 +721,6 @@ BattleBGEffect_RunPicResizeScript: ; c83ed (32:43ed)
 	dw BattleBGEffects_IncrementJumptable
 	dw .restart
 	dw .end
-
 
 .zero
 	ld hl, BG_EFFECT_STRUCT_03
@@ -926,7 +920,6 @@ BattleBGEffect_Surf: ; c8545 (32:4545)
 	dw .one
 	dw .two
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	lb de, 2, 2
@@ -992,7 +985,6 @@ BattleBGEffect_Whirlpool: ; c8599 (32:4599)
 	dw .zero
 	dw .one
 	dw .two
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -1067,7 +1059,6 @@ BattleBGEffect_Psychic: ; c8607 (32:4607)
 	dw .one
 	dw .two
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1105,7 +1096,6 @@ BattleBGEffect_Teleport: ; c863f (32:463f)
 	dw .one
 	dw .two
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1129,7 +1119,6 @@ BattleBGEffect_NightShade: ; c8662 (32:4662)
 	dw .zero
 	dw .one
 	dw .two
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -1160,7 +1149,6 @@ BattleBGEffect_DoubleTeam: ; c8689 (32:4689)
 	dw .three
 	dw .four
 	dw .five
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -1253,7 +1241,6 @@ BattleBGEffect_AcidArmor: ; c8709 (32:4709)
 	dw .one
 	dw .two
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1316,7 +1303,6 @@ BattleBGEffect_21: ; c8761 (32:4761)
 	dw .one
 	dw .two
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1365,7 +1351,6 @@ BattleBGEffect_Dig: ; c87a7 (32:47a7)
 	dw .one
 	dw .two
 	dw .three
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -1433,7 +1418,6 @@ BattleBGEffect_Tackle: ; c8805 (32:4805)
 	dw Tackle_BGEffect25_2d_two
 	dw .three
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1467,7 +1451,6 @@ BattleBGEffect_25: ; c8837 (32:4837)
 	dw Tackle_BGEffect25_2d_one
 	dw Tackle_BGEffect25_2d_two
 	dw .three
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -1596,7 +1579,6 @@ BattleBGEffect_2d: ; c88e7 (32:48e7)
 	dw Tackle_BGEffect25_2d_two
 	dw .three
 
-
 .three
 	call BattleAnim_ResetLCDStatCustom
 	ret
@@ -1644,7 +1626,6 @@ BattleBGEffect_26: ; c892a (32:492a)
 	dw .one
 	dw .two
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1682,7 +1663,6 @@ BattleBGEffect_2c: ; c8964 (32:4964)
 	dw .zero
 	dw .one
 	dw .two
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -1738,7 +1718,6 @@ BattleBGEffect_28: ; c89b5 (32:49b5)
 	dw .one
 	dw .two
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1780,7 +1759,6 @@ BattleBGEffect_BounceDown: ; c89ee (32:49ee)
 	dw .zero
 	dw .one
 	dw .two
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -1940,7 +1918,6 @@ BattleBGEffect_2b: ; c8acc (32:4acc)
 	dw .zero
 	dw .one
 
-
 .zero
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -1980,7 +1957,6 @@ BattleBGEffect_1c: ; c8b00 (32:4b00)
 	dw .zero
 	dw .one
 	dw .two
-
 
 .zero
 	call BattleBGEffects_IncrementJumptable
@@ -2217,7 +2193,6 @@ BattleBGEffect_VibrateMon: ; c8c61 (32:4c61)
 	dw .zero
 	dw .one
 
-
 .zero: ; c8c68 (32:4c68)
 	call BattleBGEffects_IncrementJumptable
 	call BattleBGEffects_ClearLYOverrides
@@ -2262,7 +2237,6 @@ BattleBGEffect_WobbleMon: ; c8ca2 (32:4ca2)
 	dw .zero
 	dw .one
 	dw .two
-
 
 .zero: ; c8cab (32:4cab)
 	call BattleBGEffects_IncrementJumptable
@@ -2428,7 +2402,6 @@ BGEffect_RapidCyclePals: ; c8d77 (32:4d77)
 	dw .one_dmg
 	dw .two_dmg
 
-
 .zero_dmg: ; c8d8b (32:4d8b)
 	call BattleBGEffects_IncrementJumptable
 	ld a, $e4
@@ -2492,7 +2465,6 @@ BGEffect_RapidCyclePals: ; c8d77 (32:4d77)
 	dw .two_cgb
 	dw .three_cgb
 	dw .four_cgb
-
 
 .zero_cgb: ; c8de7 (32:4de7)
 	call BGEffect_CheckBattleTurn

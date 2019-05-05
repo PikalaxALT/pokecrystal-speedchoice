@@ -10,7 +10,6 @@ Stack::
 StackTop::
 	ds 1
 
-
 SECTION "Audio", WRAM0
 wMusic::
 MusicPlaying:: ; c100
@@ -293,7 +292,6 @@ wCurrSpriteOAMAddr:: ds 1
 CurIcon:: ; c3b6
 	ds 1
 
-
 wCurIconTile:: ds 1
 wSpriteAnimAddrBackup::
 wSpriteAnimIDBuffer::
@@ -329,7 +327,6 @@ wc3fa:: ds 1
 wc3fb:: ds 1
 wc3fc:: ds 4
 
-
 SECTION "Sprites", WRAM0 [$c400]
 
 Sprites:: ; c400
@@ -349,14 +346,12 @@ Sprites:: ; c400
 	ds 4 * 40
 SpritesEnd::
 
-
 SECTION "Tilemap", WRAM0
 
 TileMap:: ; c4a0
 ; 20x18 grid of 8x8 tiles
 	ds SCREEN_WIDTH * SCREEN_HEIGHT
 TileMapEnd::
-
 
 SECTION "Battle", WRAM0
 wc608::
@@ -1523,7 +1518,6 @@ wOptionsMenuPreset:: ds 1
 
 wRAM0End:: ; cfd8
 
-
 SECTION "WRAM 1", WRAMX, BANK [1]
 
 wd000:: ds 1
@@ -2007,7 +2001,6 @@ EastConnectionStripXOffset:: ; d1d6
 EastConnectionWindow:: ; d1d7
 	ds 2
 
-
 TilesetHeader::
 TilesetBank:: ; d1d9
 	ds 1
@@ -2070,7 +2063,6 @@ EnemyMonBaseStats:: ds 5 ; d226
 EnemyMonCatchRate:: db ; d22b
 EnemyMonBaseExp::   db ; d22c
 EnemyMonEnd::
-
 
 wBattleMode:: ; d22d
 ; 0: overworld
@@ -2161,7 +2153,6 @@ BaseEggGroups:: ; d24d
 BaseTMHM:: ; d24e
 	ds 8
 
-
 CurDamage:: ; d256
 	ds 2
 
@@ -2197,7 +2188,6 @@ wd26d:: ds 1
 	ds 3
 wd271:: ds 5
 	ds wd26b - @
-
 
 ; SECTION "Enemy Party", WRAMX, BANK [1]
 OTPlayerName:: ds NAME_LENGTH ; d26b
@@ -2522,7 +2512,6 @@ JohtoBadges:: ; d857
 KantoBadges:: ; d858
 	flag_array 8
 
-
 TMsHMs:: ; d859
 	ds NUM_TMS + NUM_HMS
 TMsHMsEnd::
@@ -2578,7 +2567,6 @@ FarfetchdPosition:: ; d964
 	ds 1 ; which position the ilex farfetch'd is in
 
 	ds 13
-
 
 ;SECTION "Map Triggers", WRAMX, BANK [1]
 
@@ -2663,7 +2651,6 @@ wMobileTradeRoomMobileTrigger::              ds 1 ; d9bf
 wMobileBattleRoomTrigger::                   ds 1 ; d9c0
 
 	ds 49
-
 
 ;SECTION "Events", WRAMX, BANK [1]
 
@@ -2820,7 +2807,6 @@ wKurtApricornQuantity:: ds 1
 
 wPlayerDataEnd::
 
-
 wMapData::
 
 VisitedSpawns:: ; dca5
@@ -2857,7 +2843,6 @@ wScreenSave:: ds 6 * 5
 
 wMapDataEnd::
 
-
 SECTION "Party", WRAMX, BANK [1]
 
 wPokemonData::
@@ -2868,7 +2853,7 @@ PartySpecies:: ; dcd8
 	ds PARTY_LENGTH ; species of each Pokémon in party
 PartyEnd:: ; dcde
 	ds 1 ; legacy scripts don't check PartyCount
-		
+
 PartyMons::
 PartyMon1:: party_struct PartyMon1 ; dcdf
 PartyMon2:: party_struct PartyMon2 ; dd0f
@@ -2882,9 +2867,7 @@ PartyMonOT:: ds NAME_LENGTH * PARTY_LENGTH ; ddff
 PartyMonNicknames:: ds PKMN_NAME_LENGTH * PARTY_LENGTH ; de41
 PartyMonNicknamesEnd::
 
-
 	ds 22
-
 
 PokedexCaught:: ; de99
 	flag_array NUM_POKEMON
@@ -2900,7 +2883,6 @@ UnlockedUnowns:: ; def3
 	ds 1
 
 wFirstUnownSeen:: ds 1
-
 
 wDaycareMan:: ; def5
 ; bit 7: active
@@ -3004,7 +2986,6 @@ w2_d188:: ds 1
 	ds 8
 wPokeAnimStructEnd::
 
-
 SECTION "Battle Tower", WRAMX, BANK [3]
 
 w3_d000:: ds 1 ; d000
@@ -3059,7 +3040,6 @@ w3_dffc:: ds 4
 SECTION "Aligned Tile Map", WRAMX, BANK [4]
 AlignedTileMap:: ds $400
 
-
 SECTION "GBC Video", WRAMX, BANK [5]
 
 ; 8 4-color palettes
@@ -3083,7 +3063,6 @@ ds 106
 LYOverridesBackup:: ; d200
 	ds SCREEN_HEIGHT_PX
 LYOverridesBackupEnd::
-
 
 SECTION "Battle Animations", WRAMX [$d300], BANK [5]
 

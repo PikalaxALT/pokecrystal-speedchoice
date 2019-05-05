@@ -192,7 +192,6 @@ MapSetupScript_Submenu: ; 1541a
 	db map_connection_blocks
 	db map_end
 
-
 ReadMapSetupScript: ; 1541d
 .loop
 	ld a, [hli]
@@ -285,7 +284,6 @@ MapSetupCommands: ; 15440
 	dba DontScrollText ; 2c
 	dba ReturnFromMapSetupScript ; 2d
 ; 154ca
-
 
 DontScrollText: ; 154ca
 	xor a

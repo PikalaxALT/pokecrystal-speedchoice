@@ -26,7 +26,6 @@ MapSetup_Sound_Off:: ; 3b4e
 	ret
 ; 3b6a
 
-
 UpdateSound:: ; 3b6a
 
 	push hl
@@ -53,7 +52,6 @@ UpdateSound:: ; 3b6a
 	ret
 ; 3b86
 
-
 _LoadMusicByte:: ; 3b86
 ; CurMusicByte = [a:de]
 GLOBAL LoadMusicByte
@@ -69,7 +67,6 @@ GLOBAL LoadMusicByte
 	ld [MBC3RomBank], a
 	ret
 ; 3b97
-
 
 PlayMusic:: ; 3b97
 ; Play music de.
@@ -106,7 +103,6 @@ PlayMusic:: ; 3b97
 	ret
 ; 3bbc
 
-
 PlayMusic2:: ; 3bbc
 ; Stop playing music, then play music de.
 
@@ -139,7 +135,6 @@ PlayMusic2:: ; 3bbc
 	ret
 
 ; 3be3
-
 
 PlayCryHeader:: ; 3be3
 ; Play cry header de.
@@ -185,14 +180,13 @@ endr
 	pop af
 	ld [hROMBank], a
 	ld [MBC3RomBank], a
-	
+
 	pop af
 	pop bc
 	pop de
 	pop hl
 	ret
 ; 3c23
-
 
 PlaySFX:: ; 3c23
 ; Play sound effect de.
@@ -235,19 +229,17 @@ PlaySFX:: ; 3c23
 	ret
 ; 3c4e
 
-
 WaitPlaySFX:: ; 3c4e
 	call WaitSFX
 	call PlaySFX
 	ret
 ; 3c55
 
-
 WaitSFX:: ; 3c55
 ; infinite loop until sfx is done playing
 
 	push hl
-	
+
 .wait
 	ld hl, Channel5Flags
 	bit 0, [hl]
@@ -261,7 +253,7 @@ WaitSFX:: ; 3c55
 	ld hl, Channel8Flags
 	bit 0, [hl]
 	jr nz, .dframe
-	
+
 	pop hl
 	ret
 .dframe
@@ -531,7 +523,6 @@ TerminateExpBarSound:: ; 3dfe
 	ld [rNR14], a
 	ret
 ; 3e10
-
 
 ChannelsOff:: ; 3e10
 ; Quickly turn off music channels

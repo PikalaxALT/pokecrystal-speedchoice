@@ -164,10 +164,9 @@ tradeanim_wait_180_if_ot_egg: macro
 	db tradeanim_wait_180_if_ot_egg_command ; 2f
 endm
 
-
 ; Mobile
 	enum_start 1
-	
+
 	enum mobiletradeanim_showgivemon_command
 mobiletradeanim_showgivemon: macro
 	db mobiletradeanim_showgivemon_command ; 01

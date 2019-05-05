@@ -84,7 +84,6 @@ GoldenrodVendingMachine:
 	db "LEMONADE     ¥350@"
 	db "CANCEL@"
 
-
 LassScript_0x564bf:
 	jumptextfaceplayer UnknownText_0x5654b
 

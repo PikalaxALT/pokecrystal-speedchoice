@@ -11,7 +11,6 @@ MapRoute28Signpost0Script:
 
 Route28HiddenRareCandy:
 	dwb EVENT_ROUTE_28_HIDDEN_RARE_CANDY, RARE_CANDY
-	
 
 UnknownText_0x1a5413:
 	text "ROUTE 28"

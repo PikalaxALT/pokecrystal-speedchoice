@@ -13,12 +13,10 @@ SelectMenu:: ; 13327
 	jp CloseText
 ; 13340
 
-
 ItemMayBeRegisteredText: ; 13340
 	text_jump UnknownText_0x1c1cf3
 	db "@"
 ; 13345
-
 
 CheckRegisteredItem: ; 13345
 
@@ -89,7 +87,6 @@ endr
 	ret
 ; 133a6
 
-
 .CheckRegisteredNo ; 133a6
 	ld a, [WhichRegisteredItem]
 	and REGISTERED_NUMBER
@@ -105,7 +102,6 @@ endr
 	ret
 ; 133b6
 
-
 .IsSameItem ; 133b6
 	ld a, [RegisteredItem]
 	cp [hl]
@@ -118,7 +114,6 @@ endr
 	scf
 	ret
 ; 133c3
-
 
 UseRegisteredItem: ; 133c3
 

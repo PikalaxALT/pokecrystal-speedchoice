@@ -27,7 +27,6 @@ ResetFlashIfOutOfCave:: ; 2e5d
 	ret
 ; 2e6f
 
-
 EventFlagAction:: ; 0x2e6f
 	ld hl, EventFlags
 	call FlagAction
@@ -100,7 +99,6 @@ FlagAction:: ; 0x2e76
 	ld [hl], a
 	ret
 ; 0x2ead
-
 
 CheckReceivedDex:: ; 2ead
 	ld de, ENGINE_POKEDEX

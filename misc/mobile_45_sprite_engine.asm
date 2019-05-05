@@ -322,7 +322,6 @@ Unknown_116005: ; 116005
 GFX_11601a:: ; 11601a
 INCBIN "gfx/unknown/11601a.2bpp"
 
-
 Function11615a: ; 11615a
 	xor a
 	ld [wc30d], a

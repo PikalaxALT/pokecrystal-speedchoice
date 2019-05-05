@@ -40,7 +40,6 @@ Marts: ; 160a9
 MartsEnd
 ; 160ed
 
-
 Mart0: ; 160ed
 	db 4 ; # items
 	db POTION
@@ -448,7 +447,7 @@ MartCherrygroveBetter: ; 160f3
 	db AWAKENING
 	db ICE_HEAL
 	db $ff
-	
+
 MartVioletBetter: ; 160fa
 	db 11 ; # items
 	db POKE_BALL

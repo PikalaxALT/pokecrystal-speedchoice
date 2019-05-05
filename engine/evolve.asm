@@ -88,7 +88,6 @@ endr
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 
-
 ; EVOLVE_STAT
 	ld a, [TempMonLevel]
 	cp [hl]
@@ -117,7 +116,6 @@ endr
 	inc hl
 	jr .proceed
 
-
 .happiness
 	ld a, [TempMonHappiness]
 	cp 220
@@ -144,7 +142,6 @@ endr
 	jp z, .dont_evolve_3
 	jr .proceed
 
-
 .trade
 	ld a, [wLinkMode]
 	and a
@@ -170,7 +167,6 @@ endr
 	ld [TempMonItem], a
 	jr .proceed
 
-
 .item
 	ld a, [hli]
 	ld b, a
@@ -185,7 +181,6 @@ endr
 	and a
 	jp nz, .dont_evolve_3
 	jr .proceed
-
 
 .level
 	ld a, [hli]
@@ -429,7 +424,6 @@ Text_WhatEvolving: ; 0x42482
 	db "@"
 ; 0x42487
 
-
 LearnLevelMoves: ; 42487
 	ld a, [wd265]
 	ld [CurPartySpecies], a
@@ -495,7 +489,6 @@ endr
 	ld [wd265], a
 	ret
 ; 424e1
-
 
 FillMoves: ; 424e1
 ; Fill in moves at de for CurPartySpecies at CurPartyLevel
@@ -618,7 +611,6 @@ ShiftMoves: ; 4256e
 	jr nz, .loop
 	ret
 ; 42577
-
 
 EvoFlagAction: ; 42577
 	push de

@@ -8,11 +8,9 @@ Underground_MapScriptHeader:
 
 UndergroundHiddenFullRestore:
 	dwb EVENT_UNDERGROUND_HIDDEN_FULL_RESTORE, FULL_RESTORE
-	
 
 UndergroundHiddenXSpecial:
 	dwb EVENT_UNDERGROUND_HIDDEN_X_SPECIAL, X_SPECIAL
-	
 
 Underground_MapEventHeader:
 	; filler

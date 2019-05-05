@@ -418,11 +418,9 @@ IlexForestEther:
 
 IlexForestHiddenEther:
 	dwb EVENT_ILEX_FOREST_HIDDEN_ETHER, ETHER
-	
 
 IlexForestHiddenSuperPotion:
 	dwb EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION, SUPER_POTION
-	
 
 IlexForestHiddenFullHeal:
 	dwb EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL, FULL_HEAL
@@ -471,6 +469,7 @@ MapIlexForestSignpost4Script:
 	pause 20
 	clearflag ENGINE_HAVE_EXAMINED_GS_BALL
 	special Special_CelebiShrineEvent
+Randomizer_Celebi::
 	loadwildmon CELEBI, 30
 	startbattle
 	reloadmapafterbattle

@@ -3,7 +3,7 @@ sramstatmethod: MACRO
     ld hl, \1_
     jp SRAMStatsStart
     ENDM
-    
+
     sramstatmethod SRAMStatsFrameCount
 
 SRAMStatsFrameCount_::
@@ -22,21 +22,21 @@ SRAMStatsFrameCount_::
     jp SRAMStatsEnd
 
     sramstatmethod SRAMStatsIncrement2Byte
-    
+
 SRAMStatsIncrement2Byte_::
     ld h, d
     ld l, e
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsIncrement4Byte
-    
+
 SRAMStatsIncrement4Byte_::
     ld h, d
     ld l, e
     call FourByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsTotalDamageTaken
 
 SRAMStatsTotalDamageTaken_::
@@ -51,7 +51,7 @@ SRAMStatsTotalDamageTaken_::
     jp nc, SRAMStatsEnd
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsActualDamageTaken
 
 SRAMStatsActualDamageTaken_::
@@ -81,7 +81,7 @@ SRAMStatsActualDamageTaken_::
     ld hl, sStatsActualDamageTaken+2
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsTotalDamageDealt
 
 SRAMStatsTotalDamageDealt_::
@@ -96,7 +96,7 @@ SRAMStatsTotalDamageDealt_::
     jp nc, SRAMStatsEnd
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsActualDamageDealt
 
 SRAMStatsActualDamageDealt_::
@@ -126,7 +126,7 @@ SRAMStatsActualDamageDealt_::
     ld hl, sStatsActualDamageDealt+2
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsStepCount
 
 SRAMStatsStepCount_::
@@ -145,9 +145,9 @@ SRAMStatsStepCount_::
 .increment
     call FourByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsBlackoutMoneyLoss
-    
+
 SRAMStatsBlackoutMoneyLoss_::
 ; add Buffer1-Buffer3 (big endian) to little endian money loss
     ld hl, sStatsMoneyLost
@@ -163,9 +163,9 @@ SRAMStatsBlackoutMoneyLoss_::
     jp nc, SRAMStatsEnd
     inc [hl]
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsAddMoneyGain
-    
+
 SRAMStatsAddMoneyGain_::
 ; add [de] through [de-2] to little endian money gain
     ld hl, sStatsMoneyMade
@@ -183,9 +183,9 @@ SRAMStatsAddMoneyGain_::
     jp nc, SRAMStatsEnd
     inc [hl]
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsAddMoneySpent
-    
+
 SRAMStatsAddMoneySpent_::
 ; add [de] through [de-2] to little endian money spent
     ld hl, sStatsMoneySpent
@@ -203,9 +203,9 @@ SRAMStatsAddMoneySpent_::
     jp nc, SRAMStatsEnd
     inc [hl]
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsIncreaseItemsBought
-    
+
 SRAMStatsIncreaseItemsBought_::
 ; add [wItemQuantityChangeBuffer] to items bought
     ld hl, sStatsItemsBought
@@ -215,9 +215,9 @@ SRAMStatsIncreaseItemsBought_::
     jp nc, SRAMStatsEnd
     inc [hl]
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsIncreaseItemsSold
-    
+
 SRAMStatsIncreaseItemsSold_::
 ; add [wItemQuantityChangeBuffer] to items sold
     ld hl, sStatsItemsSold
@@ -227,9 +227,9 @@ SRAMStatsIncreaseItemsSold_::
     jp nc, SRAMStatsEnd
     inc [hl]
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsRecordCriticalHit
-    
+
 SRAMStatsRecordCriticalHit_::
     ld a, [CriticalHit]
 	and a
@@ -247,9 +247,9 @@ SRAMStatsRecordCriticalHit_::
     add hl, bc
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsRecordMoveHitOrMiss
-    
+
 SRAMStatsRecordMoveHitOrMiss_::
     ld a, [AttackMissed]
     and a
@@ -267,9 +267,9 @@ SRAMStatsRecordMoveHitOrMiss_::
     add hl, bc
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsRecordMoveEffectiveness
-    
+
 SRAMStatsRecordMoveEffectiveness_::
     ld a, [TypeModifier]
 	and $7f
@@ -290,9 +290,9 @@ SRAMStatsRecordMoveEffectiveness_::
     add hl, bc
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsRecordNormalEXPGain
-    
+
 SRAMStatsRecordNormalEXPGain_::
 ; exp at StringBuffer2, 2 bytes
     ld hl, sStatsExperienceGained
@@ -305,9 +305,9 @@ SRAMStatsRecordNormalEXPGain_::
     jp nc, SRAMStatsEnd
     call TwoByteIncrement
     jp SRAMStatsEnd
-    
+
     sramstatmethod SRAMStatsRecordBWEXPGain
-    
+
 SRAMStatsRecordBWEXPGain_::
 ; exp at BWXP_SCRATCH5B_1, 3 bytes
     ld hl, sStatsExperienceGained
@@ -324,8 +324,6 @@ SRAMStatsRecordBWEXPGain_::
     inc [hl]
     jp SRAMStatsEnd
 
-    
-    
 SRAMStatsStart::
 ; takes return address in hl
 ; check enable
@@ -344,14 +342,14 @@ SRAMStatsStart::
     ld [MBC3SRamBank], a
 ; done, move to actual code
     jp hl
-    
+
 SRAMStatsEnd::
 ; restore old sram bank
     pop af
     ld [hSRAMBank], a
     ld [MBC3SRamBank], a
     ret
-    
+
 FourByteIncrement::
 ; address in hl
     inc [hl]

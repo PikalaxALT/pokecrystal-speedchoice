@@ -49,7 +49,6 @@ GetPlayerBackpicCoords: ; fbd9d (3e:7d9d)
 	lb bc, 6, 6
 	ret
 
-
 DoWeatherModifiers: ; fbda4
 
 	ld de, .WeatherTypeModifiers
@@ -76,7 +75,6 @@ rept 2
 	inc de
 endr
 	jr .CheckWeatherType
-
 
 .done_weather_types
 	ld de, .WeatherMoveModifiers
@@ -158,7 +156,6 @@ endr
 	db WEATHER_RAIN, EFFECT_SOLARBEAM, 05
 	db $ff
 ; fbe24
-
 
 DoBadgeTypeBoosts: ; fbe24
 	ld a, [wLinkMode]

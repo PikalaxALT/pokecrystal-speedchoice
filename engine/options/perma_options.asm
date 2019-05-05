@@ -183,12 +183,12 @@ Options_Rocketless:
 	call PlaceString
 	and a
 	ret
-	
+
 .Off
 	db "NORMAL@"
 .On
 	db "PURGE @"
-	
+
 Options_Spinners: ; e44fa
 	ld hl, wPermanentOptions
 	bit D_LEFT_F, a
@@ -214,7 +214,7 @@ Options_Spinners: ; e44fa
 	and %11111001
 	or b
 	ld [hl], a
-	
+
 .UpdateDisplay: ; e4512
 	call .GetSpinnerVal
 	ld c, a
@@ -230,19 +230,19 @@ endr
 	call PlaceString
 	and a
 	ret
-	
+
 .GetSpinnerVal:
 	ld a, [hl]
 	and %110
 	srl a
 	ret
-	
+
 .Strings:
 	dw .Normal
 	dw .Purge
 	dw .Hell
 	dw .Why
-	
+
 .Normal
 	db "NORMAL@"
 .Purge
@@ -269,12 +269,12 @@ Options_TrainerVision:
 	call PlaceString
 	and a
 	ret
-	
+
 .Off
 	db "NORMAL@"
 .On
 	db "MAX   @"
-	
+
 Options_NerfHMs:
 	ld hl, wPermanentOptions
 	ld a, [RandomizedMovesStatus]
@@ -329,4 +329,3 @@ Options_NerfHMs:
 	db "RANDOMIZED MOVES!@"
 .PoundUnchanged
 	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
-

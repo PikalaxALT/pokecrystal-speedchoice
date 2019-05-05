@@ -721,7 +721,6 @@ CheckSpinnerSettings::
 	jr nz, .done
 	ld a, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE
 	jr .changeBehavior
-	
 
 ClearObjectStructs:: ; 2471
 	ld hl, Object1Struct

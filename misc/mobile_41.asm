@@ -467,7 +467,6 @@ Function10616e: ; 10616e
 	ret
 ; 106187
 
-
 BackupMobileEventIndex: ; 106187
 	ld a, BANK(sMobileEventIndex)
 	call GetSRAMBank
@@ -480,7 +479,6 @@ BackupMobileEventIndex: ; 106187
 	call CloseSRAM
 	ret
 ; 10619d
-
 
 RestoreMobileEventIndex: ; 10619d (41:619d)
 	ld a, BANK(sMobileEventIndexBackup)
@@ -532,7 +530,6 @@ Function1061cd: ; unreferenced
 	call CopyBytes
 	ret
 ; 1061ef
-
 
 _MobilePrintNum:: ; 1061ef
 ; Supports signed 31-bit integers (up to 10 digits)
@@ -1081,7 +1078,6 @@ Function10650a: ; 10650a
 
 GFX_106514:
 INCBIN "gfx/unknown/106514.2bpp"
-
 
 LoadOverworldFont:: ; 106594
 	ld de, .bgfont

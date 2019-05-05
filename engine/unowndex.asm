@@ -19,7 +19,6 @@ UpdateUnownDex: ; fba18
 	ret
 ; fba2e
 
-
 PrintUnownWord: ; fba2e (3e:7a2e)
 	hlcoord 4, 15
 	ld bc, 12
@@ -88,7 +87,6 @@ x = x + 1
 	endr
 	db -1
 endm
-
 
 UnownWord1:	 unownword "ANGRY"
 UnownWord2:	 unownword "BEAR"

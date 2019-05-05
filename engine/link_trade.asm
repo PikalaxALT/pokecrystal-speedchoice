@@ -136,7 +136,6 @@ _LoadTradeScreenBorder: ; 16d696
 	ret
 ; 16d69a
 
-
 LinkComms_LoadPleaseWaitTextboxBorderGFX: ; 16d69a
 	ld de, LinkCommsBorderGFX + $30 tiles
 	ld hl, VTiles2 tile $76

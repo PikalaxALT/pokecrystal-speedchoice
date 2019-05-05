@@ -1,6 +1,6 @@
 BWXP_EXPAddition::
     callba SRAMStatsRecordBWEXPGain
-    
+
 ; copy back yield to multiplier fields
     ld a, [BWXP_SCRATCH5B_1 + 2]
     ld [hProduct + 3], a
@@ -8,10 +8,10 @@ BWXP_EXPAddition::
     ld [hProduct + 2], a
     ld a, [BWXP_SCRATCH5B_1]
     ld [hProduct + 1], a
-    
+
 ; functions from original code, call them as is
     call AnimateExpBar
-	
+
     push bc
     call LoadTileMapToTempTileMap
     pop bc
@@ -23,12 +23,12 @@ BWXP_EXPAddition::
     ld a, [hProduct + 3]
     add d
     ld [hld], a
-    
+
     ld d, [hl]
     ld a, [hProduct + 2]
     adc d
     ld [hld], a
-    
+
     ld d, [hl]
     ld a, [hProduct + 1]
     adc d
@@ -40,4 +40,3 @@ BWXP_EXPAddition::
     ld [hli], a
     ld [hl], a
 	ret
-

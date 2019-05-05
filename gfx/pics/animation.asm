@@ -1,6 +1,5 @@
 ; Pic animation arrangement.
 
-
 AnimateMon_Slow_Normal: ; d0000
 	hlcoord 12, 0
 	ld a, [wBattleMode]
@@ -53,7 +52,6 @@ AnimateMon_Unused: ; d003a
 	ret
 ; d0042
 
-
 POKEANIM: MACRO
 	rept _NARG
 
@@ -68,7 +66,6 @@ endc
 
 	db (PokeAnim_Finish_ - PokeAnim_SetupCommands) / 2
 ENDM
-
 
 PokeAnims: ; d0042
 	dw .Slow
@@ -90,7 +87,6 @@ PokeAnims: ; d0042
 .Unused: POKEANIM CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
 .Egg1:   POKEANIM Setup, Play
 .Egg2:   POKEANIM Extra, Play
-
 
 AnimateFrontpic: ; d008e
 	call AnimateMon_CheckIfPokemon
@@ -765,7 +761,6 @@ Unknown_d0448:
 	; db 29, 30, 31, 32, 33, 34
 	; db 36, 37, 38, 39, 40, 41
 	; db 43, 44, 45, 46, 47, 48
-
 
 Functiond046c: ; d046c
 	ld hl, wPokeAnimCoord

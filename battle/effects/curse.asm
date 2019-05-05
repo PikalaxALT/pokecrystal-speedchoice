@@ -21,7 +21,6 @@ BattleCommand_Curse: ; 37588
 	cp GHOST
 	jr z, .ghost
 
-
 ; If no stats can be increased, don't.
 
 ; Attack
@@ -54,7 +53,6 @@ BattleCommand_Curse: ; 37588
 	call BattleCommand_DefenseUp
 	jp BattleCommand_StatUpMessage
 
-
 .ghost
 
 ; Cut HP in half and put a curse on the opponent.
@@ -83,7 +81,6 @@ BattleCommand_Curse: ; 37588
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
-
 
 .cantraise
 

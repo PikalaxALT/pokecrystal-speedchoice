@@ -27,7 +27,6 @@ MaxMoney: ; 15ff7
 	dt 999999
 ; 15ffa
 
-
 TakeMoney:: ; 15ffa
 ; log money spent
 ; easier to log it here, compared to adds which add at the source
@@ -205,7 +204,6 @@ GiveCoins:: ; 1606f
 .maxcoins: ; 1608d
 	bigdw 9999
 ; 1608f
-
 
 TakeCoins:: ; 1608f
 	ld a, 2

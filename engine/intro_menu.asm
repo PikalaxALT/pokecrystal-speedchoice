@@ -198,7 +198,7 @@ ENDC
 	ld [Money + 1], a
 	ld a, START_MONEY % $100
 	ld [Money + 2], a
-    
+
     ld a, DONE_BUTTON
     ld [CurItem], a
     ld a, 1
@@ -559,7 +559,6 @@ Continue_LoadMenuHeader: ; 5ebf
 	db "TIME@"
 ; 5f1c
 
-
 Continue_DisplayBadgesDexPlayerName: ; 5f1c
 	call MenuBoxCoord2Tile
 	push hl
@@ -641,7 +640,6 @@ Continue_DisplayGameTime: ; 5f84
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	jp PrintNum
 ; 5f99
-
 
 OakSpeech: ; 0x5f99
 	callba InitClock
@@ -984,7 +982,6 @@ Intro_PlacePlayerSprite: ; 61cd
 	db 10 * 8 + 4, 10 * 8, 3
 ; 620b
 
-
 CrystalIntroSequence: ; 620b
 	callab Copyright_GFPresents
 	jr c, StartTitleScreen
@@ -1047,7 +1044,6 @@ StartTitleScreen: ; 6219
 	dw ResetClock
 ; 6274
 
-
 .TitleScreen: ; 6274
 	callba _TitleScreen
 	ret
@@ -1105,7 +1101,6 @@ TitleScreenScene: ; 62a3
 	ret
 ; 62bc
 
-
 TitleScreenEntrance: ; 62bc
 
 ; Animate the logo:
@@ -1154,7 +1149,6 @@ TitleScreenEntrance: ; 62bc
 	ld [hWY], a
 	ret
 ; 62f6
-
 
 TitleScreenTimer: ; 62f6
 

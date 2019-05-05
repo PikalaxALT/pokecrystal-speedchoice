@@ -12,7 +12,6 @@ DelayFrame:: ; 45a
 	ret
 ; 468
 
-
 DelayFrames:: ; 468
 ; Wait c frames
 	call DelayFrame

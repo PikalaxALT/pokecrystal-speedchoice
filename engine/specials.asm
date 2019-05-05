@@ -497,7 +497,6 @@ Special_ActivateFishingSwarm: ; c3fc
 	ret
 ; c403
 
-
 StoreSwarmMapIndices:: ; c403
 	ld a, c
 	and a
@@ -516,7 +515,6 @@ StoreSwarmMapIndices:: ; c403
 	ld [wYanmaMapNumber], a
 	ret
 ; c419
-
 
 SpecialCheckPokerus: ; c419
 ; Check if a monster in your party has Pokerus
@@ -587,12 +585,10 @@ SpecialSnorlaxAwake: ; 0xc43d
 	db 36,  9 ; right
 	db -1
 
-
 PlayCurMonCry: ; c472
 	ld a, [CurPartySpecies]
 	jp PlayCry
 ; c478
-
 
 SpecialGameboyCheck: ; c478
 	ld a, [hCGB]
@@ -614,7 +610,6 @@ SpecialGameboyCheck: ; c478
 .done
 	ld [ScriptVar], a
 	ret
-
 
 Special_FadeOutMusic: ; c48f
 	ld a, MUSIC_NONE % $100

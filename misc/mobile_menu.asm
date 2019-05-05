@@ -100,7 +100,6 @@ Function49f16: ; 49f16
 	jp .joy_loop
 ; 49fcc
 
-
 MobileString1: ; 49fcc
 	db   "めいしフ,ルダー"
 	next "あいさつ"
@@ -109,7 +108,6 @@ MobileString1: ; 49fcc
 	next "もどる"
 	db   "@"
 ; 49fe9
-
 
 MobileStrings2:
 
@@ -637,7 +635,6 @@ Function4a492: ; 4a492 (12:6492)
 	call MG_Mobile_Layout00
 	ret
 
-
 MainMenu_MobileStudium: ; 4a496
 	ld a, [StartDay]
 	ld b, a
@@ -663,7 +660,6 @@ MainMenu_MobileStudium: ; 4a496
 	ld [StartSecond], a
 	ret
 ; 4a4c4
-
 
 Function4a4c4: ; 4a4c4 (12:64c4)
 	call ClearBGPalettes

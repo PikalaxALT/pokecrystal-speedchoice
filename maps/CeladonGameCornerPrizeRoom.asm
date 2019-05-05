@@ -102,7 +102,6 @@ CeladonPrizeRoom_NoCoinCase:
 	closetext
 	end
 
-
 CeladonPrizeRoom_TMMenuDataHeader:
 	db $40 ; flags
 	db 02, 00 ; start coords
@@ -117,7 +116,6 @@ CeladonPrizeRoom_TMMenuDataHeader:
 	db "TM29    3500@"
 	db "TM15    7500@"
 	db "CANCEL@"
-
 
 CeladonGameCornerPokemonVendor:
 	faceplayer
@@ -200,7 +198,6 @@ Randomizer_GameCornerLarvitarSpecies3::
 	takecoins 8888
 	jump CGCPVloop
 
-
 CGCPVMenuDataHeader:
 	db $40 ; flags
 	db 02, 00 ; start coords
@@ -218,7 +215,6 @@ Randomizer_GameCornerPorygonName::
 Randomizer_GameCornerLarvitarName::
 	db "LARVITAR   8888@"
 	db "CANCEL@"
-
 
 CeladonGameCornerPrizeRoomGentlemanText:
 	text "I wanted PORYGON,"

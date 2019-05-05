@@ -149,13 +149,11 @@ SwitchSometimes: ; 380c1
 	jp AI_TrySwitch
 ; 380ff
 
-
 CheckSubstatusCantRun: ; 380ff
 	ld a, [EnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	ret
 ; 38105
-
 
 AI_TryItem: ; 38105
 	; items are not allowed in the BattleTower
@@ -244,7 +242,6 @@ endr
 	scf
 	ret
 
-
 .IsHighestLevel: ; 38170
 	ld a, [OTPartyCount]
 	ld d, a
@@ -276,7 +273,6 @@ endr
 	scf
 	ret
 ; 38196
-
 
 AI_Items: ; 39196
 	dbw FULL_RESTORE, .FullRestore
@@ -543,7 +539,6 @@ AI_Items: ; 39196
 	and a
 	ret
 
-
 AIUpdateHUD: ; 38387
 	call UpdateEnemyMonInParty
 	callba UpdateEnemyHUD
@@ -562,7 +557,6 @@ AIUsedItemSound: ; 3839a
 	pop de
 	ret
 ; 383a3
-
 
 EnemyUsedFullHeal: ; 383a3 (e:43a3)
 	call AIUsedItemSound
@@ -667,7 +661,6 @@ EnemyPotionFinish: ; 38436
 	call AIUsedItemSound
 	predef AnimateHPBar
 	jp AIUpdateHUD
-
 
 AI_TrySwitch: ; 3844b
 ; Determine whether the AI can switch based on how many Pokemon are still alive.
@@ -839,7 +832,6 @@ EnemyUsedXSpecial: ; 38553
 	ld b, SP_ATTACK
 	ld a, X_SPECIAL
 
-
 ; Parameter
 ; a = ITEM_CONSTANT
 ; b = BATTLE_CONSTANT (ATTACK, DEFENSE, SPEED, SP_ATTACK, SP_DEFENSE, ACCURACY, EVASION)
@@ -851,7 +843,6 @@ EnemyUsedXItem:
 	callba CheckIfStatCanBeRaised
 	jp AIUpdateHUD
 ; 38568
-
 
 ; Parameter
 ; a = ITEM_CONSTANT

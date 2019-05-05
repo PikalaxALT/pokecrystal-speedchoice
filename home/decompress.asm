@@ -14,16 +14,13 @@ FarDecompress:: ; b40
 	ret
 ; b50
 
-
 Decompress:: ; b50
 ; Pokemon Crystal uses an lz variant for compression.
 ; This is mainly (but not necessarily) used for graphics.
 
 ; This function decompresses lz-compressed data from hl to de.
 
-
 LZ_END EQU $ff ; Compressed data is terminated with $ff.
-
 
 ; A typical control command consists of:
 
@@ -32,14 +29,12 @@ LZ_LEN EQU %00011111 ; length n   (bits 0-4)
 
 ; Additional parameters are read during command execution.
 
-
 ; Commands:
 
 LZ_LITERAL   EQU 0 << 5 ; Read literal data for n bytes.
 LZ_ITERATE   EQU 1 << 5 ; Write the same byte for n bytes.
 LZ_ALTERNATE EQU 2 << 5 ; Alternate two bytes for n bytes.
 LZ_ZERO      EQU 3 << 5 ; Write 0 for n bytes.
-
 
 ; Another class of commands reuses data from the decompressed output.
 LZ_RW        EQU 2 + 5 ; bit
@@ -52,7 +47,6 @@ LZ_RW        EQU 2 + 5 ; bit
 LZ_REPEAT    EQU 4 << 5 ; Repeat n bytes from the offset.
 LZ_FLIP      EQU 5 << 5 ; Repeat n bitflipped bytes.
 LZ_REVERSE   EQU 6 << 5 ; Repeat n bytes in reverse.
-
 
 ; If the value in the count needs to be larger than 5 bits,
 ; LZ_LONG can be used to expand the count to 10 bits.
@@ -68,9 +62,7 @@ LZ_LONG_HI   EQU %00000011
 ; x: the new control command
 ; y: the length
 
-
 ; For more information, refer to the code below and in extras/gfx.py.
-
 
 	; Save the output address
 	; for rewrite commands.
@@ -113,7 +105,6 @@ LZ_LONG_HI   EQU %00000011
 	inc bc
 	jr .command
 
-
 .short
 	push af
 
@@ -124,7 +115,6 @@ LZ_LONG_HI   EQU %00000011
 
 	; read at least 1 byte
 	inc c
-
 
 .command
 	; Increment loop counts.
@@ -144,7 +134,6 @@ LZ_LONG_HI   EQU %00000011
 	cp LZ_ZERO
 	jr z, .Zero
 
-
 .Literal
 ; Read literal data for bc bytes.
 .lloop
@@ -158,7 +147,6 @@ LZ_LONG_HI   EQU %00000011
 	ld [de], a
 	inc de
 	jr .lloop
-
 
 .Iter
 ; Write the same byte for bc bytes.
@@ -174,7 +162,6 @@ LZ_LONG_HI   EQU %00000011
 	ld [de], a
 	inc de
 	jr .iloop
-
 
 .Alt
 ; Alternate two bytes for bc bytes.
@@ -205,7 +192,6 @@ LZ_LONG_HI   EQU %00000011
 	inc hl
 	jr .Main
 
-
 .Zero
 ; Write 0 for bc bytes.
 	xor a
@@ -220,7 +206,6 @@ LZ_LONG_HI   EQU %00000011
 	ld [de], a
 	inc de
 	jr .zloop
-
 
 .rewrite
 ; Repeat decompressed data from output.
@@ -275,7 +260,6 @@ LZ_LONG_HI   EQU %00000011
 ; More practically, LZ_LONG is not recursive.
 ; For now, it defaults to LZ_REPEAT.
 
-
 .Repeat
 ; Copy decompressed data for bc bytes.
 	dec c
@@ -288,7 +272,6 @@ LZ_LONG_HI   EQU %00000011
 	ld [de], a
 	inc de
 	jr .Repeat
-
 
 .Flip
 ; Copy bitflipped decompressed data for bc bytes.
@@ -315,7 +298,6 @@ LZ_LONG_HI   EQU %00000011
 	inc de
 	jr .Flip
 
-
 .Reverse
 ; Copy reversed decompressed data for bc bytes.
 	dec c
@@ -329,7 +311,6 @@ LZ_LONG_HI   EQU %00000011
 	ld [de], a
 	inc de
 	jr .Reverse
-
 
 .donerw
 	pop hl

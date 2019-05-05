@@ -13,7 +13,6 @@ PokefanMScript_0x74002:
 
 DiglettsCaveHiddenMaxRevive:
 	dwb EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE, MAX_REVIVE
-	
 
 UnknownText_0x74008:
 	text "A bunch of DIGLETT"

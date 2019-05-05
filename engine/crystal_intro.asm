@@ -209,7 +209,6 @@ PlaceGameFreakPresents_3: ; e46dd
 	ret
 ; e46ed
 
-
 GameFreakLogoJumper: ; e46ed (39:46ed)
 	ld hl, SPRITEANIMSTRUCT_0B
 	add hl, bc
@@ -2661,4 +2660,3 @@ IntroGrass3GFX: ; e7a1d
 INCBIN "gfx/intro/grass3.2bpp"
 IntroGrass4GFX: ; e7a5d
 INCBIN "gfx/intro/grass4.2bpp"
-

@@ -343,7 +343,7 @@ endr
 	farcall FullyEvolveMonInB
 	pop hl
 .notEvolvingMon
-	
+
 	ld a, b
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
@@ -380,7 +380,7 @@ endr
 	db 95,  $8 ;  5% chance
 	db 99,  $a ;  4% chance
 	db 100, $c ;  1% chance
-	
+
 .BetterGrassMonTable: ; 2a1cb
 	db 20,  $0 ; 20% chance
 	db 40,  $2 ; 20% chance
@@ -545,7 +545,6 @@ LookUpWildmonsForMapDE: ; 2a288
 	ret
 ; 2a2a0
 
-
 InitRoamMons: ; 2a2a0
 ; initialize wRoamMon structs
 
@@ -591,7 +590,6 @@ Randomizer_EnteiSpecies::
 
 	ret
 ; 2a2ce
-
 
 CheckEncounterRoamMon: ; 2a2ce
 	push hl
@@ -641,7 +639,6 @@ endr
 	ret
 ; 2a30d
 
-
 UpdateRoamMons: ; 2a30d
 	ld a, [wRoamMon1MapGroup]
 	cp GROUP_N_A
@@ -684,7 +681,6 @@ UpdateRoamMons: ; 2a30d
 .SkipSuicune
 	jp _BackUpMapIndices
 ; 2a355
-
 
 .Update: ; 2a355
 	ld hl, RoamMaps
@@ -1062,7 +1058,6 @@ endr
 	ld bc, PKMN_NAME_LENGTH
 	jp CopyBytes
 ; 2a5e9
-
 
 JohtoGrassWildMons:: ; 0x2a5e9
 INCLUDE "data/wild/johto_grass.asm"

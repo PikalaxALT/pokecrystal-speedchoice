@@ -8,7 +8,6 @@ HiddenPowerDamage: ; fbced
 	ld hl, EnemyMonDVs
 .got_dvs
 
-
 ; Power:
 
 ; Take the top bit from each stat
@@ -62,7 +61,6 @@ endr
 	inc a
 
 	ld d, a
-
 
 ; Type:
 

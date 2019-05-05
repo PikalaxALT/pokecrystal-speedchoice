@@ -15,7 +15,6 @@ endr
 	ret
 ; 0x1ca8a5
 
-
 GetLandmarkName:: ; 0x1ca8a5
 ; Copy the name of landmark e to StringBuffer1.
 	push hl
@@ -47,7 +46,6 @@ endr
 	pop hl
 	ret
 ; 0x1ca8c3
-
 
 Landmarks:: ; 0x1ca8c3
 
@@ -153,7 +151,6 @@ ENDM
 	landmark  28,  84, Route28Name
 	landmark 148, 132, FastShipName
 
-
 NewBarkTownName:     db "NEW BARK¯TOWN@"
 CherrygroveCityName: db "CHERRYGROVE¯CITY@"
 VioletCityName:      db "VIOLET CITY@"
@@ -256,7 +253,6 @@ TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"
 BattleTowerName:     db "BATTLE¯TOWER@"
 SpecialMapName:      db "SPECIAL@"
-
 
 RegionCheck: ; 0x1caea1
 ; Checks if the player is in Kanto or Johto.

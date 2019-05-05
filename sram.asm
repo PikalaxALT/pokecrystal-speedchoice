@@ -2,10 +2,8 @@ SRAM_Begin EQU $a000
 SRAM_End   EQU $c000
 GLOBAL SRAM_Begin, SRAM_End
 
-
 SECTION "Scratch", SRAM, BANK [0]
 sScratch::
-
 
 SECTION "SRAM Bank 0", SRAM [$a600], BANK [0]
 
@@ -96,7 +94,6 @@ sBackupGameDataEnd::
 sBackupChecksum:: ds 2
 s0_bf0f:: ds 1
 sStackTop:: ds 2
-
 
 SECTION "SRAM Bank 1", SRAM, BANK [1]
 
@@ -274,7 +271,6 @@ sStatsBallsThrown:: ds 2
 sStatsPokemonCaughtInBalls:: ds 2
 sStatsNumPokemaniacsFought:: dw
 sStatsEnd::
-
 
 SECTION "Boxes 1-7",  SRAM, BANK [2]
 	box sBox1

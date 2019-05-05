@@ -35,9 +35,7 @@ KrissHouse2F_MapScriptHeader:
 	special ToggleMaptileDecorations
 	return
 
-
 	db 0, 0, 0 ; filler
-
 
 Doll1:
 	describedecoration 1

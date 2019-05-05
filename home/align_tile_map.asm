@@ -16,7 +16,7 @@ AlignTileMap::
 ; do stack copy similar to AutoBGMapTransfer
 	ld bc, 32 - (20 - 1)
 	ld a, 18
-	
+
 TransferBgRowsHBL:
 	rept 20 / 2 - 1
 	pop de

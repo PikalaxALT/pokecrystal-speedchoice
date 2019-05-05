@@ -5,7 +5,6 @@ DisplayUsedMoveText: ; 105db0
 	jp WaitBGMap
 ; 105db9
 
-
 UsedMoveText: ; 105db9
 ; this is a stream of text and asm from 105db9 to 105ef6
 
@@ -44,7 +43,6 @@ UsedMoveText: ; 105db9
 .grammar
 	call GetMoveGrammar
 ; wd265 now contains MoveGrammar
-
 
 ; everything except 'instead' made redundant in localization
 
@@ -144,7 +142,6 @@ EndUsedMove5Text: ; 105e57
 	text_jump _EndUsedMove5Text
 	db "@"
 ; 105e5c
-
 
 GetMoveGrammar: ; 105e5c
 ; store move grammar type in wd265
@@ -282,7 +279,6 @@ MoveGrammar: ; 105e7a
 ; all other moves = 4
 	db $ff ; end
 ; 105ed0
-
 
 UpdateUsedMoves: ; 105ed0
 ; append move a to PlayerUsedMoves unless it has already been used

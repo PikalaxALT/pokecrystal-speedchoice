@@ -260,7 +260,7 @@ BWXP_SqrtHL::
     dec e
     add hl, de
     jr c, .loop
-    
+
     pop de
     ret
 
@@ -496,7 +496,7 @@ BWXP_BigDivision::
 
 .done
 	ret
-    
+
 ;*****
 ; 40-bit subtract value ending at [hl] from value ending at [de]
 ;*****
@@ -504,7 +504,7 @@ BWXP_FortyBitSubtract::
 	ld a, [de]
 	sub [hl]
 	ld [de], a
-    
+
     rept 4
 	dec de
 	dec hl
@@ -514,7 +514,7 @@ BWXP_FortyBitSubtract::
     endr
 
 	ret
-    
+
 ;*****
 ; set the appropriate answer bit when we do a division step
 ;*****
@@ -592,31 +592,31 @@ BWXP_FortyBitCompare::
 .returnFalse
 	and a
 	ret
-    
+
 BWXP_FortyBitLeftShift::
 ; take hl = last address in memory
 ; shift it and the four preceding bytes left
     sla [hl]
-    
+
     rept 4
     dec hl
     rl [hl]
     endr
-    
+
     ret
-    
+
 BWXP_FortyBitRightShift::
 ; take hl = first address in memory
 ; shift it and the four following bytes right
     srl [hl]
-    
+
     rept 4
     inc hl
     rr [hl]
     endr
-    
+
     ret
-    
+
 BWXP_CheckForEXPShare::
 ; find an alive exp share holder in the party if there is one
     ld a, [PartyCount]
@@ -632,7 +632,7 @@ BWXP_CheckForEXPShare::
     pop bc
     pop hl
     jr z, .nextentry
-    
+
     push hl
     push bc
     ld bc, MON_ITEM
@@ -640,7 +640,7 @@ BWXP_CheckForEXPShare::
     pop bc
     ld a, [hl]
     pop hl
-    
+
     cp EXP_SHARE
     jr nz, .nextentry
 ; return true

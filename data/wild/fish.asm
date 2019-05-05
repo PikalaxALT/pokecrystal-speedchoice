@@ -197,7 +197,6 @@ FishGroupRemoraid_Super: ; 92663
 	db 100 percent,     REMORAID,   40
 ; 9266f
 
-
 TimeFishGroups: ; 9266f
 	;  day              nite
 	db CORSOLA,    20,  STARYU,     20

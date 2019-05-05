@@ -48,7 +48,7 @@ Options_BetterEncSlots:
 	call PlaceString
 	and a
 	ret
-	
+
 Options_Gender:
 	ld hl, wPermanentOptions
 	and (1 << D_LEFT_F) | (1 << D_RIGHT_F)
@@ -66,7 +66,7 @@ Options_Gender:
 	call PlaceString
 	and a
 	ret
-	
+
 .Off
 	db "SHOW@"
 .On
@@ -107,7 +107,7 @@ Options_BetterMartsOption:
 	call PlaceString
 	and a
 	ret
-	
+
 Options_GoodEarlyWildsOption:
 	ld hl, wPermanentOptions2
 	and (1 << D_LEFT_F) | (1 << D_RIGHT_F)
@@ -125,7 +125,7 @@ Options_GoodEarlyWildsOption:
 	call PlaceString
 	and a
 	ret
-	
+
 Options_RaceGoalOption: ; e44fa
 	ld hl, wPermanentOptions2
 	bit D_LEFT_F, a
@@ -161,7 +161,7 @@ Options_RaceGoalOption: ; e44fa
 	and GOAL_MASK ^ $FF
 	or b
 	ld [hl], a
-	
+
 .UpdateDisplay: ; e4512
 	call .GetRaceGoalVal
 	ld c, a
@@ -177,27 +177,25 @@ endr
 	call PlaceString
 	and a
 	ret
-	
+
 .GetRaceGoalVal:
 	ld a, [hl]
 	and GOAL_MASK
 	srl a
 	srl a
 	ret
-	
+
 .Strings:
 	dw .Manual
 	dw .E4
 	dw .Red
-	
-	
+
 .Manual
 	db "MANUAL@"
 .E4
 	db "E4    @"
 .Red
 	db "RED   @"
-
 
 Options_KantoAccessOption:
 	ld hl, wPermanentOptions2
@@ -216,9 +214,8 @@ Options_KantoAccessOption:
 	call PlaceString
 	and a
 	ret
-	
+
 .Off
 	db "NORMAL@"
 .On
 	db "EARLY @"
-

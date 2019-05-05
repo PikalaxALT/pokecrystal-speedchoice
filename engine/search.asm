@@ -28,7 +28,6 @@ SpecialBeastsCheck: ; 0x4a6e8
 	ld [ScriptVar], a
 	ret
 
-
 SpecialMonCheck: ; 0x4a711
 ; Check if the player owns any monsters of the species in ScriptVar.
 ; Return the result in ScriptVar.
@@ -45,7 +44,6 @@ SpecialMonCheck: ; 0x4a711
 	ld a, 1
 	ld [ScriptVar], a
 	ret
-
 
 CheckOwnMonAnywhere: ; 0x4a721
 ; Check if the player owns any monsters of the species in ScriptVar.
@@ -177,7 +175,6 @@ endr
 	call CloseSRAM
 	and a
 	ret
-
 
 CheckOwnMon: ; 0x4a7ba
 ; Check if a Pokémon belongs to the player and is of a specific species.

@@ -17,7 +17,7 @@ ClerkScript_0x18e040:
 	pokemart MARTTYPE_STANDARD, MART_AZALEA
 	closetext
 	end
-	
+
 AzaleaBetterMartScript:
 	pokemart MARTTYPE_STANDARD, MART_AZALEA_BETTER
 	closetext

@@ -5,7 +5,6 @@ battleanimobj: MACRO
 	db \1, \2, \3, \4, \5, \6
 endm
 
-
 ; ANIM_OBJ_00
 	battleanimobj $01, $ff, BATTLEANIMFRAMESET_00, BATTLEANIMFUNC_00, $02, $01
 

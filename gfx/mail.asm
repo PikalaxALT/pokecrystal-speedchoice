@@ -1075,7 +1075,6 @@ INCBIN "gfx/mail/0b9e26.1bpp"
 PortraitMailBorderGFX: ; b9e4e
 INCBIN "gfx/mail/0b9e4e.1bpp"
 
-
 ItemIsMail: ; b9e76
 	ld a, d
 	ld hl, .items

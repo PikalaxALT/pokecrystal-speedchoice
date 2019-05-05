@@ -12,16 +12,13 @@ TILESETS_6                EQU $37
 TILESETS_7                EQU $77
 TILESETS_8                EQU $78
 
-
 ; data/egg_moves.o
 
 EGG_MOVES                 EQU $8
 
-
 ; data/evos_attacks.o
 
 EVOS_ATTACKS              EQU $10
-
 
 ; data/pokedex/entries.o
 
@@ -30,17 +27,14 @@ POKEDEX_ENTRIES_2         EQU $6E
 POKEDEX_ENTRIES_3         EQU $73
 POKEDEX_ENTRIES_4         EQU $74
 
-
 ; engine/events.o
 ; engine/scripting.o
 ; engine/events_2.o
 EVENTS                    EQU $25
 
-
 ; engine/credits.o
 
 CREDITS                   EQU $42
-
 
 ; gfx/pics.o
 
@@ -69,7 +63,6 @@ PICS_16                   EQU $57
 PICS_17                   EQU $58
 PICS_18                   EQU $59
 PICS_19                   EQU $5A
-
 
 ; maps.o
 
@@ -105,7 +98,6 @@ MAP_SCRIPTS_23            EQU $6A
 MAP_SCRIPTS_24            EQU $6B
 MAP_SCRIPTS_25            EQU $6C
 
-
 ; audio.o
 
 AUDIO                     EQU $3A
@@ -123,7 +115,6 @@ SOUND_EFFECTS             EQU $3C
 CRYSTAL_SOUND_EFFECTS     EQU $5E
 
 CRIES                     EQU $3C
-
 
 ; misc.o
 

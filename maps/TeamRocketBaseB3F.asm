@@ -181,7 +181,7 @@ ScientistMitchScript:
 BossDoor:
 	dw EVENT_OPENED_DOOR_TO_GIOVANNIS_OFFICE
 	dw .Script
-	
+
 .Script
 	opentext
 	checkevent EVENT_LEARNED_SLOWPOKETAIL

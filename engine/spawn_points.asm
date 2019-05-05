@@ -39,8 +39,6 @@ ENDM
 	spawn FAST_SHIP_CABINS_SW_SSW_NW,  6,  2
 	spawn N_A,                        -1, -1
 
-
-
 LoadSpawnPoint: ; 1531f
 	; loads the spawn point in wd001
 	push hl
@@ -68,7 +66,6 @@ endr
 	pop hl
 	ret
 ; 15344
-
 
 IsSpawnPoint: ; 15344
 ; Checks if the map loaded in de is a spawn point.  Returns carry if it's a spawn point.

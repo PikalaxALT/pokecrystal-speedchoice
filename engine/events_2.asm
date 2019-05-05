@@ -1,6 +1,5 @@
 ; More overworld event handling.
 
-
 WarpToSpawnPoint:: ; 97c28
 	ld hl, StatusFlags2
 	res 1, [hl] ; safari zone?
@@ -99,7 +98,6 @@ CheckFacingTileEvent:: ; 97c5f
 	scf
 	ret
 ; 97cc0
-
 
 RandomEncounter:: ; 97cc0
 ; Random encounter

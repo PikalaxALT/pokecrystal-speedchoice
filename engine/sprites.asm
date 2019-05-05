@@ -218,7 +218,6 @@ DeinitializeSprite: ; 8d036
 	ret
 ; 8d03d
 
-
 DeinitializeAllSprites: ; 8d03d (23:503d)
 ; Clear the index field of every struct in the wSpriteAnimationStructs array.
 	ld hl, wSpriteAnimationStructs
@@ -231,7 +230,6 @@ DeinitializeAllSprites: ; 8d03d (23:503d)
 	dec e
 	jr nz, .loop
 	ret
-
 
 UpdateAnimFrame: ; 8d04c
 	call InitSpriteAnimBuffer ; init WRAM
@@ -423,7 +421,6 @@ _ReinitSpriteAnimFrame:: ; 8d120
 	ld [hl], -1
 	ret
 ; 8d132
-
 
 GetSpriteAnimFrame: ; 8d132
 .loop
@@ -651,7 +648,6 @@ Sprites_Sine: ; 8e72c
 
 .sinewave: ; 8e75d
 	sine_wave $100
-
 
 AnimateEndOfExpBar: ; 8e79d
 	ld a, [hSGB]

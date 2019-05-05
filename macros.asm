@@ -21,9 +21,7 @@ RGB: MACRO
 	dw ((\3) << 10) + ((\2) << 5) + (\1)
 	ENDM
 
-
 percent EQUS "* $ff / 100"
-
 
 dwb: MACRO
 	dw \1
@@ -154,8 +152,6 @@ endanim: MACRO
 	db $ff
 	ENDM
 
-
-
 sine_wave: MACRO
 ; \1: amplitude
 
@@ -166,7 +162,6 @@ x = 0
 x = x + (\1) * $40000
 	endr
 ENDM
-
 
 bcd: MACRO
 	rept _NARG

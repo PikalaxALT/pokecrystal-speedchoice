@@ -82,7 +82,6 @@ UnknownScript_0x7709a:
 
 MountMoonSquareHiddenMoonStone:
 	dwb EVENT_MOUNT_MOON_SQUARE_HIDDEN_MOON_STONE, MOON_STONE
-	
 
 MapMountMoonSquareSignpost1Script:
 	jumptext UnknownText_0x7713b

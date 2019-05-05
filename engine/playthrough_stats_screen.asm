@@ -104,7 +104,7 @@ PlaythroughStatsScreen::
 	jr nz, .scrollDone
 	xor a
 	jr .scrollDone
-	
+
 RenderStats::
 ; render stats themselves
 	ld hl, wPlayStatsConfigPtr
@@ -137,7 +137,7 @@ RenderStats::
 	pop hl
 	ld a, [hli]
 	ld [wStoredJumptableIndex], a
-	
+
 	push hl
 	cp STATTYPE_2BYTE
 	jr nz, .test2bcompare
@@ -215,7 +215,7 @@ RenderStats::
 	inc hl
 	inc hl
 	jr .next_loop_nopop
-	
+
 Print2ByteCompare:
 	ld bc, SCREEN_WIDTH - 3
 	add hl, bc
@@ -237,7 +237,7 @@ Print2ByteCompare:
 	ld de, Buffer1
 	call PrintNum
 	ret
-	
+
 Print4ByteCompare:
 	ld bc, SCREEN_WIDTH - 3
 	add hl, bc
@@ -259,7 +259,7 @@ Print4ByteCompare:
 	ld de, Buffer2
 	call PrintNum
 	ret
-	
+
 PrintTimer:
 ; frames/milliseconds part
 ; use 4/239 as a better approximation for gbc framerate than 1/60
@@ -391,8 +391,7 @@ endr
 	call PrintNum
 	ld [hl], ":"
 	ret
-	
-	
+
 Copy2ByteValueIntoPrintScratch:
 	xor a
 	ld [Buffer1], a
@@ -419,7 +418,7 @@ Copy4ByteValueIntoPrintScratch:
 	ld a, [hl]
 	ld [Buffer1], a
 	ret
-	
+
 Copy2ByteComparesIntoPrintScratch:
 	push hl
 	ld a, [hli]
@@ -440,7 +439,7 @@ Copy2ByteComparesIntoPrintScratch:
 	ld a, [hl]
 	ld [Buffer3], a
 	ret
-	
+
 Copy4ByteComparesIntoPrintScratch:
 	push hl
 	ld a, [hli]
@@ -469,9 +468,7 @@ Copy4ByteComparesIntoPrintScratch:
 	ld a, [hl]
 	ld [Buffer5], a
 	ret
-	
-	
-	
+
 RetrievePlaythroughStatsConfig::
 	ld a, [wOptionsMenuID]
 	ld hl, PlaythroughStatsScreens
@@ -479,7 +476,7 @@ RetrievePlaythroughStatsConfig::
 	call AddNTimes
 	ld de, wPlayStatsStringPtr
 	jp CopyBytes
-	
+
 stat_screen: MACRO
 	dw (\1) ; title string
 	dw (\2) ; pointer to config for entries on this page
@@ -493,7 +490,7 @@ if \2 >= STATTYPE_2BYTE_COMPARE
 	dw (\4) ; second sram address
 endc
 ENDM
-	
+
 PlaythroughStatsScreens::
 	stat_screen PSTimersTitleString, PSTimersConfig
 	stat_screen PSMovementTitleString, PSMovementConfig
@@ -504,7 +501,7 @@ PlaythroughStatsScreens::
 	stat_screen PSMoneyItemsTitleString, PSMoneyItemsConfig
 	stat_screen PSMiscTitleString, PSMiscConfig
 PlaythroughStatsScreensEnd::
-	
+
 PSTimersConfig::
 	stat_screen_entry PSTimersOverallString, STATTYPE_TIMER, sStatsFrameCount
 	stat_screen_entry PSTimersOverworldString, STATTYPE_TIMER, sStatsOWFrameCount 
@@ -512,7 +509,7 @@ PSTimersConfig::
 	stat_screen_entry PSTimersMenuString, STATTYPE_TIMER, sStatsMenuFrameCount
 	stat_screen_entry PSTimersIntroString, STATTYPE_TIMER, sStatsIntrosFrameCount
 	dw 0 ; end
-	
+
 PSMovementConfig::
 	stat_screen_entry PSMovementTotalStepsString, STATTYPE_4BYTE, sStatsStepCount
 	stat_screen_entry PSMovementStepsWalkedString, STATTYPE_4BYTE, sStatsStepCountWalk
@@ -520,7 +517,7 @@ PSMovementConfig::
 	stat_screen_entry PSMovementStepsSurfedString, STATTYPE_4BYTE, sStatsStepCountSurf
 	stat_screen_entry PSMovementBonksString, STATTYPE_2BYTE, sStatsBonks
 	dw 0 ; end
-	
+
 PSBattle1Config::
 	stat_screen_entry PSBattle1TotalBattlesString, STATTYPE_2BYTE, sStatsBattles
 	stat_screen_entry PSBattle1WildBattlesString, STATTYPE_2BYTE, sStatsWildBattles
@@ -528,7 +525,7 @@ PSBattle1Config::
 	stat_screen_entry PSBattle1BattlesFledFromString, STATTYPE_2BYTE, sStatsBattlesFled
 	stat_screen_entry PSBattle1FailedEscapesString, STATTYPE_2BYTE, sStatsFailedRuns
 	dw 0 ; end
-	
+
 PSBattle2Config::
 	stat_screen_entry PSBattle2EnemyPKMNFaintedString, STATTYPE_2BYTE, sStatsEnemyPokemonFainted
 	stat_screen_entry PSBattle2EXPGainedString, STATTYPE_4BYTE, sStatsExperienceGained
@@ -537,7 +534,7 @@ PSBattle2Config::
 	stat_screen_entry PSBattle2BallsThrownString, STATTYPE_2BYTE, sStatsBallsThrown
 	stat_screen_entry PSBattle2PokemonCaughtString, STATTYPE_2BYTE, sStatsPokemonCaughtInBalls
 	dw 0 ; end
-	
+
 PSBattle3Config::
 	stat_screen_entry PSBattle3MovesHitString, STATTYPE_2BYTE_COMPARE, sStatsOwnMovesHit, sStatsEnemyMovesHit
 	stat_screen_entry PSBattle3MovesMissedString, STATTYPE_2BYTE_COMPARE, sStatsOwnMovesMissed, sStatsEnemyMovesMissed
@@ -546,12 +543,12 @@ PSBattle3Config::
 	stat_screen_entry PSBattle3CriticalsDealtString, STATTYPE_2BYTE_COMPARE, sStatsCriticalsDealt, sStatsCriticalsTaken
 	stat_screen_entry PSBattle3OHKOsDealtString, STATTYPE_2BYTE_COMPARE, sStatsOHKOsDealt, sStatsOHKOsTaken
 	dw 0
-	
+
 PSBattle4Config::
 	stat_screen_entry PSBattle4TotalDmgDealtString, STATTYPE_4BYTE_COMPARE, sStatsTotalDamageDealt, sStatsActualDamageDealt
 	stat_screen_entry PSBattle4TotalDmgTakenString, STATTYPE_4BYTE_COMPARE, sStatsTotalDamageTaken, sStatsActualDamageTaken
 	dw 0
-	
+
 PSMoneyItemsConfig::
 	stat_screen_entry PSMIMoneyMadeString, STATTYPE_MONEY, sStatsMoneyMade
 	stat_screen_entry PSMIMoneySpentString, STATTYPE_MONEY, sStatsMoneySpent
@@ -560,17 +557,17 @@ PSMoneyItemsConfig::
 	stat_screen_entry PSMIItemsBoughtString, STATTYPE_2BYTE, sStatsItemsBought
 	stat_screen_entry PSMIItemsSoldString, STATTYPE_2BYTE, sStatsItemsSold
 	dw 0
-	
+
 PSMiscConfig::
 	stat_screen_entry PSMiscSavesString, STATTYPE_2BYTE, sStatsSaveCount
 	stat_screen_entry PSMiscReloadsString, STATTYPE_2BYTE, sStatsReloadCount
 	stat_screen_entry PSMiscClockResetsString, STATTYPE_2BYTE, sStatsClockResetCount
 	stat_screen_entry PSMiscPokemaniacsFoughtString, STATTYPE_2BYTE, sStatsNumPokemaniacsFought
 	dw 0
-	
+
 PlayerStatsString:
 	db "   PLAYER STATS@"
-	
+
 PSTimersTitleString:
 	db "      TIMERS@"
 PSTimersOverallString:
@@ -583,7 +580,7 @@ PSTimersMenuString:
 	db "TIME IN MENUS:@"
 PSTimersIntroString:
 	db "TIME IN INTROS:@"
-	
+
 PSMovementTitleString:
 	db "     MOVEMENT@"
 PSMovementTotalStepsString:
@@ -596,7 +593,7 @@ PSMovementStepsSurfedString:
 	db "STEPS SURFED:@"
 PSMovementBonksString:
 	db "BONKS:@"
-	
+
 PSBattle1TitleString:
 	db "     BATTLE 1@"
 PSBattle1TotalBattlesString:
@@ -609,7 +606,7 @@ PSBattle1BattlesFledFromString:
 	db "BATTLES FLED FROM:@"
 PSBattle1FailedEscapesString:
 	db "FAILED ESCAPES:@"
-	
+
 PSBattle2TitleString:
 	db "     BATTLE 2@"
 PSBattle2EnemyPKMNFaintedString:
@@ -624,7 +621,7 @@ PSBattle2BallsThrownString:
 	db "BALLS THROWN:@"
 PSBattle2PokemonCaughtString:
 	db "<PK><MN> CAPTURED:@"
-	
+
 PSBattle3TitleString:
 	db "     BATTLE 3@"
 
@@ -640,14 +637,14 @@ PSBattle3CriticalsDealtString:
 	db "CRITICAL HITS:@"
 PSBattle3OHKOsDealtString:
 	db "OHKOs:@"
-	
+
 PSBattle4TitleString:
 	db "     BATTLE 4@"
 PSBattle4TotalDmgDealtString:
 	db "DAMAGE DEALT:@"
 PSBattle4TotalDmgTakenString:
 	db "DAMAGE TAKEN:@"
-	
+
 PSMoneyItemsTitleString:
 	db "  MONEY & ITEMS@"
 PSMIMoneyMadeString:
@@ -662,8 +659,7 @@ PSMIItemsBoughtString:
 	db "ITEMS BOUGHT:@"
 PSMIItemsSoldString:
 	db "ITEMS SOLD:@"
-	
-	
+
 PSMiscTitleString:
 	db "      MISC.@"
 PSMiscSavesString:

@@ -1267,7 +1267,6 @@ String_48aa1: ; 48aa1
 	next "Tell Later@"
 ; 48ab5
 
-
 Function48ab5: ; 48ab5 (12:4ab5)
 	ld a, [hJoyPressed]
 	and A_BUTTON

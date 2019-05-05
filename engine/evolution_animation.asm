@@ -365,7 +365,6 @@ endr
 	ret
 ; 4e831
 
-
 .GFX:
 INCBIN "gfx/evo/bubble_large.2bpp"
 INCBIN "gfx/evo/bubble.2bpp"

@@ -152,7 +152,6 @@ StartMenu:: ; 125cd
 	ret
 ; 126d3
 
-
 .MenuDataHeader
 	db $40 ; tile backup
 	db 0, 10 ; start coords
@@ -223,10 +222,9 @@ StartMenu:: ; 125cd
 
 .QuitDesc     db   "Quit and"
               next "be judged.@"
-			  
+
 .EscapeDesc   db   "Escape from"
 			  next "trouble.@"
-
 
 .OpenMenu ; 127e5
 	ld a, [MenuSelection]
@@ -271,7 +269,6 @@ endr
 	ret
 ; 12819
 
-
 .GetMenuAccountTextPointer ; 12819
 	ld e, a
 	ld d, 0
@@ -284,7 +281,6 @@ rept 6
 endr
 	ret
 ; 12829
-
 
 .SetUpMenuItems ; 12829
 	xor a
@@ -350,7 +346,6 @@ endr
 	ld [MenuItemsList], a
 	ret
 ; 1288d
-
 
 .FillMenuList ; 1288d
 	xor a
@@ -451,14 +446,12 @@ StartMenu_Escape:
 	text_jump _DoYouWantToEscapeMenuText
 	db "@"
 
-
 StartMenu_Exit: ; 128ed
 ; Exit the menu.
 
 	ld a, 1
 	ret
 ; 128f0
-
 
 StartMenu_Quit: ; 128f0
 ; Retire from the bug catching contest.
@@ -481,7 +474,6 @@ StartMenu_Quit: ; 128f0
 	db "@"
 ; 1290b
 
-
 StartMenu_Save: ; 1290b
 ; Save the game.
 
@@ -495,7 +487,6 @@ StartMenu_Save: ; 1290b
 	ret
 ; 1291c
 
-
 StartMenu_Option: ; 1291c
 ; Game options.
 
@@ -504,7 +495,6 @@ StartMenu_Option: ; 1291c
 	ld a, 6
 	ret
 ; 12928
-
 
 StartMenu_Status: ; 12928
 ; Player status.
@@ -515,7 +505,6 @@ StartMenu_Status: ; 12928
 	ld a, 0
 	ret
 ; 12937
-
 
 StartMenu_Pokedex: ; 12937
 
@@ -532,7 +521,6 @@ StartMenu_Pokedex: ; 12937
 	ret
 ; 1294c
 
-
 StartMenu_Pokegear: ; 1294c
 
 	call FadeToMenu
@@ -541,7 +529,6 @@ StartMenu_Pokegear: ; 1294c
 	ld a, 0
 	ret
 ; 1295b
-
 
 StartMenu_Pack: ; 1295b
 
@@ -559,7 +546,6 @@ StartMenu_Pack: ; 1295b
 	ld a, 4
 	ret
 ; 12976
-
 
 StartMenu_Pokemon: ; 12976
 
@@ -715,7 +701,6 @@ CantUseItemText: ; 12a67
 	db "@"
 ; 12a6c
 
-
 PartyMonItemName: ; 12a6c
 	ld a, [CurItem]
 	ld [wd265], a
@@ -724,14 +709,12 @@ PartyMonItemName: ; 12a6c
 	ret
 ; 12a79
 
-
 CancelPokemonAction: ; 12a79
 	callba InitPartyMenuWithCancel
 	callba UnfreezeMonIcons
 	ld a, 1
 	ret
 ; 12a88
-
 
 PokemonActionSubmenu: ; 12a88
 	hlcoord 1, 15
@@ -777,7 +760,6 @@ PokemonActionSubmenu: ; 12a88
 	dbw MONMENU_MOVE,       ManagePokemonMoves ; move
 	dbw MONMENU_MAIL,       MonMailAction ; mail
 ; 12aec
-
 
 SwitchPartyMons: ; 12aec
 
@@ -831,7 +813,6 @@ SwitchPartyMons: ; 12aec
 	ret
 ; 12b60
 
-
 GiveTakePartyMonItem: ; 12b60
 
 ; Eggs can't hold items!
@@ -873,7 +854,6 @@ GiveTakePartyMonItem: ; 12b60
 	ret
 ; 12ba9
 
-
 .GiveItem: ; 12ba9
 
 	callba DepositSellInitPackBuffers
@@ -905,7 +885,6 @@ GiveTakePartyMonItem: ; 12b60
 .quit
 	ret
 ; 12bd9
-
 
 TryGiveItemToPartymon: ; 12bd9
 
@@ -971,7 +950,6 @@ TryGiveItemToPartymon: ; 12bd9
 	ret
 ; 12c4c
 
-
 GivePartyItem: ; 12c4c
 
 	call GetPartyItemLocation
@@ -985,7 +963,6 @@ GivePartyItem: ; 12c4c
 .done
 	ret
 ; 12c60
-
 
 TakePartyItem: ; 12c60
 
@@ -1022,7 +999,6 @@ TakePartyItem: ; 12c60
 	ret
 ; 12c9b
 
-
 GiveTakeItemMenuData: ; 12c9b
 	db %01010000
 	db 12, 12 ; start coords
@@ -1036,7 +1012,6 @@ GiveTakeItemMenuData: ; 12c9b
 	db "GIVE@"
 	db "TAKE@"
 ; 12caf
-
 
 TookAndMadeHoldText: ; 12caf
 	text_jump UnknownText_0x1c1b2c
@@ -1078,7 +1053,6 @@ CantBeHeldText: ; 12cd2
 	db "@"
 ; 12cd7
 
-
 GetPartyItemLocation: ; 12cd7
 	push af
 	ld a, MON_ITEM
@@ -1087,14 +1061,12 @@ GetPartyItemLocation: ; 12cd7
 	ret
 ; 12cdf
 
-
 ReceiveItemFromPokemon: ; 12cdf
 	ld a, $1
 	ld [wItemQuantityChangeBuffer], a
 	ld hl, NumItems
 	jp ReceiveItem
 ; 12cea
-
 
 GiveItemToPokemon: ; 12cea (4:6cea)
 	ld a, $1
@@ -1107,7 +1079,6 @@ StartMenuYesNo: ; 12cf5
 	call YesNoBox
 	jp ExitMenu
 ; 12cfe
-
 
 ComposeMailMessage: ; 12cfe (4:6cfe)
 	ld de, wTempMailMessage
@@ -1211,7 +1182,6 @@ MonMailAction: ; 12d45
 	ret
 ; 12dc9
 
-
 .MenuDataHeader: ; 0x12dc9
 	db $40 ; flags
 	db 10, 12 ; start coords
@@ -1227,7 +1197,6 @@ MonMailAction: ; 12d45
 	db "TAKE@"
 	db "QUIT@"
 ; 0x12de2
-
 
 .mailwilllosemessagetext: ; 0x12de2
 ; The MAIL will lose its message. OK?
@@ -1265,7 +1234,6 @@ MonMailAction: ; 12d45
 	db "@"
 ; 0x12e00
 
-
 OpenPartyStats: ; 12e00
 	call LoadStandardMenuDataHeader
 	call ClearSprites
@@ -1280,7 +1248,6 @@ OpenPartyStats: ; 12e00
 	ret
 ; 12e1b
 
-
 MonMenu_Cut: ; 12e1b
 	callba CutFunction
 	ld a, [wFieldMoveSucceeded]
@@ -1294,7 +1261,6 @@ MonMenu_Cut: ; 12e1b
 	ld a, $3
 	ret
 ; 12e30
-
 
 MonMenu_Fly: ; 12e30
 	callba FlyFunction

@@ -9,12 +9,11 @@ ResetGameTime:: ; 208a
 	ret
 ; 209e
 
-
 GameTimer:: ; 209e
 
     ld a, [hROMBank]
 	ld [hROMBankBackup], a
-    
+
     ld a, BANK(SRAMStatsFrameCount)
 	rst Bankswitch
 	call SRAMStatsFrameCount
@@ -36,11 +35,9 @@ GameTimer:: ; 209e
 	ret
 ; 20ad
 
-
 UpdateGameTimer:: ; 20ad
 ; Increment the game timer by one frame.
 ; The game timer is capped at 999:59:59.00.
-
 
 ; Don't update if game logic is paused.
 	ld a, [wc2cd]
@@ -57,7 +54,6 @@ UpdateGameTimer:: ; 20ad
 	bit 0, [hl]
 	ret nz
 
-
 ; +1 frame
 	ld hl, GameTimeFrames
 	ld a, [hl]
@@ -68,7 +64,6 @@ UpdateGameTimer:: ; 20ad
 
 	ld [hl], a
 	ret
-
 
 .second
 	xor a
@@ -85,7 +80,6 @@ UpdateGameTimer:: ; 20ad
 	ld [hl], a
 	ret
 
-
 .minute
 	xor a
 	ld [hl], a
@@ -101,7 +95,6 @@ UpdateGameTimer:: ; 20ad
 	ld [hl], a
 	ret
 
-
 .hour
 	xor a
 	ld [hl], a
@@ -112,7 +105,6 @@ UpdateGameTimer:: ; 20ad
 	ld a, [GameTimeHours + 1]
 	ld l, a
 	inc hl
-
 
 ; Cap the timer after 1000 hours.
 	ld a, h
@@ -130,7 +122,6 @@ UpdateGameTimer:: ; 20ad
 	ld [GameTimeMinutes], a
 	ld [GameTimeSeconds], a
 	ret
-
 
 .ok
 	ld a, h

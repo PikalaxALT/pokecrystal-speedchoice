@@ -150,7 +150,6 @@ Elevator_WhichFloorText: ; 0x1350d
 	db "@"
 ; 0x13512
 
-
 Elevator_GetCurrentFloorText: ; 13512
 	ld hl, Options
 	ld a, [hl]
@@ -173,7 +172,6 @@ Elevator_GetCurrentFloorText: ; 13512
 Elevator_CurrentFloorText: ; 13537
 	db "Now on:@"
 ; 1353f
-
 
 Elevator_GetCurrentFloorString: ; 1353f
 	push hl

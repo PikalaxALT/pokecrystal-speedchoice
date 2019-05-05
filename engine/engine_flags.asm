@@ -7,7 +7,6 @@ EngineFlagAction:: ; 80430
 ;
 ; Setting/resetting does not return a result.
 
-
 ; 16-bit flag ids are considered invalid, but it's nice
 ; to know that the infrastructure is there.
 
@@ -81,7 +80,6 @@ EngineFlagAction:: ; 80430
 	ld [de], a
 	ret
 ; 80462
-
 
 EngineFlags: ; 80462
 ; All locations are in WRAM bank 1.

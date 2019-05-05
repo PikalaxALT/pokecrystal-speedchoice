@@ -18,7 +18,6 @@ MapCeladonDeptStoreElevatorSignpost0Script:
 UnknownScript_0x713bd:
 	end
 
-
 Elevator_0x713be:
 	db 6 ; floors
 	elevfloor _1F,  4, CELADON_DEPT_STORE_1F
@@ -28,7 +27,6 @@ Elevator_0x713be:
 	elevfloor _5F,  3, CELADON_DEPT_STORE_5F
 	elevfloor _6F,  2, CELADON_DEPT_STORE_6F
 	db $ff ; end
-
 
 CeladonDeptStoreElevator_MapEventHeader:
 	; filler

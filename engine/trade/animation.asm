@@ -1478,7 +1478,6 @@ TradeAnim_WaitAnim2: ; 29886
 	ret
 ; 29893
 
-
 DebugTrade: ; 29893
 ; This function is unreferenced.
 ; It was meant for use in Japanese versions, so the
@@ -1514,7 +1513,6 @@ Unknown_298b5: ; 298b5
 	db VENUSAUR, "ゲーフり@@", $23, $01 ; GAME FREAK
 	db CHARIZARD, "クりーチャ@", $56, $04 ; Creatures Inc.
 ; 298c7
-
 
 TradeGameBoyTilemap: ; 298c7
 ; 6x8

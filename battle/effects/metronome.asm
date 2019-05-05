@@ -34,14 +34,12 @@ BattleCommand_Metronome: ; 37418
 	call CheckUserMove
 	jr z, .GetMove
 
-
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
 	ld [hl], b
 	call UpdateMoveData
 	jp ResetTurn
 ; 37454
-
 
 MetronomeExcepts: ; 37454
 	db NO_MOVE

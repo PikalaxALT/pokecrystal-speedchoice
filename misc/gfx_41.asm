@@ -232,7 +232,6 @@ CallInSafeGFXMode: ; 104177
 	jp [hl]
 ; 10419d
 
-
 Function10419d: ; 10419d (41:419d)
 	call Function10424e
 	ld a, $23
@@ -318,7 +317,6 @@ asm_104205:
 	ld b, $7b
 	jr asm_10420b
 
-
 Function104209:
 ; LY magic
 	ld b, $7f
@@ -372,7 +370,6 @@ asm_10420b:
 
 	ret
 ; 10424e
-
 
 Function10424e: ; 10424e (41:424e)
 	ld a, h
@@ -429,7 +426,6 @@ CutAndPasteMap: ; 104265 (41:4265)
 	ld [hMapObjectIndexBuffer], a
 	ret
 
-
 _Get2bpp:: ; 104284
 	; 2bpp when [rLCDC] & $80
 	; switch to WRAM bank 6
@@ -454,7 +450,7 @@ endr
 	ld l, e
 	ld de, wDecompressScratch
 	call FarCopyBytes
-	
+
 	pop hl
 	pop bc
 

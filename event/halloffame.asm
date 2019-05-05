@@ -151,7 +151,6 @@ AnimateHallOfFame: ; 864c3
 	db "New Hall of Famer!@"
 ; 8653f
 
-
 GetHallOfFameParty: ; 8653f
 	ld hl, OverworldMap
 	ld bc, HOF_LENGTH
@@ -631,4 +630,3 @@ HOF_AnimatePlayerPic: ; 86810
 .PlayTime
 	db "PLAY TIME@"
 ; 868f7
-

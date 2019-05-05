@@ -98,7 +98,6 @@ CeladonVendingMachine:
 	db "LEMONADE     ¥350@"
 	db "CANCEL@"
 
-
 CeladonDeptStore6FDirectory:
 	jumptext CeladonDeptStore6FDirectoryText
 

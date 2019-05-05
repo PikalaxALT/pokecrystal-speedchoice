@@ -12,7 +12,6 @@ _DoItemEffect:: ; e722
 	ret
 ; e73c
 
-
 ItemEffects: ; e73c
 	dw MasterBall
 	dw UltraBall
@@ -195,7 +194,6 @@ ItemEffects: ; e73c
 	dw ItemB3
 ; e8a2
 
-
 MasterBall:
 UltraBall:
 GreatBall:
@@ -226,14 +224,14 @@ ParkBall: ; e8a2
 .room_in_party
     ld de, sStatsBallsThrown
     callba SRAMStatsIncrement2Byte
-    
+
 	xor a
 	ld [wWildMon], a
 
 	ld a, [Options2]
 	bit PARKBALL_EFFECT, a
 	jr nz, .skipBallMenuClose
-	
+
 	ld a, [CurItem]
 	cp PARK_BALL
 	call nz, ReturnToBattle_UseBall
@@ -297,43 +295,43 @@ endr
 	rl d
 	sla e
 	rl d ; de = MaxHP*4
-	
+
 	ld h, b
 	ld l, c
 	add hl, bc
 	add hl, bc ; hl = CurrHP*3
-	
+
 	ld a, e
 	sub l
 	ld e, a
 	ld a, d
 	sbc h
 	ld d, a ; de = MaxHP*4-CurrHP*3
-	
+
 	ld hl, EnemyMonMaxHP
 	ld b, [hl]
 	inc hl
 	ld c, [hl] ; bc = MaxHP
-	
+
 	ld h, b
 	ld l, c
 	add hl, bc
 	add hl, bc ; hl = MaxHP*3
-	
+
 	ld a, d
 	cp h
 	jr c, .divisorCheck
 	jr nz, .capValue
-	
+
 	ld a, e
 	cp l
 	jr c, .divisorCheck
 	jr z, .divisorCheck
-	
+
 .capValue
 	ld d, h
 	ld e, l
-	
+
 .divisorCheck
 	; Divide hl and de by 2 until hl fits in a single byte
 	ld a, h
@@ -360,7 +358,7 @@ endr
 	push hl
 	call Multiply
 	pop hl
-	
+
 .realDivide
 	ld a, l
 	ld [hMultiplier], a
@@ -764,7 +762,6 @@ endr
 	dec [hl]
 	ret
 ; ec0a
-
 
 BallMultiplierFunctionTable:
 ; table of routines that increase or decrease the catch rate based on
@@ -1216,12 +1213,10 @@ TownMap: ; ee01
 	ret
 ; ee08
 
-
 Bicycle: ; ee08
 	callba BikeFunction
 	ret
 ; ee0f
-
 
 MoonStone:
 FireStone:
@@ -1259,7 +1254,6 @@ SunStone: ; ee0f
 	ld [wItemEffectSucceeded], a
 	ret
 ; ee3d
-
 
 HPUp:
 Protein:
@@ -1308,13 +1302,11 @@ Calcium: ; ee3d
 
 	jp UseDisposableItem
 
-
 NoEffectMessage: ; ee83
 	ld hl, WontHaveAnyEffectText
 	call PrintText
 	jp ClearPalettes
 ; ee8c
-
 
 UpdateStatsAfterItem: ; ee8c
 	ld a, MON_MAXHP
@@ -1333,13 +1325,11 @@ RareCandy_StatBooster_ExitMenu: ; ee9f
 	jp ClearPalettes
 ; eea6
 
-
 Text_StatRose: ; 0xeea6
 	; 's @  rose.
 	text_jump UnknownText_0x1c5b9a
 	db "@"
 ; 0xeeab
-
 
 StatStrings: ; eeab
 	dw .health
@@ -1354,7 +1344,6 @@ StatStrings: ; eeab
 .speed   db "SPEED@"
 .special db "SPECIAL@"
 ; eed9
-
 
 GetStatExpRelativePointer: ; eed9
 	ld a, [CurItem]
@@ -1381,7 +1370,6 @@ Table_eeeb: ; eeeb
 	db CALCIUM, MON_SPC_EXP - MON_STAT_EXP
 ; eef5
 
-
 RareCandy_StatBooster_GetParameters: ; eef5
 	ld a, [CurPartySpecies]
 	ld [CurSpecies], a
@@ -1396,7 +1384,6 @@ RareCandy_StatBooster_GetParameters: ; eef5
 	call GetNick
 	ret
 ; 0xef14
-
 
 RareCandy: ; ef14
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -1489,7 +1476,6 @@ RareCandy: ; ef14
 	jp UseDisposableItem
 ; efad
 
-
 HealPowder: ; efad
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1511,7 +1497,6 @@ HealPowder: ; efad
 	jp StatusHealer_Jumptable
 ; efcc
 
-
 Antidote:
 BurnHeal:
 IceHeal:
@@ -1532,7 +1517,6 @@ FullyHealStatus: ; efd4
 	call UseStatusHealer
 	jp StatusHealer_Jumptable
 ; efda
-
 
 UseStatusHealer: ; efda (3:6fda)
 	call IsMonFainted
@@ -1659,7 +1643,6 @@ StatusHealer_Jumptable: ; f09e (3:709e)
 	dw StatusHealer_NoEffect
 	dw StatusHealer_ExitMenu
 
-
 RevivalHerb: ; f0a9
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1678,7 +1661,6 @@ RevivalHerb: ; f0a9
 	jp StatusHealer_Jumptable
 ; f0c8
 
-
 Revive:
 MaxRevive: ; f0c8
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -1688,7 +1670,6 @@ MaxRevive: ; f0c8
 	call RevivePokemon
 	jp StatusHealer_Jumptable
 ; f0d6
-
 
 RevivePokemon: ; f0d6
 	call IsMonFainted
@@ -1737,7 +1718,6 @@ RevivePokemon: ; f0d6
 	ret
 ; f128
 
-
 FullRestore: ; f128
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1755,7 +1735,6 @@ FullRestore: ; f128
 	call .FullRestore
 	jp StatusHealer_Jumptable
 ; f144
-
 
 .FullRestore: ; f144
 	xor a
@@ -1777,7 +1756,6 @@ FullRestore: ; f128
 	ret
 ; f16a
 
-
 BitterBerry: ; f16a
 	ld hl, PlayerSubStatus3
 	bit SUBSTATUS_CONFUSED, [hl]
@@ -1798,7 +1776,6 @@ BitterBerry: ; f16a
 	jp StatusHealer_Jumptable
 ; f186
 
-
 MaxPotion:
 HyperPotion:
 SuperPotion:
@@ -1814,7 +1791,6 @@ GoldBerry: ; f186
 	call ItemRestoreHP
 	jp StatusHealer_Jumptable
 ; f18c
-
 
 Energypowder: ; f18c
 	ld c, HAPPINESS_BITTERPOWDER
@@ -1839,7 +1815,6 @@ EnergypowderEnergyRootCommon: ; f192
 .skip_happiness
 	jp StatusHealer_Jumptable
 ; f1a9
-
 
 ItemRestoreHP: ; f1a9 (3:71a9)
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -2266,7 +2241,6 @@ Softboiled_MilkDrinkFunction: ; f3df (3:73df)
 	db "@"
 ; 0xf44f
 
-
 EscapeRope: ; f44f
 	xor a
 	ld [wItemEffectSucceeded], a
@@ -2277,7 +2251,6 @@ EscapeRope: ; f44f
 	call z, UseDisposableItem
 	ret
 ; f462
-
 
 SuperRepel: ; f462
 	ld b, 200
@@ -2303,13 +2276,11 @@ UseRepel: ; f46c
 	ld [wRepelEffect], a
 	jp UseItemText
 
-
 TextJump_RepelUsedEarlierIsStillInEffect: ; 0xf47d
 	; The REPEL used earlier is still in effect.
 	text_jump Text_RepelUsedEarlierIsStillInEffect
 	db "@"
 ; 0xf482
-
 
 XAccuracy: ; f482
 	ld hl, PlayerSubStatus4
@@ -2318,7 +2289,6 @@ XAccuracy: ; f482
 	set SUBSTATUS_X_ACCURACY, [hl]
 	jp UseItemText
 ; f48f
-
 
 PokeDoll: ; f48f
 	ld a, [wBattleMode]
@@ -2338,7 +2308,6 @@ PokeDoll: ; f48f
 	ret
 ; f4ab
 
-
 GuardSpec: ; f4ab
 	ld hl, PlayerSubStatus4
 	bit SUBSTATUS_MIST, [hl]
@@ -2347,7 +2316,6 @@ GuardSpec: ; f4ab
 	jp UseItemText
 ; f4b8
 
-
 DireHit: ; f4b8
 	ld hl, PlayerSubStatus4
 	bit SUBSTATUS_FOCUS_ENERGY, [hl]
@@ -2355,7 +2323,6 @@ DireHit: ; f4b8
 	set SUBSTATUS_FOCUS_ENERGY, [hl]
 	jp UseItemText
 ; f4c5
-
 
 XAttack:
 XDefend:
@@ -2401,7 +2368,6 @@ endr
 	db X_SPECIAL, SP_ATTACK
 ; f50c
 
-
 PokeFlute: ; f50c
 	ld a, [wBattleMode]
 	and a
@@ -2446,7 +2412,6 @@ PokeFlute: ; f50c
 	ld hl, .AllSleepingMonWokeUp
 	jp PrintText
 
-
 .CureSleep
 	ld de, PARTYMON_STRUCT_LENGTH
 	ld c, PARTY_LENGTH
@@ -2467,7 +2432,6 @@ PokeFlute: ; f50c
 	jr nz, .loop
 	ret
 ; f56c
-
 
 .CatchyTune: ; 0xf56c
 	; Played the # FLUTE. Now, that's a catchy tune!
@@ -2499,7 +2463,6 @@ PokeFlute: ; f50c
 	jp PokeFluteTerminatorCharacter
 ; f58f
 
-
 BlueCard: ; f58f
 	ld hl, .bluecardtext
 	jp MenuTextBoxWaitButton
@@ -2509,7 +2472,6 @@ BlueCard: ; f58f
 	db "@"
 ; f59a
 
-
 CoinCase: ; f59a
 	ld hl, .coincasetext
 	jp MenuTextBoxWaitButton
@@ -2518,7 +2480,6 @@ CoinCase: ; f59a
 	text_jump UnknownText_0x1c5c7b
 	db "@"
 ; f5a5
-
 
 OldRod: ; f5a5
 	ld e, $0
@@ -2540,12 +2501,10 @@ Function_0xf5b1: ; f5b1
 	ret
 ; f5b8
 
-
 Itemfinder: ; f5b8
 	callba ItemFinder
 	ret
 ; f5bf
-
 
 MaxElixer:
 PPUp:
@@ -2817,24 +2776,20 @@ UnknownText_0xf739: ; 0xf739
 	db "@"
 ; 0xf73e
 
-
 Squirtbottle: ; f73e
 	callba _Squirtbottle
 	ret
 ; f745
-
 
 CardKey: ; f745
 	callba _CardKey
 	ret
 ; f74c
 
-
 BasementKey: ; f74c
 	callba _BasementKey
 	ret
 ; f753
-
 
 SacredAsh: ; f753
 	callba _SacredAsh
@@ -2844,7 +2799,6 @@ SacredAsh: ; f753
 	call UseDisposableItem
 	ret
 ; f763
-
 
 NormalBox: ; f763
 	ld c, DECOFLAG_SILVER_TROPHY_DOLL
@@ -2969,7 +2923,6 @@ ItemB3:
 TeruSama: ; f77d
 	jp IsntTheTimeMessage
 ; f780
-
 
 Play_SFX_FULL_HEAL: ; f780
 	push de
@@ -3145,7 +3098,6 @@ GotOffTheItemText: ; 0xf847
 	db "@"
 ; 0xf84c
 
-
 ApplyPPUp: ; f84c
 	ld a, MON_MOVES
 	call GetPartyParamLocation
@@ -3181,8 +3133,6 @@ ApplyPPUp: ; f84c
 	inc de
 	jr .loop
 ; f881
-
-
 
 ComputeMaxPP: ; f881
 	push bc
@@ -3269,7 +3219,6 @@ RestoreAllPP: ; f8b9
 	jr nz, .loop
 	ret
 ; f8ec
-
 
 GetMaxPPOfMove: ; f8ec
 	ld a, [StringBuffer1 + 0]

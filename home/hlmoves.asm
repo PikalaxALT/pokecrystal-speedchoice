@@ -2,22 +2,22 @@ LoadHLMovesPlusType::
 	push bc
 	ld bc, MOVE_TYPE
 	jr LoadHLMovesCommon
-	
+
 LoadHLMovesPlusPower::
 	push bc
 	ld bc, MOVE_POWER
 	jr LoadHLMovesCommon
-	
+
 LoadHLMovesPlusEffect::
 	push bc
 	ld bc, MOVE_EFFECT
 	jr LoadHLMovesCommon
-	
+
 LoadHLMovesPlusPP::
 	push bc
 	ld bc, MOVE_PP
 	jr LoadHLMovesCommon
-	
+
 LoadHLMoves::
 	push bc
 	ld bc, 0
@@ -33,4 +33,3 @@ LoadHLMovesCommon::
 	pop af
 	pop bc
 	ret
-

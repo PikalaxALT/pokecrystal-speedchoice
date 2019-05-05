@@ -1,6 +1,5 @@
 MAX_ROLLOUT_COUNT EQU 5
 
-
 BattleCommand_CheckCurl: ; 37718
 ; checkcurl
 
@@ -23,7 +22,6 @@ BattleCommand_CheckCurl: ; 37718
 	ld [de], a
 	ret
 ; 37734
-
 
 BattleCommand_RolloutPower: ; 37734
 ; rolloutpower

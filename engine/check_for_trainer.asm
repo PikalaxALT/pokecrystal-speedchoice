@@ -31,4 +31,3 @@ CheckForRangedTrainerOnMap::
 	pop bc
 	pop de
 	ret
-

@@ -12,7 +12,6 @@ SelectMonFromParty: ; 50000
 	ret
 ; 5001d
 
-
 SelectTradeOrDaycareMon: ; 5001d
 	ld a, b
 	ld [PartyMenuActionText], a
@@ -44,7 +43,6 @@ LoadPartyMenuGFX: ; 5004f
 	callab ClearSpriteAnims2
 	ret
 ; 5005f
-
 
 WritePartyMenuTilemap: ; 0x5005f
 	ld hl, Options
@@ -121,7 +119,6 @@ endr
 .CANCEL: ; 500c8
 	db "CANCEL@"
 ; 500cf
-
 
 PlacePartyHPBar: ; 500cf
 	xor a
@@ -367,7 +364,6 @@ PlacePartyMonTMHMCompatibility: ; 501e0
 	db "NOT ABLE@"
 ; 5022f
 
-
 PlacePartyMonEvoStoneCompatibility: ; 5022f
 	ld a, [PartyCount]
 	and a
@@ -455,7 +451,6 @@ endr
 	db "NOT ABLE@"
 ; 502b1
 
-
 PlacePartyMonGender: ; 502b1
 	ld a, [PartyCount]
 	and a
@@ -507,7 +502,6 @@ PlacePartyMonGender: ; 502b1
 .unknown: ; 502fe
 	db "…UNKNOWN@"
 ; 50307
-
 
 PlacePartyMonMobileBattleSelection: ; 50307
 	ld a, [PartyCount]
@@ -591,7 +585,6 @@ PlacePartyMonMobileBattleSelection: ; 50307
 	db "1@", "2@", "3@" ; 1st, 2nd, 3rd
 ; 50389
 
-
 PartyMenuCheckEgg: ; 50389
 	ld a, PartySpecies % $100
 	add b
@@ -645,7 +638,6 @@ endr
 .Gender: db 0, 7, 3, 4, $ff
 .Mobile: db 0, 8, 3, 4, $ff
 ; 503e0
-
 
 InitPartyMenuGFX: ; 503e0
 	ld hl, PartyCount
@@ -778,7 +770,6 @@ PartyMenuSelect: ; 0x50457
 	ret
 ; 0x5049a
 
-
 PrintPartyMenuText: ; 5049a
 	hlcoord 0, 14
 	lb bc, 2, 18
@@ -842,7 +833,6 @@ ToWhichPKMNString: ; 0x50549
 
 YouHaveNoPKMNString: ; 0x50556
 	db "You have no <PK><MN>!@"
-
 
 PrintPartyMenuActionText: ; 50566
 	ld a, [CurPartyMon]
@@ -927,7 +917,6 @@ PrintPartyMenuActionText: ; 50566
 	text_jump UnknownText_0x1bc16e
 	db "@"
 ; 0x505c1
-
 
 .PrintText: ; 505c1
 	ld e, a

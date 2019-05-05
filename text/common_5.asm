@@ -801,7 +801,7 @@ _DoYouWantToEscapeMenuText::
 	text "Escape from"
 	line "this location?"
 	done
-    
+
 _Text_ReallyDone::
     text "Have you really"
     line "finished the race?"

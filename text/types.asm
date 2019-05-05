@@ -39,7 +39,6 @@ PrintMonTypes: ; 5090d
 	jp ByteFill
 ; 5093a
 
-
 PrintMoveType: ; 5093a
 ; Print the type of move b at hl.
 
@@ -56,7 +55,6 @@ PrintMoveType: ; 5093a
 	pop hl
 
 	ld b, a
-
 
 PrintType: ; 50953
 ; Print type b at hl.
@@ -77,7 +75,6 @@ PrintType: ; 50953
 	jp PlaceString
 ; 50964
 
-
 GetTypeName: ; 50964
 ; Copy the name of type [wd265] to StringBuffer1.
 
@@ -95,7 +92,6 @@ endr
 	ld bc, 13
 	jp CopyBytes
 ; 5097b
-
 
 TypeNames: ; 5097b
 	dw Normal

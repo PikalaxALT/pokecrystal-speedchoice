@@ -57,7 +57,6 @@ Function6ec1: ; 6ec1
 	ret
 ; 6f07
 
-
 Function6f07: ; 6f07
 	call Function6f5f
 	ret c
@@ -224,8 +223,6 @@ Function6fa1: ; 6fa1
 	ret
 ; 6fd9
 
-
-
 CheckFacingObject:: ; 6fd9
 
 	call GetFacingTileCoord
@@ -266,7 +263,6 @@ CheckFacingObject:: ; 6fd9
 	scf
 	ret
 ; 7009
-
 
 WillPersonBumpIntoSomeoneElse: ; 7009
 	ld hl, OBJECT_NEXT_MAP_X
@@ -546,7 +542,6 @@ Function7113: ; unreferenced
 	scf
 	ret
 ; 7171
-
 
 Function7171: ; 7171
 	ld hl, OBJECT_NEXT_MAP_X

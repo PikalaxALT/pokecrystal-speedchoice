@@ -10,7 +10,6 @@ TEXTBOX_INNERY EQU TEXTBOX_Y + 2
 
 TEXTBOX_PAL EQU 7
 
-
 ClearBox:: ; fb6
 ; Fill a c*b box at hl with blank tiles.
 
@@ -33,7 +32,6 @@ FillBoxWithByte::
 	ret
 ; fc8
 
-
 ClearTileMap:: ; fc8
 ; Fill TileMap with blank tiles.
 
@@ -41,14 +39,13 @@ ClearTileMap:: ; fc8
 	ld a, " "
 	ld bc, TileMapEnd - TileMap
 	call ByteFill
-	
+
 	; Update the BG Map.
 	ld a, [rLCDC]
 	bit 7, a
 	ret z
 	jp WaitBGMap
 ; fdb
-
 
 ClearScreen:: ; fdb
 	ld a, TEXTBOX_PAL
@@ -57,8 +54,6 @@ ClearScreen:: ; fdb
 	call ByteFill
 	jr ClearTileMap
 ; fe8
-
-
 
 TextBox:: ; fe8
 ; Draw a text box at hl with room for
@@ -73,7 +68,6 @@ TextBox:: ; fe8
 	pop bc
 	jr TextBoxPalette
 ; ff1
-
 
 TextBoxBorder:: ; ff1
 
@@ -124,7 +118,6 @@ TextBoxBorder:: ; ff1
 	ret
 ; 1024
 
-
 TextBoxPalette:: ; 1024
 ; Fill text box width c height b at hl with pal 7
 	ld de, AttrMap - TileMap
@@ -152,7 +145,6 @@ endr
 	ret
 ; 103e
 
-
 SpeechTextBox:: ; 103e
 ; Standard textbox.
 	hlcoord TEXTBOX_X, TEXTBOX_Y
@@ -171,7 +163,6 @@ RadioTerminator:: ; 1052
 	ret
 .stop	db "@"
 ; 1057
-
 
 PrintText:: ; 1057
 	call SetUpTextBox
@@ -196,7 +187,6 @@ SetUpTextBox:: ; 106c
 	pop hl
 	ret
 ; 1078
-
 
 PlaceString:: ; 1078
 	push hl
@@ -274,14 +264,12 @@ endm
 	jp NextChar
 ; 0x117b
 
-
 Char15:: ; 117b
 	ld c, l
 	ld b, h
 	callba Function17f036
 	jp PlaceNextChar
 ; 1186
-
 
 print_name: macro
 	push de
@@ -308,7 +296,6 @@ Char35:       print_name Char35Text      ; 11e8
 Char36:       print_name Char36Text      ; 11ef
 Char37:       print_name Char37Text      ; 11f6
 
-
 PlaceMoveTargetsName:: ; 11fd
 	ld a, [hBattleTurn]
 	xor 1
@@ -332,7 +319,6 @@ PlaceMoveTargetsName_5A: ; 1205
 	ld l, c
 	ld de, EnemyMonNick
 	jr PlaceCommandCharacter
-
 
 PlaceEnemysName:: ; 121b
 	push de
@@ -367,7 +353,6 @@ PlaceEnemysName:: ; 121b
 	ld de, OTClassName
 	jr PlaceCommandCharacter
 
-
 PlaceGenderedPlayerName:: ; 1252
 	push de
 	ld de, PlayerName
@@ -380,7 +365,6 @@ PlaceGenderedPlayerName:: ; 1252
 	jr z, PlaceCommandCharacter
 	ld de, String_chan
 	jr PlaceCommandCharacter
-
 
 PlaceCommandCharacter:: ; 126a
 	call PlaceString
@@ -466,7 +450,6 @@ TextFar:: ; 12b9
 	jp NextChar
 ; 12ea
 
-
 LineChar:: ; 12ea
 	pop hl
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
@@ -498,7 +481,6 @@ Paragraph:: ; 12f2
 	jp NextChar
 ; 131f
 
-
 Char4B:: ; 131f
 	ld a, [wLinkMode]
 	or a
@@ -525,7 +507,6 @@ Char4C:: ; 1337
 	jp NextChar
 ; 1345
 
-
 ContText:: ; 1345
 	push de
 	ld de, .cont
@@ -539,7 +520,6 @@ ContText:: ; 1345
 
 .cont	db $4b, "@"
 ; 1356
-
 
 PlaceDexEnd:: ; 1356
 ; Legacy: ends a Pokédex entry (Red).
@@ -668,7 +648,6 @@ PokeFluteTerminatorCharacter:: ; 13e0
 
 .stop	db "@"
 ; 13e5
-
 
 PlaceWholeStringInBoxAtOnce:: ; 13e5
 	ld a, [TextBoxFlags]

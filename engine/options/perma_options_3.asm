@@ -24,7 +24,7 @@ Options_EasyTinTower:
 	call PlaceString
 	and a
 	ret
-	
+
 .Off
 	db "OFF@"
 .On

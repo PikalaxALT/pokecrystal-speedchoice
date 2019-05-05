@@ -135,7 +135,7 @@ RetrieveOptionsMenuConfig::
 	call AddNTimes
 	ld de, wOptionsMenuCount
 	jp CopyBytes
-	
+
 options_menu: MACRO
 	db (\1) ; number of options except bottom option
 	dw (\2) ; template string
@@ -285,7 +285,7 @@ OptionsControl: ; e452a
 	dec [hl]
 	scf
 	ret
-	
+
 .HandleBottomOption
 ; move to bottommost regular option
 	ld a, [wOptionsMenuCount]

@@ -391,7 +391,6 @@ Function157e9: ; 0x157e9
 	text_jump _KrissPCNoRoomWithdrawText
 	db "@"
 
-
 KrisTossItemMenu: ; 0x1585f
 	call LoadStandardMenuDataHeader
 	callba ClearPCItemScreen
@@ -408,7 +407,6 @@ KrisTossItemMenu: ; 0x1585f
 	ret
 ; 0x1587d
 
-
 KrisDecorationMenu: ; 0x1587d
 	callba _KrisDecorationMenu
 	ld a, c
@@ -418,13 +416,11 @@ KrisDecorationMenu: ; 0x1587d
 	ret
 ; 0x15888
 
-
 KrisLogOffMenu: ; 0x15888
 	xor a
 	scf
 	ret
 ; 0x1588b
-
 
 KrisDepositItemMenu: ; 0x1588b
 	call Function158b8
@@ -463,7 +459,6 @@ UnknownText_0x158c7: ; 0x158c7
 	text_jump UnknownText_0x1c13df
 	db "@"
 ; 0x158cc
-
 
 Function158cc: ; 0x158cc
 	ld a, [wSpriteUpdatesEnabled]
@@ -552,7 +547,6 @@ Function1590a: ; 0x1590a
 	ret
 ; 0x1596e
 
-
 .HowManyText ; 0x1596e
 	text_jump _KrissPCHowManyDepositText
 	db "@"
@@ -565,13 +559,11 @@ Function1590a: ; 0x1590a
 	text_jump _KrissPCNoRoomDepositText
 	db "@"
 
-
 KrisMailBoxMenu: ; 0x1597d
 	callba _KrisMailBoxMenu
 	xor a
 	ret
 ; 0x15985
-
 
 Function15985: ; 0x15985
 	xor a
@@ -666,7 +658,6 @@ PC_DisplayText: ; 15a20
 	call ExitMenu
 	ret
 ; 15a27
-
 
 UnknownText_0x15a27: ; 0x15a27
 	; turned on the PC.

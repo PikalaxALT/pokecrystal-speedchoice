@@ -193,7 +193,6 @@ CheckPokeItem:: ; 44654
 	ret
 ; 446cc
 
-
 GivePokeItem:: ; 446cc
 	ld a, [PartyCount]
 	dec a
@@ -243,7 +242,6 @@ GivePokeItem:: ; 446cc
 	jp CloseSRAM
 ; 44725
 
-
 BackupPartyMonMail: ; 44725
 	ld a, BANK(sPartyMail)
 	call GetSRAMBank
@@ -284,7 +282,6 @@ DeletePartyMonMail: ; 44765 (11:4765)
 	call ByteFill
 	jp CloseSRAM
 ; 44781 (11:4781)
-
 
 IsAnyMonHoldingMail: ; 44781
 	ld a, [PartyCount]

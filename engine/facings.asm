@@ -35,7 +35,6 @@ FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
 
-
 ; Tables used as a reference to transform OAM data.
 
 ; Format:
@@ -45,7 +44,6 @@ NUM_FACINGS EQU (FacingsEnd - Facings) / 2
 X_FLIP    EQU 1 << OAM_X_FLIP
 Y_FLIP    EQU 1 << OAM_Y_FLIP
 BEHIND_BG EQU 1 << OAM_PRIORITY
-
 
 Facing00:
 Facing02:

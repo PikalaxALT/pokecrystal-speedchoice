@@ -65,7 +65,7 @@ FullyEvolveMonInB:
 	ret z
 	ld b, BELLOSSOM
 	ret
-	
+
 EeveelutionsTable::
 ; there are only 5 eeveelutions but we need 8 values.
 ; so make the best 3 (Jolteon, Vaporeon, Espeon) more common.
@@ -77,14 +77,13 @@ EeveelutionsTable::
 	db ESPEON
 	db FLAREON
 	db UMBREON
-	
-	
+
 femon: MACRO
 	rept \1
 	db \2
 	endr
 ENDM
-	
+
 FullyEvolvedMonTable::
 	femon 3, VENUSAUR
 	femon 3, CHARIZARD
@@ -241,5 +240,3 @@ FullyEvolvedMonTable::
 	db LUGIA
 	db HO_OH
 	db CELEBI
-	
-

@@ -58,8 +58,6 @@ _InterpretMobileMenu:: ; 2403c
 	ret
 ; 24085
 
-
-
 Draw2DMenu: ; 24085
 	xor a
 	ld [hBGMapMode], a
@@ -166,7 +164,6 @@ Place2DMenuItemStrings: ; 240db
 	ret
 ; 2411a
 
-
 Init2DMenuCursorPosition: ; 2411a (9:411a)
 	call GetMenuTextStartCoord
 	ld a, b
@@ -259,7 +256,6 @@ Init2DMenuCursorPosition: ; 2411a (9:411a)
 	ret
 ; 241a8
 
-
 _StaticMenuJoypad:: ; 241a8
 	call Place2DMenuCursor
 _ScrollingMenuJoypad:: ; 241ab
@@ -289,7 +285,6 @@ MobileMenuJoypad: ; 241ba
 	ld c, a
 	ret
 ; 241d5
-
 
 Function241d5: ; 241d5
 ; Unreferenced
@@ -330,7 +325,6 @@ Function241d5: ; 241d5
 	and a
 	ret
 ; 24216
-
 
 MenuJoypadLoop: ; 24216
 .loop

@@ -86,7 +86,7 @@ RequestDone::
 	pop de
 	pop hl
 	jr LCDDone
-	
+
 _Serve1bppRequestHB:
 	push hl
 	push de
@@ -131,7 +131,7 @@ _Serve1bppRequestHB:
 	ld hl, Requested1bpp
 	dec [hl]
 	jr RequestDone
-	
+
 Wait2bpp::
 	ld a, [hFFC6]
 	push af
@@ -159,7 +159,7 @@ DisableLCD:: ; 568
 	ld [rIF], a
 	ld a, [rIE]
 	ld b, a
-	
+
 ; Disable VBlank
 	res 0, a ; vblank
 	ld [rIE], a
@@ -180,7 +180,6 @@ DisableLCD:: ; 568
 	ld [rIE], a
 	ret
 ; 58a
-
 
 EnableLCD:: ; 58a
 	ld a, [rLCDC]

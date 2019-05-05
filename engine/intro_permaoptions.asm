@@ -44,7 +44,7 @@ IntroPermaOptions::
     call CloseSRAM
     ld [hStatsDisabled], a ; still 0 from above
 	ret
-	
+
 PrintPermaOptionsToScreen::
 	;ld de, SelectedOptionsText
 	;coord hl, 2, 0
@@ -175,7 +175,7 @@ PrintPermaOptionsToScreen::
 	dw NoSpinnersText
 	dw SpinnerHellText
 	dw SuperSpinnerHellText
-	
+
 PlaceStringIncHL::
 	push bc
 	call PlaceString
@@ -183,7 +183,7 @@ PlaceStringIncHL::
 	add hl, bc
 	pop bc
 	ret
-	
+
 PrintHexValueXoredWithOptions::
 ; a contains the value to be displayed
 	push hl
@@ -204,7 +204,7 @@ PrintHexValueXoredWithOptions::
 	or $80
 	ld [hli], a
 	ret
-	
+
 SelectedOptionsText::
 	db "SELECTED OPTIONS@"
 NormalRocketsText::
@@ -265,4 +265,3 @@ PleaseSetOptions::
 AreOptionsAcceptable::
 	text_jump _AreOptionsAcceptable
 	db "@"
-

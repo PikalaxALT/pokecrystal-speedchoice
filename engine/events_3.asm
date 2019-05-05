@@ -100,7 +100,6 @@ ReturnFromMapSetupScript:: ; b8000
 	ret
 ; b8098
 
-
 PlaceMapNameSign:: ; b8098 (2e:4098)
 	ld hl, wLandmarkSignTimer
 	ld a, [hl]
@@ -129,7 +128,6 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	ld [hFFC6], a
 	ret
 
-
 LoadMapNameSignGFX: ; b80c6
 	ld de, MapEntryFrameGFX
 	ld hl, VTiles2 tile $60
@@ -146,7 +144,6 @@ InitMapNameFrame: ; b80d3
 	call PlaceMapNameFrame
 	ret
 ; b80e1
-
 
 PlaceMapNameCenterAlign: ; b80e1 (2e:40e1)
 	ld a, [wCurrentLandmark]
@@ -179,7 +176,6 @@ PlaceMapNameCenterAlign: ; b80e1 (2e:40e1)
 .stop
 	pop hl
 	ret
-
 
 InitMapSignAttrMap: ; b8115
 	ld de, AttrMap - TileMap
@@ -361,7 +357,6 @@ CheckForHiddenItems: ; b8172
 	inc hl
 	ret
 ; b81ea
-
 
 TreeMonEncounter: ; b81ea
 	callba MobileFn_1060ef

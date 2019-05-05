@@ -125,7 +125,6 @@ prob_total = 0
 	prob 1
 ; 1fb56e
 
-
 OddEggs: ; 1fb56e
 
 Randomizer_OddEgg1::

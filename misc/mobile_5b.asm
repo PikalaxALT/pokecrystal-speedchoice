@@ -848,13 +848,11 @@ Unknown_16cfa9:
 	RGB 31, 31, 31
 	RGB 07, 07, 07
 
-
 Unknown_16cfb1:
 	RGB 31, 31, 31
 	RGB 13, 09, 18
 	RGB 26, 21, 16
 	RGB 07, 07, 07
-
 
 Unknown_16cfb9:
 	RGB 31, 31, 31

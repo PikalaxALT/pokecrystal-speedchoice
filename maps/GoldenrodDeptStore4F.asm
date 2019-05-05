@@ -19,7 +19,7 @@ ClerkScript_0x55ee9:
 	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_4F
 	closetext
 	end
-	
+
 Goldenrod4FBetterMartScript:
 	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_4F_BETTER
 	closetext

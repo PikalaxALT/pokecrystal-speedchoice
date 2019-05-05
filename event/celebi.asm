@@ -39,7 +39,6 @@ Special_CelebiShrineEvent: ; 4989a
 	pop bc
 	jr .loop
 
-
 .done
 	pop af
 	ld [VramState], a
@@ -93,7 +92,6 @@ CelebiEvent_CountDown: ; 49935
 	dec [hl]
 	ret
 
-
 .done
 	ld hl, wJumptableIndex
 	set 7, [hl]
@@ -130,7 +128,6 @@ INCBIN "gfx/special/celebi/1.2bpp"
 INCBIN "gfx/special/celebi/2.2bpp"
 INCBIN "gfx/special/celebi/3.2bpp"
 INCBIN "gfx/special/celebi/4.2bpp"
-
 
 UpdateCelebiPosition: ; 49aa2 (12:5aa2)
 	ld hl, SPRITEANIMSTRUCT_XOFFSET
@@ -226,7 +223,6 @@ UpdateCelebiPosition: ; 49aa2 (12:5aa2)
 .done
 	ret
 
-
 .FreezeCelebiPosition: ; 49b30 (12:5b30)
 	pop af
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
@@ -234,7 +230,6 @@ UpdateCelebiPosition: ; 49aa2 (12:5aa2)
 	ld a, $40
 	call ReinitSpriteAnimFrame
 	ret
-
 
 CelebiEvent_Cosine: ; 49b3b (12:5b3b)
 	add $10
@@ -252,7 +247,6 @@ CelebiEvent_Cosine: ; 49b3b (12:5b3b)
 	xor $ff
 	inc a
 	ret
-
 
 .SineFunction: ; 49b52 (12:5b52)
 	ld e, a
@@ -305,21 +299,17 @@ GetCelebiSpriteTile: ; 49bae
 	jr c, .done
 	jr .restart
 
-
 .Frame1
 	ld a, $84
 	jr .load_tile
-
 
 .Frame2
 	ld a, $88
 	jr .load_tile
 
-
 .Frame3
 	ld a, $8c
 	jr .load_tile
-
 
 .Frame4
 	ld a, $90
@@ -329,7 +319,6 @@ GetCelebiSpriteTile: ; 49bae
 	add hl, bc
 	ld [hl], a
 	jr .done
-
 
 .restart
 	pop de
@@ -368,7 +357,6 @@ CheckCaughtCelebi: ; 49bf9
 	ld a, $1
 	ld [ScriptVar], a
 	jr .done
-
 
 .false
 	xor a

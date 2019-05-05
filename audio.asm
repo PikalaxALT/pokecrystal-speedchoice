@@ -1,6 +1,5 @@
 INCLUDE "includes.asm"
 
-
 SECTION "Audio", ROMX, BANK[AUDIO]
 
 INCLUDE "audio/engine.asm"
@@ -19,8 +18,6 @@ INCLUDE "audio/cry_pointers.asm"
 SFX:
 INCLUDE "audio/sfx_pointers.asm"
 
-
-
 SECTION "Songs 1", ROMX, BANK[SONGS_1]
 
 INCLUDE "audio/music/route36.asm"
@@ -38,7 +35,6 @@ INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/ruinsofalphinterior.asm"
 INCLUDE "audio/music/lookpokemaniac.asm"
 INCLUDE "audio/music/trainervictory.asm"
-
 
 SECTION "Songs 2", ROMX, BANK[SONGS_2]
 
@@ -75,7 +71,6 @@ INCLUDE "audio/music/dancinghall.asm"
 INCLUDE "audio/music/contestresults.asm"
 INCLUDE "audio/music/route30.asm"
 
-
 SECTION "Songs 3", ROMX, BANK[SONGS_3]
 
 INCLUDE "audio/music/violetcity.asm"
@@ -84,7 +79,6 @@ INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/evolution.asm"
 INCLUDE "audio/music/printer.asm"
-
 
 SECTION "Songs 4", ROMX, BANK[SONGS_4]
 
@@ -126,7 +120,6 @@ INCLUDE "audio/music/lookkimonogirl.asm"
 INCLUDE "audio/music/pokeflutechannel.asm"
 INCLUDE "audio/music/bugcatchingcontest.asm"
 
-
 SECTION "Songs 5", ROMX, BANK[SONGS_5]
 
 INCLUDE "audio/music/mobileadaptermenu.asm"
@@ -138,31 +131,23 @@ INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
 
-
-
 SECTION "Extra Songs 1", ROMX, BANK[EXTRA_SONGS_1]
 
 INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/clair.asm"
 INCLUDE "audio/music/mobileadapter.asm"
 
-
 SECTION "Extra Songs 2", ROMX, BANK[EXTRA_SONGS_2]
 
 INCLUDE "audio/music/postcredits.asm"
-
-
 
 SECTION "Sound Effects", ROMX, BANK[SOUND_EFFECTS]
 
 INCLUDE "audio/sfx.asm"
 
-
 SECTION "Crystal Sound Effects", ROMX, BANK[CRYSTAL_SOUND_EFFECTS]
 
 INCLUDE "audio/sfx_crystal.asm"
-
-
 
 SECTION "Cries", ROMX, BANK[CRIES]
 
