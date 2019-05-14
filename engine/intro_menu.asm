@@ -1190,10 +1190,10 @@ TitleScreenMain: ; 6304
 ; Save data can be deleted by pressing Up + B + Select.
 	call GetJoypad
 	ld hl, hJoyDown
-	ld a, [hl]
-	and D_UP + B_BUTTON + SELECT
-	cp  D_UP + B_BUTTON + SELECT
-	jr z, .delete_save_data
+	; ld a, [hl]
+	; and D_UP + B_BUTTON + SELECT
+	; cp  D_UP + B_BUTTON + SELECT
+	; jr z, .delete_save_data
 
 ; To bring up the clock reset dialog:
 
